@@ -1,0 +1,90 @@
+/* Login Component Styles */
+
+.login-container {
+  padding: 2rem;
+  margin-top: 80px;
+}
+
+.login-content {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.login-title {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.login-form {
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-field {
+  margin-bottom: 1.5rem;
+}
+
+.login-field:last-of-type {
+  margin-bottom: 2rem;
+}
+
+.login-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.login-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #e9ecef;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.login-input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.login-button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #667eea;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #5a6fd8;
+}
+
+.login-forgot-password {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.login-forgot-link {
+  color: #667eea;
+  text-decoration: none;
+  font-size: 0.9rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.login-forgot-link:hover {
+  color: #5a6fd8;
+}

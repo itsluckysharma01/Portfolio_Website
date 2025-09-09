@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Colors */
+  --color-primary: #00d4ff; /* Electric innovation, cutting-edge technical identity */
+  --color-primary-50: #e6fbff; /* Very light cyan */
+  --color-primary-100: #ccf7ff; /* Light cyan */
+  --color-primary-200: #99efff; /* Lighter cyan */
+  --color-primary-300: #66e7ff; /* Medium light cyan */
+  --color-primary-400: #33dfff; /* Medium cyan */
+  --color-primary-500: #00d4ff; /* Base primary */
+  --color-primary-600: #00aad4; /* Darker cyan */
+  --color-primary-700: #0080aa; /* Dark cyan */
+  --color-primary-800: #005580; /* Very dark cyan */
+  --color-primary-900: #002b55; /* Darkest cyan */
+
+  /* Secondary Colors */
+  --color-secondary: #39ff14; /* Growth momentum, successful project outcomes */
+  --color-secondary-50: #f0ffe6; /* Very light green */
+  --color-secondary-100: #e1ffcc; /* Light green */
+  --color-secondary-200: #c3ff99; /* Lighter green */
+  --color-secondary-300: #a5ff66; /* Medium light green */
+  --color-secondary-400: #87ff33; /* Medium green */
+  --color-secondary-500: #39ff14; /* Base secondary */
+  --color-secondary-600: #2dd410; /* Darker green */
+  --color-secondary-700: #22aa0c; /* Dark green */
+  --color-secondary-800: #178008; /* Very dark green */
+  --color-secondary-900: #0c5504; /* Darkest green */
+
+  /* Accent Colors */
+  --color-accent: #ff6b6b; /* Critical actions, urgent attention moments */
+  --color-accent-50: #ffebeb; /* Very light red */
+  --color-accent-100: #ffd6d6; /* Light red */
+  --color-accent-200: #ffadad; /* Lighter red */
+  --color-accent-300: #ff8585; /* Medium light red */
+  --color-accent-400: #ff7575; /* Medium red */
+  --color-accent-500: #ff6b6b; /* Base accent */
+  --color-accent-600: #d45555; /* Darker red */
+  --color-accent-700: #aa4040; /* Dark red */
+  --color-accent-800: #802a2a; /* Very dark red */
+  --color-accent-900: #551515; /* Darkest red */
+
+  /* Background Colors */
+  --color-background: #0d1117; /* Professional depth, focused work environment */
+  --color-surface: #1a1a1a; /* Subtle content elevation, card backgrounds */
+  --color-surface-light: #2d2d2d; /* Lighter surface for hover states */
+  --color-surface-lighter: #404040; /* Even lighter surface */
+
+  /* Text Colors */
+  --color-text-primary: #ffffff; /* Maximum readability, primary content clarity */
+  --color-text-secondary: #8b949e; /* Clear hierarchy, supporting information tone */
+  --color-text-muted: #6e7681; /* Muted text for less important content */
+  --color-text-disabled: #484f58; /* Disabled text color */
+
+  /* Status Colors */
+  --color-success: #28a745; /* Positive confirmation, completed project status */
+  --color-success-50: #e8f5e8; /* Very light green */
+  --color-success-100: #d1ebd1; /* Light green */
+  --color-success-200: #a3d7a3; /* Lighter green */
+  --color-success-300: #75c375; /* Medium light green */
+  --color-success-400: #47af47; /* Medium green */
+  --color-success-500: #28a745; /* Base success */
+  --color-success-600: #208637; /* Darker green */
+  --color-success-700: #186529; /* Dark green */
+  --color-success-800: #10441b; /* Very dark green */
+  --color-success-900: #08220d; /* Darkest green */
+
+  --color-warning: #ffc107; /* Helpful alerts, work-in-progress indicators */
+  --color-warning-50: #fffbf0; /* Very light yellow */
+  --color-warning-100: #fff7e0; /* Light yellow */
+  --color-warning-200: #ffefc2; /* Lighter yellow */
+  --color-warning-300: #ffe7a3; /* Medium light yellow */
+  --color-warning-400: #ffdf85; /* Medium yellow */
+  --color-warning-500: #ffc107; /* Base warning */
+  --color-warning-600: #d4a006; /* Darker yellow */
+  --color-warning-700: #aa8005; /* Dark yellow */
+  --color-warning-800: #806004; /* Very dark yellow */
+  --color-warning-900: #554003; /* Darkest yellow */
+
+  --color-error: #dc3545; /* Constructive feedback, form validation guidance */
+  --color-error-50: #fdf2f2; /* Very light red */
+  --color-error-100: #fce4e6; /* Light red */
+  --color-error-200: #f9c9cc; /* Lighter red */
+  --color-error-300: #f5aeb3; /* Medium light red */
+  --color-error-400: #f29399; /* Medium red */
+  --color-error-500: #dc3545; /* Base error */
+  --color-error-600: #b82c3a; /* Darker red */
+  --color-error-700: #94232f; /* Dark red */
+  --color-error-800: #701a24; /* Very dark red */
+  --color-error-900: #4c1119; /* Darkest red */
+
+  /* Border Colors */
+  --color-border: rgba(255, 255, 255, 0.1); /* Minimal borders */
+  --color-border-light: rgba(255, 255, 255, 0.2); /* Slightly more visible borders */
+  --color-border-focus: var(--color-primary); /* Focus state borders */
+
+  /* Shadow Colors */
+  --shadow-subtle: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* Subtle depth */
+  --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.1); /* Medium depth */
+  --shadow-large: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* Dramatic shadows for hero elements */
+}
+
+/* Base styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  
+  code, pre {
+    font-family: 'Fira Code', monospace;
+  }
+}
+
+/* Component styles */
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-background font-semibold px-6 py-3 rounded-lg transition-all duration-300 ease-out hover:bg-primary-600 hover:shadow-lg;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-background font-semibold px-6 py-3 rounded-lg transition-all duration-300 ease-out hover:bg-secondary-600 hover:shadow-lg;
+  }
+  
+  .btn-accent {
+    @apply bg-accent text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 ease-out hover:bg-accent-600 hover:shadow-lg;
+  }
+  
+  .card {
+    @apply bg-surface border border-border rounded-lg p-6 transition-all duration-300 ease-out hover:bg-surface-light;
+  }
+  
+  .input-field {
+    @apply bg-surface border border-border text-text-primary px-4 py-3 rounded-lg focus:border-primary focus:outline-none transition-all duration-300 ease-out;
+  }
+  
+  .text-gradient-primary {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+  
+  .shadow-subtle {
+    box-shadow: var(--shadow-subtle);
+  }
+  
+  .shadow-hero {
+    box-shadow: var(--shadow-large);
+  }
+}
+
+/* Utility styles */
+@layer utilities {
+  .transition-smooth {
+    @apply transition-all duration-300 ease-out;
+  }
+  
+  .transition-slow {
+    @apply transition-all duration-500 ease-out;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

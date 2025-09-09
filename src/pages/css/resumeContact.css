@@ -1,0 +1,49 @@
+/* ResumeContact Component Styles */
+
+.resume-container {
+  padding: 2rem;
+  margin-top: 80px;
+}
+
+.resume-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.resume-title {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.resume-section {
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.resume-section:last-child {
+  margin-bottom: 0;
+}
+
+.resume-section h2 {
+  color: #343a40;
+  margin-bottom: 1rem;
+}
+
+.resume-description {
+  line-height: 1.6;
+  color: #6c757d;
+}
+
+.resume-skills-list {
+  list-style: none;
+  padding: 0;
+}
+
+.resume-skill-item {
+  padding: 0.5rem 0;
+  color: #6c757d;
+}

@@ -1,6 +1,41 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Folder Structure
+
+my-portfolio/
+├── public/
+│ ├── index.html
+│ ├── favicon.ico
+│ └── ... (images, videos, etc.)
+├── src/
+│ ├── assets/
+│ │ ├── images/
+│ │ ├── videos/
+│ │ └── data/
+│ │ ├── projectsData.js
+│ │ └── certificatesData.js
+│ ├── components/
+│ │ ├── Home/
+│ │ │ ├── Home.js
+│ │ │ └── Home.css
+│ │ ├── About/
+│ │ │ ├── About.js
+│ │ │ └── About.css
+│ │ ├── Projects/
+│ │ │ ├── Projects.js
+│ │ │ ├── ProjectCard.js
+│ │ │ └── Projects.css
+│ │ ├── Certificates/
+│ │ │ ├── Certificates.js
+│ │ │ ├── CertificateCard.js
+│ │ │ └── Certificates.css
+│ │ └── ... (other components like Header, Footer, etc.)
+│ ├── App.js
+│ ├── index.js
+│ └── styles/
+│ └── global.css
+├── package.json
+└── README.md
 
 ## Available Scripts
 

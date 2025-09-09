@@ -1,0 +1,97 @@
+/* Contact Component Styles */
+
+.contact-container {
+  padding: 2rem;
+  margin-top: 80px;
+}
+
+.contact-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-title {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.contact-card {
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.contact-intro {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #6c757d;
+  margin-bottom: 2rem;
+}
+
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-method {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contact-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.contact-icon.email {
+  background-color: #667eea;
+}
+
+.contact-icon.phone {
+  background-color: #764ba2;
+}
+
+.contact-icon.linkedin {
+  background-color: #28a745;
+}
+
+.contact-method h3 {
+  margin: 0;
+  color: #2c3e50;
+}
+
+.contact-method p {
+  margin: 0;
+  color: #6c757d;
+}
+
+.contact-button-container {
+  text-align: center;
+}
+
+.contact-button {
+  background-color: #667eea;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-button:hover {
+  background-color: #5a6fd8;
+  transform: translateY(-2px);
+}
