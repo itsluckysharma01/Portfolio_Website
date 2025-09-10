@@ -181,7 +181,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Lucky Sharma**
 
 - GitHub: [@itsluckysharma01](https://github.com/itsluckysharma01)
-- LinkedIn: [Lucky Sharma Linkdin](www.linkedin.com/in/lucky-sharma918894599977)
+- LinkedIn: [Linkdin](www.linkedin.com/in/lucky-sharma918894599977)
 - Email: [Lucky Sharma](itsluckysharma001@gmail.com)
 
 ## 🙏 Acknowledgments
