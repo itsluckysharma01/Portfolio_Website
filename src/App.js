@@ -12,15 +12,62 @@ import Contact from "./pages/Contact";
 function App() {
   return (
     <Router>
-      <NavBar />
       <Routes>
         <Route path="/home" element={<HomePage />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/skillhub" element={<SkillHub />} />
-        <Route path="/techblog" element={<TechBlog />} />
-        <Route path="/resume" element={<ResumeContact />} />
-        <Route path="/login" element={<Login />} />
+        <Route
+          path="/contact"
+          element={
+            <>
+              <NavBar />
+              <Contact />
+            </>
+          }
+        />
+        <Route
+          path="/about"
+          element={
+            <>
+              <NavBar />
+              <About />
+            </>
+          }
+        />
+        <Route
+          path="/skillhub"
+          element={
+            <>
+              <NavBar />
+              <SkillHub />
+            </>
+          }
+        />
+        <Route
+          path="/techblog"
+          element={
+            <>
+              <NavBar />
+              <TechBlog />
+            </>
+          }
+        />
+        <Route
+          path="/resume"
+          element={
+            <>
+              <NavBar />
+              <ResumeContact />
+            </>
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <>
+              <NavBar />
+              <Login />
+            </>
+          }
+        />
         <Route path="/" element={<HomePage />} />
       </Routes>
     </Router>
