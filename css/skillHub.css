@@ -1,0 +1,43 @@
+/* Page-specific styles for SkillHub component */
+
+/* Minimal overrides and helpers - project likely uses Tailwind; these are complements */
+
+.dh-feedback {
+  position: absolute;
+  top: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-primary, #0ea5a4);
+  color: var(--color-background, #ffffff);
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.12);
+}
+
+.animate-fade-in {
+  animation: fadeInUp 480ms ease both;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.font-code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;
+}
+
+/* Simple utility to hide/show where Tailwind might not be present */
+.hidden { display: none !important; }
+
+/* Basic input and button fallbacks */
+.input-field { background: var(--surface, #f8fafc); border: 1px solid var(--border, #e6e9ef); padding: 0.5rem 0.75rem; border-radius: 8px; }
+.btn-primary { background: var(--color-primary, #0ea5a4); color: white; border-radius: 8px; }
+.btn-secondary { background: var(--color-secondary, #7c3aed); color: white; border-radius: 8px; }
+.card { background: var(--card-bg, #fff); border-radius: 12px; padding: 1rem; box-shadow: 0 6px 20px rgba(2,6,23,0.04); }
+
+/* small responsive tweaks */
+@media (max-width: 768px) {
+  .input-field.w-64 { width: 100% !important; }
+}

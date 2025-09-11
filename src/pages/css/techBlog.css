@@ -72,3 +72,25 @@
   opacity: 0.9;
   transform: translateY(-1px);
 }
+
+/* Additional styles for React TechBlog component */
+.tech-blog-page { font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; color: var(--text-primary, #e6eef8); }
+.nav { backdrop-filter: blur(6px); }
+.nav .logo svg { width: 2rem; height: 2rem; }
+.input-field { border: 1px solid var(--border, rgba(0,0,0,0.08)); background: var(--surface, #fff); padding: 0.6rem 0.8rem; border-radius: 0.5rem; }
+.btn-primary { background: linear-gradient(90deg, var(--primary, #7c3aed), var(--secondary, #06b6d4)); color: var(--background, #fff); padding: 0.6rem 1rem; border-radius: 0.5rem; border: none; cursor: pointer; }
+.btn-secondary { background: transparent; border: 1px solid var(--border, rgba(0,0,0,0.08)); padding: 0.4rem 0.6rem; border-radius: 0.4rem; cursor: pointer; }
+.card { background: var(--surface, #ffffff); padding: 1rem; border-radius: 0.75rem; border: 1px solid var(--border, rgba(0,0,0,0.06)); }
+.filter-btn { padding: 0.5rem 0.75rem; background: var(--surface, #fff); border: 1px solid var(--border, rgba(0,0,0,0.06)); border-radius: 0.5rem; color: var(--text-secondary, #6b7280); cursor: pointer; }
+.filter-btn.active { background: var(--primary, #7c3aed); color: var(--background, #fff); border-color: var(--primary, #7c3aed); }
+.font-code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Courier New', monospace; }
+.text-gradient-primary { background: linear-gradient(90deg, var(--primary, #7c3aed), var(--accent, #f97316)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+/* Utilities used in component */
+.bg-background { background: var(--background, #0f1724); }
+.bg-surface { background: var(--surface, #0b1220); }
+.bg-surface-light { background: rgba(255,255,255,0.04); }
+.text-text-secondary { color: var(--text-secondary, #9aa4b2); }
+.text-text-muted { color: var(--text-muted, #8b97a6); }
+
+@media (max-width: 768px) { .desktop-nav { display: none !important; } }

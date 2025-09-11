@@ -1,31 +1,936 @@
-import React from 'react'
-import './css/resumeContact.css'
+import React, { useState, useEffect } from 'react';
+import './css/resumeContact.css';
 
 const ResumeContact = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    company: '',
+    projectType: '',
+    timeline: '',
+    budget: '',
+    priority: 'normal',
+    technologies: [],
+    description: '',
+    additionalInfo: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    
+    if (type === 'checkbox') {
+      if (name === 'technologies[]') {
+        setFormData(prev => ({
+          ...prev,
+          technologies: checked 
+            ? [...prev.technologies, value]
+            : prev.technologies.filter(tech => tech !== value)
+        }));
+      }
+    } else {
+      setFormData(prev => ({
+        ...prev,
+        [name]: value
+      }));
+    }
+  };
+
+  const downloadResume = () => {
+    // Create a temporary link element
+    const link = document.createElement('a');
+    link.href = 'data:application/pdf;base64,'; // In real implementation, this would be the actual PDF data
+    link.download = 'Alex_Rodriguez_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    showNotification('Resume download started!', 'success');
+  };
+
+  const viewInteractiveResume = () => {
+    showNotification('Interactive resume feature coming soon!', 'info');
+  };
+
+  const openCalendar = () => {
+    showNotification('Calendar booking integration coming soon!', 'info');
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    // Validate required fields
+    const requiredFields = ['firstName', 'lastName', 'email', 'projectType', 'description'];
+    const missingFields = requiredFields.filter(field => !formData[field]);
+    
+    if (missingFields.length > 0) {
+      showNotification('Please fill in all required fields.', 'error');
+      return;
+    }
+    
+    // Validate email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      showNotification('Please enter a valid email address.', 'error');
+      return;
+    }
+    
+    setIsSubmitting(true);
+    
+    // Simulate API call
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        company: '',
+        projectType: '',
+        timeline: '',
+        budget: '',
+        priority: 'normal',
+        technologies: [],
+        description: '',
+        additionalInfo: ''
+      });
+      showNotification('Thank you! Your project inquiry has been sent. I\'ll respond within 24 hours.', 'success');
+    }, 2000);
+  };
+
+  const showNotification = (message, type = 'info') => {
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    
+    notification.innerHTML = `
+      <div class="notification-content">
+        <span class="notification-message">${message}</span>
+        <button onclick="this.parentElement.parentElement.remove()" class="notification-close">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+    `;
+    
+    document.body.appendChild(notification);
+    
+    // Animate in
+    setTimeout(() => {
+      notification.classList.add('notification-show');
+    }, 100);
+    
+    // Auto remove after 5 seconds
+    setTimeout(() => {
+      notification.classList.add('notification-hide');
+      setTimeout(() => {
+        if (notification.parentElement) {
+          notification.remove();
+        }
+      }, 300);
+    }, 5000);
+  };
+
+  useEffect(() => {
+    // Smooth scrolling for anchor links
+    const handleAnchorClick = (e) => {
+      if (e.target.getAttribute('href')?.startsWith('#')) {
+        e.preventDefault();
+        const target = document.querySelector(e.target.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }
+    };
+
+    document.addEventListener('click', handleAnchorClick);
+    return () => document.removeEventListener('click', handleAnchorClick);
+  }, []);
+
   return (
-    <div className="resume-container">
-      <div className="resume-content">
-        <h1 className="resume-title">
-          My Resume
-        </h1>
-        <div className="resume-section">
-          <h2>Professional Summary</h2>
-          <p className="resume-description">
-            Experienced web developer with expertise in modern technologies and frameworks.
-          </p>
+    <div className="resume-contact">
+      {/* Navigation */}
+      <nav className="navbar">
+        <div className="nav-container">
+          <div className="nav-content">
+            {/* Logo */}
+            <div className="nav-logo">
+              <a href="/" className="logo-link">
+                <svg className="logo-icon" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+                <span className="logo-text">DevPortfolio Pro</span>
+              </a>
+            </div>
+            
+            {/* Desktop Navigation */}
+            <div className="nav-desktop">
+              <div className="nav-links">
+                <a href="/" className="nav-link">Home</a>
+                <a href="/about" className="nav-link">About</a>
+                <a href="/skills" className="nav-link">Skills Lab</a>
+                <a href="/projects" className="nav-link">Projects</a>
+                <a href="/blog" className="nav-link">Blog</a>
+                <a href="/contact" className="nav-link nav-link-active">Contact</a>
+              </div>
+            </div>
+            
+            {/* Mobile menu button */}
+            <div className="nav-mobile-toggle">
+              <button onClick={toggleMobileMenu} className="mobile-menu-button">
+                <svg className="mobile-menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
         
-        <div className="resume-section">
-          <h2>Skills</h2>
-          <ul className="resume-skills-list">
-            <li className="resume-skill-item">• React.js & JavaScript</li>
-            <li className="resume-skill-item">• HTML5 & CSS3</li>
-            <li className="resume-skill-item">• Node.js & Express</li>
-          </ul>
+        {/* Mobile Navigation */}
+        <div className={`nav-mobile ${mobileMenuOpen ? 'nav-mobile-open' : ''}`}>
+          <div className="nav-mobile-content">
+            <a href="/" className="nav-mobile-link">Home</a>
+            <a href="/about" className="nav-mobile-link">About</a>
+            <a href="/skills" className="nav-mobile-link">Skills Lab</a>
+            <a href="/projects" className="nav-mobile-link">Projects</a>
+            <a href="/blog" className="nav-mobile-link">Blog</a>
+            <a href="/contact" className="nav-mobile-link nav-mobile-link-active">Contact</a>
+          </div>
         </div>
-      </div>
-    </div>
-  )
-}
+      </nav>
 
-export default ResumeContact
+      {/* Hero Section */}
+      <section id="hero" className="hero-section">
+        <div className="container">
+          <div className="hero-content">
+            <h1 className="hero-title">
+              Let's Build Something <span className="text-gradient">Amazing Together</span>
+            </h1>
+            <p className="hero-description">
+              Ready to collaborate on your next project? Download my resume, explore my professional timeline, or get in touch directly.
+            </p>
+            
+            {/* Quick Actions */}
+            <div className="hero-actions">
+              <button onClick={downloadResume} className="btn-primary">
+                <svg className="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 10v6m0 0l-4-4m4 4l4-4m-6 8h8a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                </svg>
+                <span>Download Resume</span>
+              </button>
+              <a href="#contact-form" className="btn-secondary">
+                <svg className="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                </svg>
+                <span>Start a Project</span>
+              </a>
+            </div>
+          </div>
+          
+          {/* Availability Status */}
+          <div className="availability-status">
+            <div className="card">
+              <div className="availability-header">
+                <div className="status-indicator"></div>
+                <span className="status-text">Available for New Projects</span>
+              </div>
+              <p className="availability-description">
+                Currently accepting new client projects and collaboration opportunities. Next availability: <span className="highlight">August 2025</span>
+              </p>
+              <div className="services-grid">
+                <div className="service-item">
+                  <div className="service-title primary">Full-Stack Development</div>
+                  <div className="service-subtitle">Web Applications</div>
+                </div>
+                <div className="service-item">
+                  <div className="service-title secondary">Technical Consulting</div>
+                  <div className="service-subtitle">Architecture & Strategy</div>
+                </div>
+                <div className="service-item">
+                  <div className="service-title accent">Code Reviews</div>
+                  <div className="service-subtitle">Quality Assurance</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Resume & Professional Timeline */}
+      <section id="resume-timeline" className="resume-timeline-section">
+        <div className="container">
+          <div className="resume-timeline-grid">
+            {/* Resume Download & Preview */}
+            <div className="resume-section">
+              <h2 className="section-title">
+                Professional <span className="text-gradient">Resume</span>
+              </h2>
+              
+              {/* Resume Preview Card */}
+              <div className="resume-preview-card card">
+                <div className="resume-preview">
+                  <div className="resume-content">
+                    <div className="resume-header">
+                      <h3 className="resume-name">Alex Rodriguez</h3>
+                      <p className="resume-role">Full-Stack Developer</p>
+                      <p className="resume-contact">alex.rodriguez@devportfolio.pro | +1 (555) 123-4567</p>
+                    </div>
+                    <div className="resume-sections">
+                      <div className="resume-section-item">
+                        <h4 className="resume-section-title secondary">Experience</h4>
+                        <div className="resume-section-content">
+                          <p>Senior Full-Stack Developer</p>
+                          <p>TechCorp Solutions (2022-Present)</p>
+                        </div>
+                      </div>
+                      <div className="resume-section-item">
+                        <h4 className="resume-section-title secondary">Skills</h4>
+                        <div className="resume-section-content">
+                          <p>React, Node.js, Python, AWS...</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="resume-overlay"></div>
+                </div>
+                
+                <div className="resume-actions">
+                  <button onClick={downloadResume} className="btn-primary flex-1">
+                    <svg className="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 10v6m0 0l-4-4m4 4l4-4m-6 8h8a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                    </svg>
+                    Download PDF
+                  </button>
+                  <button onClick={viewInteractiveResume} className="btn-secondary flex-1">
+                    <svg className="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                    </svg>
+                    View Interactive
+                  </button>
+                </div>
+              </div>
+              
+              {/* Quick Stats */}
+              <div className="stats-grid">
+                <div className="stat-item">
+                  <div className="stat-number primary">5+</div>
+                  <div className="stat-label">Years Experience</div>
+                </div>
+                <div className="stat-item">
+                  <div className="stat-number secondary">50+</div>
+                  <div className="stat-label">Projects Completed</div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Professional Timeline */}
+            <div className="timeline-section">
+              <h2 className="section-title">
+                Career <span className="text-gradient">Timeline</span>
+              </h2>
+              
+              <div className="timeline">
+                {/* Timeline Item 1 */}
+                <div className="timeline-item">
+                  <div className="timeline-icon primary">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                    </svg>
+                  </div>
+                  <div className="timeline-content">
+                    <div className="timeline-header">
+                      <h3 className="timeline-title">Senior Full-Stack Developer</h3>
+                      <span className="timeline-badge primary">Current</span>
+                    </div>
+                    <p className="timeline-company">TechCorp Solutions • 2022 - Present</p>
+                    <p className="timeline-description">Leading development of enterprise-scale web applications, mentoring junior developers, and architecting cloud-native solutions.</p>
+                    <div className="timeline-tags">
+                      <span className="tag primary">React</span>
+                      <span className="tag primary">Node.js</span>
+                      <span className="tag primary">AWS</span>
+                      <span className="tag primary">Team Leadership</span>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Timeline Item 2 */}
+                <div className="timeline-item">
+                  <div className="timeline-icon secondary">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                    </svg>
+                  </div>
+                  <div className="timeline-content">
+                    <h3 className="timeline-title">Full-Stack Developer</h3>
+                    <p className="timeline-company">StartupXYZ • 2020 - 2022</p>
+                    <p className="timeline-description">Built MVP from ground up, scaled to 10K+ users, implemented CI/CD pipelines and established development best practices.</p>
+                    <div className="timeline-tags">
+                      <span className="tag secondary">Vue.js</span>
+                      <span className="tag secondary">Python</span>
+                      <span className="tag secondary">Docker</span>
+                      <span className="tag secondary">DevOps</span>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Timeline Item 3 */}
+                <div className="timeline-item">
+                  <div className="timeline-icon accent">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                    </svg>
+                  </div>
+                  <div className="timeline-content">
+                    <h3 className="timeline-title">Junior Developer</h3>
+                    <p className="timeline-company">WebDev Agency • 2019 - 2020</p>
+                    <p className="timeline-description">Developed responsive websites and web applications for diverse clients, learned modern development practices and agile methodologies.</p>
+                    <div className="timeline-tags">
+                      <span className="tag accent">JavaScript</span>
+                      <span className="tag accent">PHP</span>
+                      <span className="tag accent">MySQL</span>
+                      <span className="tag accent">WordPress</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Certifications & References */}
+      <section id="credentials" className="credentials-section">
+        <div className="container">
+          <div className="credentials-grid">
+            {/* Technical Certifications */}
+            <div className="certifications-section">
+              <h2 className="section-title">
+                Technical <span className="text-gradient">Certifications</span>
+              </h2>
+              
+              <div className="certifications-list">
+                {/* Certification 1 */}
+                <div className="certification-card card">
+                  <div className="certification-header">
+                    <div className="certification-info">
+                      <img src="https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="AWS Certification" className="certification-logo" loading="lazy" />
+                      <div>
+                        <h3 className="certification-title">AWS Certified Solutions Architect</h3>
+                        <p className="certification-issuer">Amazon Web Services</p>
+                      </div>
+                    </div>
+                    <span className="certification-badge primary">Valid</span>
+                  </div>
+                  <p className="certification-description">Professional level certification demonstrating expertise in designing distributed systems on AWS.</p>
+                  <div className="certification-footer">
+                    <span className="certification-date">Issued: March 2024</span>
+                    <a href="#" className="certification-verify primary">Verify Certificate</a>
+                  </div>
+                </div>
+                
+                {/* Certification 2 */}
+                <div className="certification-card card">
+                  <div className="certification-header">
+                    <div className="certification-info">
+                      <img src="https://images.pixabay.com/photo/2017/08/05/11/16/logo-2582748_1280.png" alt="React Certification" className="certification-logo" loading="lazy" />
+                      <div>
+                        <h3 className="certification-title">React Developer Certification</h3>
+                        <p className="certification-issuer">Meta (Facebook)</p>
+                      </div>
+                    </div>
+                    <span className="certification-badge secondary">Valid</span>
+                  </div>
+                  <p className="certification-description">Advanced React development including hooks, context, performance optimization, and testing.</p>
+                  <div className="certification-footer">
+                    <span className="certification-date">Issued: January 2024</span>
+                    <a href="#" className="certification-verify secondary">Verify Certificate</a>
+                  </div>
+                </div>
+                
+                {/* Certification 3 */}
+                <div className="certification-card card">
+                  <div className="certification-header">
+                    <div className="certification-info">
+                      <img src="https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Google Cloud Certification" className="certification-logo" loading="lazy" />
+                      <div>
+                        <h3 className="certification-title">Professional Cloud Developer</h3>
+                        <p className="certification-issuer">Google Cloud Platform</p>
+                      </div>
+                    </div>
+                    <span className="certification-badge accent">Valid</span>
+                  </div>
+                  <p className="certification-description">Expertise in building scalable and reliable applications on Google Cloud Platform.</p>
+                  <div className="certification-footer">
+                    <span className="certification-date">Issued: November 2023</span>
+                    <a href="#" className="certification-verify accent">Verify Certificate</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Professional References */}
+            <div className="references-section">
+              <h2 className="section-title">
+                Professional <span className="text-gradient">References</span>
+              </h2>
+              
+              <div className="references-list">
+                {/* Reference 1 */}
+                <div className="reference-card card">
+                  <div className="reference-content">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Sarah Chen" className="reference-avatar" loading="lazy" />
+                    <div className="reference-info">
+                      <h3 className="reference-name">Sarah Chen</h3>
+                      <p className="reference-position">CTO, TechCorp Solutions</p>
+                      <p className="reference-quote">"Alex consistently delivers high-quality code and demonstrates exceptional problem-solving skills. His ability to mentor junior developers while maintaining technical excellence makes him invaluable to our team."</p>
+                      <a href="#" className="reference-link primary">View LinkedIn Recommendation</a>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Reference 2 */}
+                <div className="reference-card card">
+                  <div className="reference-content">
+                    <img src="https://images.pixabay.com/photo/2016/11/21/12/42/beard-1845166_1280.jpg" alt="Michael Torres" className="reference-avatar" loading="lazy" />
+                    <div className="reference-info">
+                      <h3 className="reference-name">Michael Torres</h3>
+                      <p className="reference-position">Founder, StartupXYZ</p>
+                      <p className="reference-quote">"Alex was instrumental in building our platform from the ground up. His full-stack expertise and startup mindset helped us scale from idea to 10,000+ users in record time."</p>
+                      <a href="#" className="reference-link secondary">Contact Reference</a>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Reference 3 */}
+                <div className="reference-card card">
+                  <div className="reference-content">
+                    <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Emily Rodriguez" className="reference-avatar" loading="lazy" />
+                    <div className="reference-info">
+                      <h3 className="reference-name">Emily Rodriguez</h3>
+                      <p className="reference-position">Senior Product Manager, TechCorp</p>
+                      <p className="reference-quote">"Working with Alex is a pleasure. He translates complex technical concepts into clear business value and always delivers on time. His collaborative approach makes cross-functional projects seamless."</p>
+                      <a href="#" className="reference-link accent">View Recommendation</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form & Methods */}
+      <section id="contact-form" className="contact-section">
+        <div className="container">
+          <div className="contact-header">
+            <h2 className="section-title">
+              Start Your <span className="text-gradient">Project Today</span>
+            </h2>
+            <p className="section-description">
+              Ready to collaborate? Choose your preferred way to get in touch and let's discuss how we can bring your vision to life.
+            </p>
+          </div>
+          
+          <div className="contact-grid">
+            {/* Contact Form */}
+            <div className="contact-form-section">
+              <div className="card">
+                <h3 className="form-title">Project Inquiry Form</h3>
+                <form onSubmit={handleSubmit} className="contact-form">
+                  {/* Personal Information */}
+                  <div className="form-grid">
+                    <div className="form-group">
+                      <label htmlFor="firstName" className="form-label">First Name *</label>
+                      <input 
+                        type="text" 
+                        id="firstName" 
+                        name="firstName" 
+                        required 
+                        className="form-input" 
+                        placeholder="John"
+                        value={formData.firstName}
+                        onChange={handleInputChange}
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="lastName" className="form-label">Last Name *</label>
+                      <input 
+                        type="text" 
+                        id="lastName" 
+                        name="lastName" 
+                        required 
+                        className="form-input" 
+                        placeholder="Doe"
+                        value={formData.lastName}
+                        onChange={handleInputChange}
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="form-grid">
+                    <div className="form-group">
+                      <label htmlFor="email" className="form-label">Email Address *</label>
+                      <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        required 
+                        className="form-input" 
+                        placeholder="john@company.com"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="company" className="form-label">Company/Organization</label>
+                      <input 
+                        type="text" 
+                        id="company" 
+                        name="company" 
+                        className="form-input" 
+                        placeholder="Your Company"
+                        value={formData.company}
+                        onChange={handleInputChange}
+                      />
+                    </div>
+                  </div>
+                  
+                  {/* Project Details */}
+                  <div className="form-grid">
+                    <div className="form-group">
+                      <label htmlFor="projectType" className="form-label">Project Type *</label>
+                      <select 
+                        id="projectType" 
+                        name="projectType" 
+                        required 
+                        className="form-input"
+                        value={formData.projectType}
+                        onChange={handleInputChange}
+                      >
+                        <option value="">Select project type</option>
+                        <option value="web-application">Web Application</option>
+                        <option value="mobile-app">Mobile Application</option>
+                        <option value="e-commerce">E-commerce Platform</option>
+                        <option value="api-development">API Development</option>
+                        <option value="consulting">Technical Consulting</option>
+                        <option value="code-review">Code Review</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="timeline" className="form-label">Project Timeline</label>
+                      <select 
+                        id="timeline" 
+                        name="timeline" 
+                        className="form-input"
+                        value={formData.timeline}
+                        onChange={handleInputChange}
+                      >
+                        <option value="">Select timeline</option>
+                        <option value="asap">ASAP (Rush project)</option>
+                        <option value="1-month">Within 1 month</option>
+                        <option value="2-3-months">2-3 months</option>
+                        <option value="3-6-months">3-6 months</option>
+                        <option value="6-months-plus">6+ months</option>
+                        <option value="flexible">Flexible</option>
+                      </select>
+                    </div>
+                  </div>
+                  
+                  <div className="form-grid">
+                    <div className="form-group">
+                      <label htmlFor="budget" className="form-label">Budget Range</label>
+                      <select 
+                        id="budget" 
+                        name="budget" 
+                        className="form-input"
+                        value={formData.budget}
+                        onChange={handleInputChange}
+                      >
+                        <option value="">Select budget range</option>
+                        <option value="under-5k">Under $5,000</option>
+                        <option value="5k-15k">$5,000 - $15,000</option>
+                        <option value="15k-30k">$15,000 - $30,000</option>
+                        <option value="30k-50k">$30,000 - $50,000</option>
+                        <option value="50k-plus">$50,000+</option>
+                        <option value="discuss">Let's discuss</option>
+                      </select>
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="priority" className="form-label">Priority Level</label>
+                      <select 
+                        id="priority" 
+                        name="priority" 
+                        className="form-input"
+                        value={formData.priority}
+                        onChange={handleInputChange}
+                      >
+                        <option value="normal">Normal</option>
+                        <option value="high">High</option>
+                        <option value="urgent">Urgent</option>
+                      </select>
+                    </div>
+                  </div>
+                  
+                  {/* Technical Requirements */}
+                  <div className="form-group">
+                    <label className="form-label">Preferred Technologies</label>
+                    <div className="technologies-grid">
+                      {['react', 'vue', 'nodejs', 'python', 'aws', 'docker', 'mongodb', 'postgresql'].map(tech => (
+                        <label key={tech} className="tech-checkbox">
+                          <input 
+                            type="checkbox" 
+                            name="technologies[]" 
+                            value={tech}
+                            checked={formData.technologies.includes(tech)}
+                            onChange={handleInputChange}
+                          />
+                          <span>{tech.charAt(0).toUpperCase() + tech.slice(1)}</span>
+                        </label>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  {/* Project Description */}
+                  <div className="form-group">
+                    <label htmlFor="description" className="form-label">Project Description *</label>
+                    <textarea 
+                      id="description" 
+                      name="description" 
+                      rows="5" 
+                      required 
+                      className="form-textarea" 
+                      placeholder="Please describe your project, goals, target audience, and any specific requirements or challenges you're facing..."
+                      value={formData.description}
+                      onChange={handleInputChange}
+                    ></textarea>
+                  </div>
+                  
+                  {/* Additional Information */}
+                  <div className="form-group">
+                    <label htmlFor="additionalInfo" className="form-label">Additional Information</label>
+                    <textarea 
+                      id="additionalInfo" 
+                      name="additionalInfo" 
+                      rows="3" 
+                      className="form-textarea" 
+                      placeholder="Any additional details, existing systems to integrate with, team structure, or specific questions..."
+                      value={formData.additionalInfo}
+                      onChange={handleInputChange}
+                    ></textarea>
+                  </div>
+                  
+                  {/* Submit Button */}
+                  <div className="form-footer">
+                    <p className="form-note">
+                      * Required fields. I'll respond within 24 hours.
+                    </p>
+                    <button type="submit" className="btn-primary" disabled={isSubmitting}>
+                      {isSubmitting ? (
+                        <>
+                          <svg className="btn-icon animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                          </svg>
+                          Sending...
+                        </>
+                      ) : (
+                        <>
+                          <svg className="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                          </svg>
+                          Send Project Inquiry
+                        </>
+                      )}
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            
+            {/* Contact Methods & Calendar */}
+            <div className="contact-sidebar">
+              {/* Direct Contact Methods */}
+              <div className="card">
+                <h3 className="sidebar-title">Direct Contact</h3>
+                <div className="contact-methods">
+                  <a href="mailto:alex.rodriguez@devportfolio.pro" className="contact-method">
+                    <div className="contact-icon primary">
+                      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <div className="contact-label">Email</div>
+                      <div className="contact-value">alex.rodriguez@devportfolio.pro</div>
+                    </div>
+                  </a>
+                  
+                  <a href="#" className="contact-method">
+                    <div className="contact-icon secondary">
+                      <svg fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <div className="contact-label">LinkedIn</div>
+                      <div className="contact-value">Connect professionally</div>
+                    </div>
+                  </a>
+                  
+                  <a href="tel:+15551234567" className="contact-method">
+                    <div className="contact-icon accent">
+                      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <div className="contact-label">Phone</div>
+                      <div className="contact-value">+1 (555) 123-4567</div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              
+              {/* Calendar Booking */}
+              <div className="card">
+                <h3 className="sidebar-title">Schedule a Call</h3>
+                <p className="calendar-description">
+                  Book a free 30-minute consultation to discuss your project requirements and explore how we can work together.
+                </p>
+                
+                {/* Calendar Widget Placeholder */}
+                <div className="calendar-widget">
+                  <svg className="calendar-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                  </svg>
+                  <h4 className="calendar-title">Available Time Slots</h4>
+                  <p className="calendar-hours">Monday - Friday, 9 AM - 5 PM PST</p>
+                  <button onClick={openCalendar} className="btn-secondary calendar-button">
+                    Book Consultation Call
+                  </button>
+                </div>
+                
+                {/* Response Time */}
+                <div className="response-time">
+                  <div className="response-info">
+                    <svg className="response-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span>Typical response time: 24 hours</span>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Communication Preferences */}
+              <div className="card">
+                <h3 className="sidebar-title">Communication Style</h3>
+                <div className="communication-list">
+                  <div className="communication-item">
+                    <svg className="communication-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    <span>Clear project requirements discussion</span>
+                  </div>
+                  <div className="communication-item">
+                    <svg className="communication-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    <span>Regular progress updates</span>
+                  </div>
+                  <div className="communication-item">
+                    <svg className="communication-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    <span>Collaborative development approach</span>
+                  </div>
+                  <div className="communication-item">
+                    <svg className="communication-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    <span>Transparent timeline management</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="footer">
+        <div className="container">
+          <div className="footer-grid">
+            {/* Brand */}
+            <div className="footer-brand">
+              <div className="footer-logo">
+                <svg className="footer-logo-icon" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+                <span className="footer-logo-text">DevPortfolio Pro</span>
+              </div>
+              <p className="footer-description">
+                Crafting exceptional digital experiences through clean code, thoughtful design, and innovative problem-solving.
+              </p>
+              <div className="footer-social">
+                <a href="#" className="social-link">
+                  <svg fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                </a>
+                <a href="#" className="social-link">
+                  <svg fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                </a>
+                <a href="#" className="social-link">
+                  <svg fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            
+            {/* Quick Links */}
+            <div className="footer-links">
+              <h4 className="footer-links-title">Quick Links</h4>
+              <ul className="footer-links-list">
+                <li><a href="/about" className="footer-link">About</a></li>
+                <li><a href="/skills" className="footer-link">Skills</a></li>
+                <li><a href="/projects" className="footer-link">Projects</a></li>
+                <li><a href="/blog" className="footer-link">Blog</a></li>
+              </ul>
+            </div>
+            
+            {/* Contact */}
+            <div className="footer-links">
+              <h4 className="footer-links-title">Get in Touch</h4>
+              <ul className="footer-links-list">
+                <li><a href="/contact" className="footer-link">Contact</a></li>
+                <li><a href="/resume" className="footer-link">Resume</a></li>
+                <li><a href="#" className="footer-link">Schedule Call</a></li>
+                <li><a href="#" className="footer-link">Collaboration</a></li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="footer-bottom">
+            <p className="footer-copyright">
+              © 2025 DevPortfolio Pro. All Rights Reserved. Built with passion and precision.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default ResumeContact;
