@@ -71,100 +71,40 @@ const HomePage = () => {
       
       {/* Hero Section */}
       <section id="hero" className="hero-section">
-        {/* Background Pattern */}
-        <div className="hero-background">
-          <div className="background-pattern"></div>
-        </div>
-        
-        {/* Code Visualization Background */}
-        <div className="code-background">
-          <pre className="code-text">
-            <code>{`const developer = {
-  name: 'Lucky Sharma',
-  passion: 'Building digital solutions that matter',
-  expertise: ['Data Science', 'Machine Learning', 'Python'],
-  philosophy: 'Code with purpose, build with precision',
-  
-  createSolution: (problem) => {
-    const analysis = this.analyzeProblem(problem);
-    const architecture = this.designArchitecture(analysis);
-    const implementation = this.buildWithExcellence(architecture);
-    return this.deliverValue(implementation);
-  },
-  
-  continuousLearning: () => {
-    while (technology.evolves) {
-      this.learn(newTechnologies);
-      this.adapt(bestPractices);
-      this.innovate(solutions);
-    }
-  }
-};`}</code>
-          </pre>
-        </div>
-        
-        <div className="hero-content">
-          <div className="hero-text animate-fade-in">
-            {/* Typewriter Effect Headline */}
+        <div className="hero-container">
+          <div className="hero-content animate-fade-in-up">
             <h1 className="hero-title">
-              <span className="typewriter-text">{typewriterText}</span>
-              <br />
-              <span className="hero-subtitle">Build with Precision</span>
+              Hi, I'm <span className="hero-name">Lucky Sharma</span>
             </h1>
-            
+            <div className="typewriter-container">
+              <span className="typewriter-text">{typewriterText}</span>
+              <span className="typewriter-cursor">|</span>
+            </div>
             <p className="hero-description">
-              Python AI & ML crafting scalable solutions that bridge innovative technology with exceptional user experiences
+              | Aspiring Front-End Developer | Skilled in Java, JavaScript, HTML/CSS, Python | Ethical Hacking & Deep Learning Enthusiast | GitHub Contributor |
             </p>
-            
-            {/* CTA Buttons */}
             <div className="hero-buttons">
               <button 
                 className="btn-primary"
-                onClick={() => navigate('/projects')}
+                onClick={() => navigate('/contact')}
               >
-                <span>Explore My Work</span>
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                </svg>
+                Get In Touch
               </button>
               <button 
                 className="btn-secondary"
-                onClick={() => navigate('/contact')}
+                onClick={() => navigate('/projects')}
               >
-                <span>Let's Connect</span>
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
-                </svg>
+                View Projects
               </button>
             </div>
-            
-            {/* Performance Metrics */}
-            <div className="performance-metrics">
-              <div className="metric">
-                <div className="metric-value">98%</div>
-                <div className="metric-label">Lighthouse Score</div>
-              </div>
-              <div className="metric">
-                <div className="metric-value">&lt;1s</div>
-                <div className="metric-label">Load Time</div>
-              </div>
-              <div className="metric">
-                <div className="metric-value">A+</div>
-                <div className="metric-label">Code Quality</div>
-              </div>
-              <div className="metric">
-                <div className="metric-value">100%</div>
-                <div className="metric-label">Accessibility</div>
-              </div>
-            </div>
+          </div>  
+          <div className="hero-image animate-fade-in-right">
+            <img
+              src="/images/profile/my_image.jpg"
+              alt="Lucky Sharma Profile"
+              className="profile-image"
+            />
           </div>
-        </div>
-        
-        {/* Scroll Indicator */}
-        <div className="scroll-indicator">
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
-          </svg>
         </div>
       </section>
 

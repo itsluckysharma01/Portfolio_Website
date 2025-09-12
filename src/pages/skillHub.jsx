@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import '../../css/skillHub.css';
+import './css/skillHub.css';
 
 const SkillHub = () => {
   const containerRef = useRef(null);
@@ -298,7 +298,7 @@ const SkillHub = () => {
     outline: 'border border-border hover:border-primary'
   };
   return (
-    <button className={\`${baseClasses} \${variantClasses[variant]}\`} {...props}>{children}</button>
+    <button className={\`\${baseClasses} \${variantClasses[variant]}\`} {...props}>{children}</button>
   );
 };`}</code>
                     </pre>
