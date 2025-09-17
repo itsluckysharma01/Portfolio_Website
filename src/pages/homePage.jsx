@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import NavBar from '../navBar'
 import './css/homePage.css'
@@ -15,36 +15,42 @@ const HomePage = () => {
   const [isDeleting, setIsDeleting] = useState(false)
   const navigate = useNavigate()
 
-  const phrases = ['Code with Purpose', 'Build with Precision', 'Create with Passion']
+  const phrases = useMemo(() => ['Code with Purpose', 'Build with Precision', 'Create with Passion'], [])
 
   useEffect(() => {
+    let timeoutId
+
     const typeWriter = () => {
       const current = phrases[currentPhrase]
       
-      if (isDeleting) {
-        setTypewriterText(current.substring(0, currentChar - 1))
-        setCurrentChar(prev => prev - 1)
-      } else {
+      if (!isDeleting && currentChar < current.length) {
+        // Typing forward
         setTypewriterText(current.substring(0, currentChar + 1))
         setCurrentChar(prev => prev + 1)
-      }
-      
-      let typeSpeed = isDeleting ? 50 : 100
-      
-      if (!isDeleting && currentChar === current.length) {
-        typeSpeed = 2000
-        setIsDeleting(true)
+        timeoutId = setTimeout(typeWriter, 50)
+      } else if (!isDeleting && currentChar === current.length) {
+        // Pause at end, then start deleting
+        timeoutId = setTimeout(() => setIsDeleting(true), 600)
+      } else if (isDeleting && currentChar > 0) {
+        // Deleting backward
+        setTypewriterText(current.substring(0, currentChar - 1))
+        setCurrentChar(prev => prev - 1)
+        timeoutId = setTimeout(typeWriter, 20)
       } else if (isDeleting && currentChar === 0) {
+        // Switch to next phrase
         setIsDeleting(false)
         setCurrentPhrase((prev) => (prev + 1) % phrases.length)
-        typeSpeed = 500
+        timeoutId = setTimeout(typeWriter, 200)
       }
-      
-      setTimeout(typeWriter, typeSpeed)
     }
 
-    const timer = setTimeout(typeWriter, 1000)
-    return () => clearTimeout(timer)
+    timeoutId = setTimeout(typeWriter, 500)
+    
+    return () => {
+      if (timeoutId) {
+        clearTimeout(timeoutId)
+      }
+    }
   }, [currentPhrase, currentChar, isDeleting, phrases])
 
   useEffect(() => {
@@ -141,7 +147,7 @@ const HomePage = () => {
               </div>
               <p className="skill-description">React, Vue.js, and modern JavaScript frameworks with responsive design patterns</p>
               <div className="code-preview">
-                <div className="code-comment">// Live Component Preview</div>
+                <div className="code-comment">{'//'} Live Component Preview</div>
                 <div className="code-line">const Button = ({`{ children, variant }`}) =&gt; (</div>
                 <div className="code-line code-indent">&lt;button className={`btn-${`{variant}`}`}&gt;</div>
                 <div className="code-line code-indent-2">{`{children}`}</div>
@@ -171,7 +177,7 @@ const HomePage = () => {
               </div>
               <p className="skill-description">Node.js, Python, and cloud-native solutions with scalable database design</p>
               <div className="code-preview">
-                <div className="code-comment">// API Architecture Flow</div>
+                <div className="code-comment">{'//'} API Architecture Flow</div>
                 <div className="code-line">app.post('/api/users', async (req, res) =&gt; {`{`}</div>
                 <div className="code-line code-indent">const user = await User.create(req.body);</div>
                 <div className="code-line code-indent">res.status(201).json({`{ user }`});</div>
@@ -200,7 +206,7 @@ const HomePage = () => {
               </div>
               <p className="skill-description">End-to-end solutions connecting frontend experiences with robust backend systems</p>
               <div className="code-preview">
-                <div className="code-comment">// API Integration Demo</div>
+                <div className="code-comment">{'//'} API Integration Demo</div>
                 <div className="code-line">const fetchUserData = async () =&gt; {`{`}</div>
                 <div className="code-line code-indent">const response = await fetch('/api/users');</div>
                 <div className="code-line code-indent">return response.json();</div>
