@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './css/resumeContact.css';
+import resumePreview from './images/resume/Lucky_Sharma_Resume_Preview.jpg';
 
 const ResumeContact = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -278,29 +279,37 @@ const ResumeContact = () => {
               <div className="resume-preview-card card">
                 <div className="resume-preview">
                   <div className="resume-content">
-                    <div className="resume-header">
-                      <h3 className="resume-name">Lucky Sharma</h3>
-                      <p className="resume-role">Full-Stack Developer And Data Analytics</p>
-                      <p className="resume-contact">itsluckysharma001@gmail.com | +91 8894599977</p>
-                    </div>
-                    <div className="resume-sections">
-                      <div className="resume-section-item">
-                        <h4 className="resume-section-title secondary">Experience</h4>
-                        <div className="resume-section-content">
-                          <p>B.Tech Computer Science and Engineering</p>
-                          <p>Govt. College Dharamshala-HPTU (2022-Present)</p>
-                        </div>
-                      </div>
-                      <div className="resume-section-item">
-                        <h4 className="resume-section-title secondary">Skills</h4>
-                        <div className="resume-section-content">
-                          <p>Computer Science Engineering</p>
-                        </div>
-                      </div>
-                    </div>
+                    <img 
+                      src={resumePreview} 
+                      alt="Lucky Sharma Resume Preview" 
+                      className="resume-image-preview" 
+                      loading="lazy"
+                    />
                   </div>
                   <div className="resume-overlay"></div>
                 </div>
+                
+                <div className="resume-header">
+                  <h3 className="resume-name">Lucky Sharma</h3>
+                  <p className="resume-role">Full-Stack Developer And Data Analytics</p>
+                  
+                </div>
+                
+                {/* <div className="resume-sections">
+                  <div className="resume-section-item">
+                    <h4 className="resume-section-title secondary">Experience</h4>
+                    <div className="resume-section-content">
+                      <p>B.Tech Computer Science and Engineering</p>
+                      <p>Govt. College Dharamshala-HPTU (2022-Present)</p>
+                    </div>
+                  </div>
+                  <div className="resume-section-item">
+                    <h4 className="resume-section-title secondary">Skills</h4>
+                    <div className="resume-section-content">
+                      <p>Computer Science Engineering</p>
+                    </div>
+                  </div>
+                </div> */}
                 
                 <div className="resume-actions">
                   <button onClick={downloadResume} className="btn-primary flex-1">

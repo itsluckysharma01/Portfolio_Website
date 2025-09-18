@@ -473,11 +473,47 @@
   overflow: hidden;
 }
 
+/* resume Preview Pdf */.resume-image-preview {
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.resume-image-preview:hover {
+  transform: scale(1.02);
+}
+
 .resume-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  min-height: 10px;
+}
+
+.resume-preview {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.resume-overlay {
   position: absolute;
-  inset: 0;
-  padding: 1.5rem;
-  font-size: 0.75rem;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.1) 0%,
+    rgba(147, 51, 234, 0.1) 100%
+  );
+  pointer-events: none;
+  border-radius: 8px;
 }
 
 .resume-header {
