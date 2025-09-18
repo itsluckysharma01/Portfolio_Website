@@ -45,8 +45,8 @@ const ResumeContact = () => {
   const downloadResume = () => {
     // Create a temporary link element
     const link = document.createElement('a');
-    link.href = 'data:application/pdf;base64,'; // In real implementation, this would be the actual PDF data
-    link.download = 'Alex_Rodriguez_Resume.pdf';
+    link.href = '/resume/Lucky_Sharma_Resume.pdf';  // In real implementation, this would be the actual PDF data
+    link.download = 'Lucky_Sharma_Resume.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -167,7 +167,7 @@ const ResumeContact = () => {
                 <svg className="logo-icon" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
                 </svg>
-                <span className="logo-text">DevPortfolio Pro</span>
+                <span className="logo-text">Lucky Sharma</span>
               </a>
             </div>
             
@@ -251,8 +251,8 @@ const ResumeContact = () => {
                   <div className="service-subtitle">Web Applications</div>
                 </div>
                 <div className="service-item">
-                  <div className="service-title secondary">Technical Consulting</div>
-                  <div className="service-subtitle">Architecture & Strategy</div>
+                  <div className="service-title secondary">Data Science and Analytics</div>
+                  <div className="service-subtitle">Data Analysis & Manipulation</div>
                 </div>
                 <div className="service-item">
                   <div className="service-title accent">Code Reviews</div>
@@ -279,22 +279,22 @@ const ResumeContact = () => {
                 <div className="resume-preview">
                   <div className="resume-content">
                     <div className="resume-header">
-                      <h3 className="resume-name">Alex Rodriguez</h3>
-                      <p className="resume-role">Full-Stack Developer</p>
-                      <p className="resume-contact">alex.rodriguez@devportfolio.pro | +1 (555) 123-4567</p>
+                      <h3 className="resume-name">Lucky Sharma</h3>
+                      <p className="resume-role">Full-Stack Developer And Data Analytics</p>
+                      <p className="resume-contact">itsluckysharma001@gmail.com | +91 8894599977</p>
                     </div>
                     <div className="resume-sections">
                       <div className="resume-section-item">
                         <h4 className="resume-section-title secondary">Experience</h4>
                         <div className="resume-section-content">
-                          <p>Senior Full-Stack Developer</p>
-                          <p>TechCorp Solutions (2022-Present)</p>
+                          <p>B.Tech Computer Science and Engineering</p>
+                          <p>Govt. College Dharamshala-HPTU (2022-Present)</p>
                         </div>
                       </div>
                       <div className="resume-section-item">
                         <h4 className="resume-section-title secondary">Skills</h4>
                         <div className="resume-section-content">
-                          <p>React, Node.js, Python, AWS...</p>
+                          <p>Computer Science Engineering</p>
                         </div>
                       </div>
                     </div>
@@ -322,11 +322,11 @@ const ResumeContact = () => {
               {/* Quick Stats */}
               <div className="stats-grid">
                 <div className="stat-item">
-                  <div className="stat-number primary">5+</div>
+                  <div className="stat-number primary">1</div>
                   <div className="stat-label">Years Experience</div>
                 </div>
                 <div className="stat-item">
-                  <div className="stat-number secondary">50+</div>
+                  <div className="stat-number secondary">10+</div>
                   <div className="stat-label">Projects Completed</div>
                 </div>
               </div>
@@ -348,16 +348,13 @@ const ResumeContact = () => {
                   </div>
                   <div className="timeline-content">
                     <div className="timeline-header">
-                      <h3 className="timeline-title">Senior Full-Stack Developer</h3>
+                      <h3 className="timeline-title">B.Tech (Bachelor of Technology)</h3>
                       <span className="timeline-badge primary">Current</span>
                     </div>
-                    <p className="timeline-company">TechCorp Solutions • 2022 - Present</p>
-                    <p className="timeline-description">Leading development of enterprise-scale web applications, mentoring junior developers, and architecting cloud-native solutions.</p>
+                    <p className="timeline-company">Govt. College Dharamshala School of Computer Science and Engineering | Kangra-HP | • 2022 - Present</p>
+                    <p className="timeline-description">Developing and implementing software solutions for academic projects. Collaborating with peers on complex programming assignments and group projects. Applying foundational knowledge of data structures, algorithms, and modern software development practices.</p>
                     <div className="timeline-tags">
-                      <span className="tag primary">React</span>
-                      <span className="tag primary">Node.js</span>
-                      <span className="tag primary">AWS</span>
-                      <span className="tag primary">Team Leadership</span>
+                      <span className="tag primary">Computer Science and Engineering</span>
                     </div>
                   </div>
                 </div>
@@ -370,14 +367,16 @@ const ResumeContact = () => {
                     </svg>
                   </div>
                   <div className="timeline-content">
-                    <h3 className="timeline-title">Full-Stack Developer</h3>
-                    <p className="timeline-company">StartupXYZ • 2020 - 2022</p>
-                    <p className="timeline-description">Built MVP from ground up, scaled to 10K+ users, implemented CI/CD pipelines and established development best practices.</p>
+                    <h3 className="timeline-title">Senior Secondary</h3>
+                    <p className="timeline-company">GSSS Kachhiari | Kangra-HP | • 2019 - 2021</p>
+                    <p className="timeline-description">Completed Senior Secondary education with a focus on Physics, Chemistry, and Mathematics (PCM). This provided a strong foundation in core scientific principles and honed analytical and problem-solving skills.</p>
                     <div className="timeline-tags">
-                      <span className="tag secondary">Vue.js</span>
-                      <span className="tag secondary">Python</span>
-                      <span className="tag secondary">Docker</span>
-                      <span className="tag secondary">DevOps</span>
+                      <span className="tag secondary">Physics</span>
+                      <span className="tag secondary">Chemistry</span>
+                      <span className="tag secondary">Math</span>
+                      <span className="tag secondary">English</span>
+                      <span className="tag secondary">Physical Education</span>
+                      
                     </div>
                   </div>
                 </div>
@@ -390,14 +389,12 @@ const ResumeContact = () => {
                     </svg>
                   </div>
                   <div className="timeline-content">
-                    <h3 className="timeline-title">Junior Developer</h3>
-                    <p className="timeline-company">WebDev Agency • 2019 - 2020</p>
-                    <p className="timeline-description">Developed responsive websites and web applications for diverse clients, learned modern development practices and agile methodologies.</p>
+                    <h3 className="timeline-title">Matriculation</h3>
+                    <p className="timeline-company">Govt. High School Sinyur | Chamba-HP |• March 2019</p>
+                    <p className="timeline-description">Attained Secondary School Certificate (SSC), demonstrating a strong foundation in core subjects including Mathematics, Science, and Social Studies. Developed essential skills in problem-solving and critical thinking.</p>
                     <div className="timeline-tags">
-                      <span className="tag accent">JavaScript</span>
-                      <span className="tag accent">PHP</span>
-                      <span className="tag accent">MySQL</span>
-                      <span className="tag accent">WordPress</span>
+                      <span className="tag accent">Sports</span>
+                      
                     </div>
                   </div>
                 </div>
