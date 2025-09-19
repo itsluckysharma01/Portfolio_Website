@@ -417,6 +417,7 @@ const ResumeContact = () => {
       <section id="credentials" className="credentials-section">
         <div className="container">
           <div className="credentials-grid">
+
             {/* Technical Certifications */}
             <div className="certifications-section">
               <h2 className="section-title">
@@ -428,7 +429,7 @@ const ResumeContact = () => {
                 <div className="certification-card card">
                   <div className="certification-header">
                     <div className="certification-info">
-                      <img src="https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="AWS Certification" className="certification-logo" loading="lazy" />
+                    <img src=".\pages\images\Certificates\01_Oracle_Professional_Data_Science.jpg" alt="Oracle Data Science" className="certification-logo" loading="lazy" />
                       <div>
                         <h3 className="certification-title">AWS Certified Solutions Architect</h3>
                         <p className="certification-issuer">Amazon Web Services</p>
@@ -480,54 +481,26 @@ const ResumeContact = () => {
                     <a href="#" className="certification-verify accent">Verify Certificate</a>
                   </div>
                 </div>
-              </div>
-            </div>
-            
-            {/* Professional References */}
-            <div className="references-section">
-              <h2 className="section-title">
-                Professional <span className="text-gradient">References</span>
-              </h2>
-              
-              <div className="references-list">
-                {/* Reference 1 */}
-                <div className="reference-card card">
-                  <div className="reference-content">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Sarah Chen" className="reference-avatar" loading="lazy" />
-                    <div className="reference-info">
-                      <h3 className="reference-name">Sarah Chen</h3>
-                      <p className="reference-position">CTO, TechCorp Solutions</p>
-                      <p className="reference-quote">"Alex consistently delivers high-quality code and demonstrates exceptional problem-solving skills. His ability to mentor junior developers while maintaining technical excellence makes him invaluable to our team."</p>
-                      <a href="#" className="reference-link primary">View LinkedIn Recommendation</a>
+
+                {/* Certification 4 */}
+                <div className="certification-card card">
+                  <div className="certification-header">
+                    <div className="certification-info">
+                    <img src=".\pages\images\Certificates\01_Oracle_Professional_Data_Science.jpg" alt="Oracle Data Science" className="certification-logo" loading="lazy" />
+                      <div>
+                        <h3 className="certification-title">AWS Certified Solutions Architect</h3>
+                        <p className="certification-issuer">Amazon Web Services</p>
+                      </div>
                     </div>
+                    <span className="certification-badge primary">Valid</span>
+                  </div>
+                  <p className="certification-description">Professional level certification demonstrating expertise in designing distributed systems on AWS.</p>
+                  <div className="certification-footer">
+                    <span className="certification-date">Issued: March 2024</span>
+                    <a href="#" className="certification-verify primary">Verify Certificate</a>
                   </div>
                 </div>
-                
-                {/* Reference 2 */}
-                <div className="reference-card card">
-                  <div className="reference-content">
-                    <img src="https://images.pixabay.com/photo/2016/11/21/12/42/beard-1845166_1280.jpg" alt="Michael Torres" className="reference-avatar" loading="lazy" />
-                    <div className="reference-info">
-                      <h3 className="reference-name">Michael Torres</h3>
-                      <p className="reference-position">Founder, StartupXYZ</p>
-                      <p className="reference-quote">"Alex was instrumental in building our platform from the ground up. His full-stack expertise and startup mindset helped us scale from idea to 10,000+ users in record time."</p>
-                      <a href="#" className="reference-link secondary">Contact Reference</a>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Reference 3 */}
-                <div className="reference-card card">
-                  <div className="reference-content">
-                    <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Emily Rodriguez" className="reference-avatar" loading="lazy" />
-                    <div className="reference-info">
-                      <h3 className="reference-name">Emily Rodriguez</h3>
-                      <p className="reference-position">Senior Product Manager, TechCorp</p>
-                      <p className="reference-quote">"Working with Alex is a pleasure. He translates complex technical concepts into clear business value and always delivers on time. His collaborative approach makes cross-functional projects seamless."</p>
-                      <a href="#" className="reference-link accent">View Recommendation</a>
-                    </div>
-                  </div>
-                </div>
+
               </div>
             </div>
           </div>
@@ -562,7 +535,7 @@ const ResumeContact = () => {
                         name="firstName" 
                         required 
                         className="form-input" 
-                        placeholder="John"
+                        placeholder="FirstName"
                         value={formData.firstName}
                         onChange={handleInputChange}
                       />
@@ -575,7 +548,7 @@ const ResumeContact = () => {
                         name="lastName" 
                         required 
                         className="form-input" 
-                        placeholder="Doe"
+                        placeholder="LastName"
                         value={formData.lastName}
                         onChange={handleInputChange}
                       />
@@ -591,7 +564,7 @@ const ResumeContact = () => {
                         name="email" 
                         required 
                         className="form-input" 
-                        placeholder="john@company.com"
+                        placeholder="name@company.com"
                         value={formData.email}
                         onChange={handleInputChange}
                       />
@@ -663,11 +636,11 @@ const ResumeContact = () => {
                         onChange={handleInputChange}
                       >
                         <option value="">Select budget range</option>
-                        <option value="under-5k">Under $5,000</option>
-                        <option value="5k-15k">$5,000 - $15,000</option>
-                        <option value="15k-30k">$15,000 - $30,000</option>
-                        <option value="30k-50k">$30,000 - $50,000</option>
-                        <option value="50k-plus">$50,000+</option>
+                        <option value="under-5k">Under Rs.-5,000</option>
+                        <option value="5k-15k">Rs.-5,000 - Rs.-15,000</option>
+                        <option value="15k-30k">Rs.-15,000 - Rs.-30,000</option>
+                        <option value="30k-50k">Rs.-30,000 - Rs.-50,000</option>
+                        <option value="50k-plus">Rs.-50,000+</option>
                         <option value="discuss">Let's discuss</option>
                       </select>
                     </div>
@@ -776,7 +749,7 @@ const ResumeContact = () => {
                     </div>
                     <div>
                       <div className="contact-label">Email</div>
-                      <div className="contact-value">alex.rodriguez@devportfolio.pro</div>
+                      <div className="contact-value">itsluckysharma001@gmail.com</div>
                     </div>
                   </a>
                   
@@ -788,7 +761,7 @@ const ResumeContact = () => {
                     </div>
                     <div>
                       <div className="contact-label">LinkedIn</div>
-                      <div className="contact-value">Connect professionally</div>
+                      <div className="contact-value">Lucky Sharma</div>
                     </div>
                   </a>
                   
@@ -800,7 +773,7 @@ const ResumeContact = () => {
                     </div>
                     <div>
                       <div className="contact-label">Phone</div>
-                      <div className="contact-value">+1 (555) 123-4567</div>
+                      <div className="contact-value">+91 88945 99977</div>
                     </div>
                   </a>
                 </div>
@@ -881,7 +854,7 @@ const ResumeContact = () => {
                 <svg className="footer-logo-icon" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
                 </svg>
-                <span className="footer-logo-text">DevPortfolio Pro</span>
+                <span className="footer-logo-text">Lucky Sharma Portfolio</span>
               </div>
               <p className="footer-description">
                 Crafting exceptional digital experiences through clean code, thoughtful design, and innovative problem-solving.
@@ -930,7 +903,7 @@ const ResumeContact = () => {
           
           <div className="footer-bottom">
             <p className="footer-copyright">
-              © 2025 DevPortfolio Pro. All Rights Reserved. Built with passion and precision.
+              © 2025 Lucky Sharma. All Rights Reserved. Built with passion and precision.
             </p>
           </div>
         </div>
