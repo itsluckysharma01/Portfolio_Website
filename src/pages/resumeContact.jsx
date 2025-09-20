@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './css/resumeContact.css';
 import resumePreview from './images/resume/Lucky_Sharma_Resume_Preview.jpg';
 
+
 const ResumeContact = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
@@ -424,21 +425,21 @@ const ResumeContact = () => {
                 {/* Certification 1 */}
                 <div className="certification-card card">
                   <div className="certification-image-container">
-                    <img src=".\pages\images\Certificates\01_Oracle_Professional_Data_Science.jpg" alt="Oracle Data Science" className="certification-logo" loading="lazy" />
+                    <img src="/images/certificates/01_Oracle_Professional_Data_Science.jpg" alt="Oracle Data Science" className="certification-logo" loading="lazy" />
                   </div>
                   <div className="certification-content">
                     <div className="certification-header">
                       <div className="certification-info">
                         <div>
-                          <h3 className="certification-title">Oracle Professional Data Science</h3>
-                          <p className="certification-issuer">Oracle Corporation</p>
+                          <h3 className="certification-title">Oracle Cloud Infrastructure 2025 Certified Data Science Professional</h3>
+                          <p className="certification-issuer">Oracle University</p>
                         </div>
                         <span className="certification-badge primary">Valid</span>
                       </div>
                     </div>
                     <p className="certification-description">Professional level certification demonstrating expertise in data science, machine learning, and analytics using Oracle technologies.</p>
                     <div className="certification-footer">
-                      <span className="certification-date">Issued: March 2024</span>
+                      <span className="certification-date">Issued: Sep. 2025</span>
                       <a href="#" className="certification-verify primary">Verify Certificate</a>
                     </div>
                   </div>
@@ -447,21 +448,21 @@ const ResumeContact = () => {
                 {/* Certification 2 */}
                 <div className="certification-card card">
                   <div className="certification-image-container">
-                    <img src="https://images.pixabay.com/photo/2017/08/05/11/16/logo-2582748_1280.png" alt="React Certification" className="certification-logo" loading="lazy" />
+                    <img src="/images/certificates/02_Oracle_Cloud_Infrastructure.jpg" alt="Oracle Data Science" className="certification-logo" loading="lazy" />
                   </div>
                   <div className="certification-content">
                     <div className="certification-header">
                       <div className="certification-info">
                         <div>
-                          <h3 className="certification-title">React Developer Certification</h3>
+                          <h3 className="certification-title">Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate</h3>
                           <p className="certification-issuer">Meta (Facebook)</p>
                         </div>
                         <span className="certification-badge secondary">Valid</span>
                       </div>
                     </div>
-                    <p className="certification-description">Advanced React development including hooks, context, performance optimization, and testing.</p>
+                    <p className="certification-description">The Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate certification validates your foundational knowledge of AI, Machine Learning, and Generative AI, including Large Language Models (LLMs).</p>
                     <div className="certification-footer">
-                      <span className="certification-date">Issued: January 2024</span>
+                      <span className="certification-date">Issued: Sep.-2025</span>
                       <a href="#" className="certification-verify secondary">Verify Certificate</a>
                     </div>
                   </div>
@@ -470,21 +471,21 @@ const ResumeContact = () => {
                 {/* Certification 3 */}
                 <div className="certification-card card">
                   <div className="certification-image-container">
-                    <img src="https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Google Cloud Certification" className="certification-logo" loading="lazy" />
+                    <img src="/images/certificates/04_NIELIT-Internship_Certificate.jpg" alt="Oracle Data Science" className="certification-logo" loading="lazy" />
                   </div>
                   <div className="certification-content">
                     <div className="certification-header">
                       <div className="certification-info">
                         <div>
-                          <h3 className="certification-title">Professional Cloud Developer</h3>
-                          <p className="certification-issuer">Google Cloud Platform</p>
+                          <h3 className="certification-title">Data Curation Using Python</h3>
+                          <p className="certification-issuer">NIELIT-Ropar(IndiaAi)</p>
                         </div>
                         <span className="certification-badge accent">Valid</span>
                       </div>
                     </div>
-                    <p className="certification-description">Expertise in building scalable and reliable applications on Google Cloud Platform.</p>
+                    <p className="certification-description">Demonstrated expertise in data curation using Python, proficiently employing Pandas and NumPy to clean, transform, and organize large datasets for analysis.</p>
                     <div className="certification-footer">
-                      <span className="certification-date">Issued: November 2023</span>
+                      <span className="certification-date">Issued: July 2025</span>
                       <a href="#" className="certification-verify accent">Verify Certificate</a>
                     </div>
                   </div>
@@ -493,21 +494,21 @@ const ResumeContact = () => {
                 {/* Certification 4 */}
                 <div className="certification-card card">
                   <div className="certification-image-container">
-                    <img src=".\pages\images\Certificates\01_Oracle_Professional_Data_Science.jpg" alt="Oracle Data Science" className="certification-logo" loading="lazy" />
+                    <img src="/images/certificates/07_Udemy_Python.jpg" alt="Oracle Data Science" className="certification-logo" loading="lazy" />
                   </div>
                   <div className="certification-content">
                     <div className="certification-header">
                       <div className="certification-info">
                         <div>
-                          <h3 className="certification-title">Oracle Professional Data Science</h3>
-                          <p className="certification-issuer">Oracle Corporation</p>
+                          <h3 className="certification-title">Complete Python Bootcamp for Everyone from Zero to Hero</h3>
+                          <p className="certification-issuer">Udemy</p>
                         </div>
                         <span className="certification-badge primary">Valid</span>
                       </div>
                     </div>
-                    <p className="certification-description">Professional level certification demonstrating expertise in data science, machine learning, and analytics using Oracle technologies.</p>
+                    <p className="certification-description">Applied theoretical knowledge to build practical, project-based applications, demonstrating the ability to write clean, efficient, and well-documented code to solve real-world problems.</p>
                     <div className="certification-footer">
-                      <span className="certification-date">Issued: March 2024</span>
+                      <span className="certification-date">Issued: June 2024</span>
                       <a href="#" className="certification-verify primary">Verify Certificate</a>
                     </div>
                   </div>
