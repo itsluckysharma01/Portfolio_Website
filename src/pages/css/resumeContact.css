@@ -706,83 +706,79 @@
   background-color: var(--surface);
 }
 
-.credentials-grid {
+/* Removed credentials-grid styles since we're using a single container layout */
+
+/* --- General Section --- */
+.certifications-list {
   display: grid;
-  gap: 3rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
 }
 
-@media (min-width: 1024px) {
-  .credentials-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+/* --- Main Card Layout (This is the key change) --- */
+.certification-card {
+  display: grid;
+  /* Creates two columns: 280px for the image, and the rest for the details */
+  grid-template-columns: 280px 1fr;
+  gap: 1.5rem; /* Space between image and text */
+  align-items: center;
+  padding: 1.2rem;
+  overflow: hidden; /* Ensures hover effect doesn't break card layout */
 }
 
-/* Certifications */
-.certifications-list, .references-list {
+/* --- New Image Container Styling --- */
+.certification-image-container {
+  width: 100%;
+  height: 200px; /* Increased height for larger image display */
+  border-radius: 0.75rem; /* Softer corners */
+  overflow: hidden; /* Crucial for making the image fit perfectly */
+  border: 1px solid #eee; /* Subtle border */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.certification-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the box without stretching */
+  transition: transform 0.4s ease-in-out; /* Smooth transition for hover effect */
+}
+
+/* --- Hover Effect --- */
+.certification-card:hover .certification-image {
+  transform: scale(1.05); /* Slightly zooms in on the image on hover */
+}
+
+
+/* --- Details Section (No major changes needed here) --- */
+.certification-details {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-}
-
-.certification-card {
-  padding: 1.5rem;
+  height: 100%; /* Make sure it fills the vertical space */
 }
 
 .certification-header {
   display: flex;
-  align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: 1rem;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
 }
 
-.certification-info {
-  display: flex;
-  align-items: center;
-}
-
-.certification-logo {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 0.5rem;
-  margin-right: 1rem;
-  object-fit: cover;
-}
-
-.certification-title {
+.certification-info .certification-title {
   font-weight: 600;
   margin-bottom: 0.25rem;
 }
 
-.certification-issuer {
+.certification-info .certification-issuer {
   color: var(--text-secondary);
-  font-size: 0.875rem;
-}
-
-.certification-badge {
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  font-size: 0.875rem;
-}
-
-.certification-badge.primary {
-  background-color: rgba(59, 130, 246, 0.2);
-  color: var(--primary);
-}
-
-.certification-badge.secondary {
-  background-color: rgba(16, 185, 129, 0.2);
-  color: var(--secondary);
-}
-
-.certification-badge.accent {
-  background-color: rgba(245, 158, 11, 0.2);
-  color: var(--accent);
+  font-size: 0.9rem;
 }
 
 .certification-description {
   color: var(--text-muted);
-  font-size: 0.875rem;
-  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  flex-grow: 1; /* Pushes the footer to the bottom */
+  margin-bottom: 1rem;
 }
 
 .certification-footer {
@@ -790,6 +786,7 @@
   align-items: center;
   justify-content: space-between;
   font-size: 0.875rem;
+  margin-top: auto; /* Aligns footer to the bottom */
 }
 
 .certification-date {
@@ -798,32 +795,78 @@
 
 .certification-verify {
   text-decoration: none;
-  transition: color 0.3s ease;
+  font-weight: 600; /* Bolder link */
+  transition: all 0.3s ease;
 }
 
-.certification-verify.primary {
-  color: var(--primary);
+/* --- Badges and Verify Links (Mostly the same) --- */
+.certification-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+.certification-badge.primary { background-color: rgba(59, 130, 246, 0.1); color: #3B82F6; }
+.certification-badge.secondary { background-color: rgba(16, 185, 129, 0.1); color: #10B981; }
+.certification-badge.accent { background-color: rgba(245, 158, 11, 0.1); color: #F59E0B; }
+
+.certification-verify.primary { color: #3B82F6; }
+.certification-verify.primary:hover { color: #2563EB; }
+.certification-verify.secondary { color: #10B981; }
+.certification-verify.secondary:hover { color: #059669; }
+.certification-verify.accent { color: #F59E0B; }
+.certification-verify.accent:hover { color: #D97706; }
+
+/* --- Responsive Design for Mobile --- */
+@media (max-width: 768px) {
+  .certifications-list {
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 1.5rem;
+  }
+  
+  .certification-card {
+    /* Stacks the image on top of the text */
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.25rem;
+  }
+
+  .certification-image-container {
+    height: 180px; /* Slightly smaller on mobile */
+  }
+
+  .certification-details {
+    text-align: center; /* Center-align text for a cleaner look on mobile */
+  }
+
+  .certification-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .certification-footer {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
 }
 
-.certification-verify.primary:hover {
-  color: var(--primary-400);
+/* Medium screens - single column but larger cards */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .certifications-list {
+    grid-template-columns: 1fr; /* Single column on tablets */
+    gap: 2rem;
+  }
+  
+  .certification-card {
+    grid-template-columns: 300px 1fr; /* Larger image area on tablets */
+  }
+  
+  .certification-image-container {
+    height: 220px; /* Larger images on tablets */
+  }
 }
-
-.certification-verify.secondary {
-  color: var(--secondary);
-}
-
-.certification-verify.secondary:hover {
-  color: var(--secondary-400);
-}
-
-.certification-verify.accent {
-  color: var(--accent);
-}
-
-.certification-verify.accent:hover {
-  color: var(--accent-400);
-}
+/* Contact Section */
 
 
 /* Contact Section */

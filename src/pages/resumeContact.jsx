@@ -416,94 +416,103 @@ const ResumeContact = () => {
       {/* Certifications & References */}
       <section id="credentials" className="credentials-section">
         <div className="container">
-          <div className="credentials-grid">
-
-            {/* Technical Certifications */}
-            <div className="certifications-section">
-              <h2 className="section-title">
-                Technical <span className="text-gradient">Certifications</span>
-              </h2>
-              
-              <div className="certifications-list">
+          <h2 className="section-title">
+            Technical <span className="text-gradient">Certifications</span>
+          </h2>
+          
+          <div className="certifications-list">
                 {/* Certification 1 */}
                 <div className="certification-card card">
-                  <div className="certification-header">
-                    <div className="certification-info">
+                  <div className="certification-image-container">
                     <img src=".\pages\images\Certificates\01_Oracle_Professional_Data_Science.jpg" alt="Oracle Data Science" className="certification-logo" loading="lazy" />
-                      <div>
-                        <h3 className="certification-title">AWS Certified Solutions Architect</h3>
-                        <p className="certification-issuer">Amazon Web Services</p>
+                  </div>
+                  <div className="certification-content">
+                    <div className="certification-header">
+                      <div className="certification-info">
+                        <div>
+                          <h3 className="certification-title">Oracle Professional Data Science</h3>
+                          <p className="certification-issuer">Oracle Corporation</p>
+                        </div>
+                        <span className="certification-badge primary">Valid</span>
                       </div>
                     </div>
-                    <span className="certification-badge primary">Valid</span>
-                  </div>
-                  <p className="certification-description">Professional level certification demonstrating expertise in designing distributed systems on AWS.</p>
-                  <div className="certification-footer">
-                    <span className="certification-date">Issued: March 2024</span>
-                    <a href="#" className="certification-verify primary">Verify Certificate</a>
+                    <p className="certification-description">Professional level certification demonstrating expertise in data science, machine learning, and analytics using Oracle technologies.</p>
+                    <div className="certification-footer">
+                      <span className="certification-date">Issued: March 2024</span>
+                      <a href="#" className="certification-verify primary">Verify Certificate</a>
+                    </div>
                   </div>
                 </div>
                 
                 {/* Certification 2 */}
                 <div className="certification-card card">
-                  <div className="certification-header">
-                    <div className="certification-info">
-                      <img src="https://images.pixabay.com/photo/2017/08/05/11/16/logo-2582748_1280.png" alt="React Certification" className="certification-logo" loading="lazy" />
-                      <div>
-                        <h3 className="certification-title">React Developer Certification</h3>
-                        <p className="certification-issuer">Meta (Facebook)</p>
+                  <div className="certification-image-container">
+                    <img src="https://images.pixabay.com/photo/2017/08/05/11/16/logo-2582748_1280.png" alt="React Certification" className="certification-logo" loading="lazy" />
+                  </div>
+                  <div className="certification-content">
+                    <div className="certification-header">
+                      <div className="certification-info">
+                        <div>
+                          <h3 className="certification-title">React Developer Certification</h3>
+                          <p className="certification-issuer">Meta (Facebook)</p>
+                        </div>
+                        <span className="certification-badge secondary">Valid</span>
                       </div>
                     </div>
-                    <span className="certification-badge secondary">Valid</span>
-                  </div>
-                  <p className="certification-description">Advanced React development including hooks, context, performance optimization, and testing.</p>
-                  <div className="certification-footer">
-                    <span className="certification-date">Issued: January 2024</span>
-                    <a href="#" className="certification-verify secondary">Verify Certificate</a>
+                    <p className="certification-description">Advanced React development including hooks, context, performance optimization, and testing.</p>
+                    <div className="certification-footer">
+                      <span className="certification-date">Issued: January 2024</span>
+                      <a href="#" className="certification-verify secondary">Verify Certificate</a>
+                    </div>
                   </div>
                 </div>
                 
                 {/* Certification 3 */}
                 <div className="certification-card card">
-                  <div className="certification-header">
-                    <div className="certification-info">
-                      <img src="https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Google Cloud Certification" className="certification-logo" loading="lazy" />
-                      <div>
-                        <h3 className="certification-title">Professional Cloud Developer</h3>
-                        <p className="certification-issuer">Google Cloud Platform</p>
+                  <div className="certification-image-container">
+                    <img src="https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Google Cloud Certification" className="certification-logo" loading="lazy" />
+                  </div>
+                  <div className="certification-content">
+                    <div className="certification-header">
+                      <div className="certification-info">
+                        <div>
+                          <h3 className="certification-title">Professional Cloud Developer</h3>
+                          <p className="certification-issuer">Google Cloud Platform</p>
+                        </div>
+                        <span className="certification-badge accent">Valid</span>
                       </div>
                     </div>
-                    <span className="certification-badge accent">Valid</span>
-                  </div>
-                  <p className="certification-description">Expertise in building scalable and reliable applications on Google Cloud Platform.</p>
-                  <div className="certification-footer">
-                    <span className="certification-date">Issued: November 2023</span>
-                    <a href="#" className="certification-verify accent">Verify Certificate</a>
+                    <p className="certification-description">Expertise in building scalable and reliable applications on Google Cloud Platform.</p>
+                    <div className="certification-footer">
+                      <span className="certification-date">Issued: November 2023</span>
+                      <a href="#" className="certification-verify accent">Verify Certificate</a>
+                    </div>
                   </div>
                 </div>
 
                 {/* Certification 4 */}
                 <div className="certification-card card">
-                  <div className="certification-header">
-                    <div className="certification-info">
+                  <div className="certification-image-container">
                     <img src=".\pages\images\Certificates\01_Oracle_Professional_Data_Science.jpg" alt="Oracle Data Science" className="certification-logo" loading="lazy" />
-                      <div>
-                        <h3 className="certification-title">AWS Certified Solutions Architect</h3>
-                        <p className="certification-issuer">Amazon Web Services</p>
+                  </div>
+                  <div className="certification-content">
+                    <div className="certification-header">
+                      <div className="certification-info">
+                        <div>
+                          <h3 className="certification-title">Oracle Professional Data Science</h3>
+                          <p className="certification-issuer">Oracle Corporation</p>
+                        </div>
+                        <span className="certification-badge primary">Valid</span>
                       </div>
                     </div>
-                    <span className="certification-badge primary">Valid</span>
-                  </div>
-                  <p className="certification-description">Professional level certification demonstrating expertise in designing distributed systems on AWS.</p>
-                  <div className="certification-footer">
-                    <span className="certification-date">Issued: March 2024</span>
-                    <a href="#" className="certification-verify primary">Verify Certificate</a>
+                    <p className="certification-description">Professional level certification demonstrating expertise in data science, machine learning, and analytics using Oracle technologies.</p>
+                    <div className="certification-footer">
+                      <span className="certification-date">Issued: March 2024</span>
+                      <a href="#" className="certification-verify primary">Verify Certificate</a>
+                    </div>
                   </div>
                 </div>
-
               </div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -535,7 +544,7 @@ const ResumeContact = () => {
                         name="firstName" 
                         required 
                         className="form-input" 
-                        placeholder="FirstName"
+                        placeholder="First Name"
                         value={formData.firstName}
                         onChange={handleInputChange}
                       />
@@ -548,7 +557,7 @@ const ResumeContact = () => {
                         name="lastName" 
                         required 
                         className="form-input" 
-                        placeholder="LastName"
+                        placeholder="Last Name"
                         value={formData.lastName}
                         onChange={handleInputChange}
                       />
