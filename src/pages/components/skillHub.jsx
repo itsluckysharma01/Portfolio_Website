@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import './css/skillHub.css';
 import BackButton from '../../components/BackButton';
 

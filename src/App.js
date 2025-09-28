@@ -11,6 +11,7 @@ import Contact from "./pages/components/Contact";
 import Projects from "./pages/components/Projects";
 
 function App() {
+  
   return (
     <Router>
       <Routes>
