@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/my_portfolio_website/static/css/main.db2cc034.css",
+    "main.js": "/my_portfolio_website/static/js/main.8ff4845c.js",
+    "static/media/Lucky_Sharma_Resume_Preview.jpg": "/my_portfolio_website/static/media/Lucky_Sharma_Resume_Preview.32620eced737ec638448.jpg",
+    "static/media/project2.png": "/my_portfolio_website/static/media/project2.5ddd7de0c55adabe6328.png",
+    "static/media/project8.png": "/my_portfolio_website/static/media/project8.b43148dc6a1543b5253a.png",
+    "static/media/project1.png": "/my_portfolio_website/static/media/project1.170440f7d84917381030.png",
+    "static/media/project4.png": "/my_portfolio_website/static/media/project4.365726025bde59ed5e7f.png",
+    "static/media/project6.png": "/my_portfolio_website/static/media/project6.f335d701a73a9500fb9d.png",
+    "static/media/project7.png": "/my_portfolio_website/static/media/project7.2473c36f9a385459b5db.png",
+    "static/media/project5.png": "/my_portfolio_website/static/media/project5.431baceacf5b1a598894.png",
+    "static/media/project3.png": "/my_portfolio_website/static/media/project3.6c84b8074b75359148e8.png",
+    "static/media/my_image.jpg": "/my_portfolio_website/static/media/my_image.b4d7bbbbd5bfeb80dc55.jpg",
+    "index.html": "/my_portfolio_website/index.html",
+    "main.db2cc034.css.map": "/my_portfolio_website/static/css/main.db2cc034.css.map",
+    "main.8ff4845c.js.map": "/my_portfolio_website/static/js/main.8ff4845c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.db2cc034.css",
+    "static/js/main.8ff4845c.js"
+  ]
+}
