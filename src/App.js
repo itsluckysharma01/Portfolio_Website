@@ -1,13 +1,14 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./navBar";
-import HomePage from "./pages/homePage";
-import About from "./pages/About";
-import ResumeContact from "./pages/resumeContact";
-import SkillHub from "./pages/skillHub";
-import TechBlog from "./pages/techBlog";
-import Login from "./pages/Login";
-import Contact from "./pages/Contact";
+import HomePage from "./pages/components/homePage";
+import About from "./pages/components/About";
+import ResumeContact from "./pages/components/resumeContact";
+import SkillHub from "./pages/components/skillHub";
+import Certificates from "./pages/components/Certificates";
+import Login from "./pages/components/Login";
+import Contact from "./pages/components/Contact";
+import Projects from "./pages/components/Projects";
 
 function App() {
   return (
@@ -42,11 +43,11 @@ function App() {
           }
         />
         <Route
-          path="/techblog"
+          path="/Certificates"
           element={
             <>
               <NavBar />
-              <TechBlog />
+              <Certificates />
             </>
           }
         />
@@ -56,6 +57,15 @@ function App() {
             <>
               <NavBar />
               <ResumeContact />
+            </>
+          }
+        />
+        <Route
+          path="/Projects"
+          element={
+            <>
+              <NavBar />
+              <Projects />
             </>
           }
         />

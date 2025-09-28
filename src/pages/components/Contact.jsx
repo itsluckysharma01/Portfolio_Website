@@ -1,9 +1,11 @@
 import React from 'react'
 import './css/Contact.css'
+import BackButton from '../../components/BackButton'
 
 const Contact = () => {
   return (
     <div className="contact-container">
+      <BackButton position="top-left" size="medium" />
       <div className="contact-content">
         <h1 className="contact-title">
           Get In Touch

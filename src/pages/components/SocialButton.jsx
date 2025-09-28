@@ -1,4 +1,4 @@
-// src/components/SocialButton.jsx
+// src/pages/components/SocialButton.jsx
 
 import React from 'react';
 
@@ -17,3 +17,5 @@ const SocialButton = ({ svgPath, text, link, platformClass }) => {
 };
 
 export default SocialButton;
+
+

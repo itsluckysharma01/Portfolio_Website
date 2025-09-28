@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './css/Login.css'
+import BackButton from '../../components/BackButton'
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -25,6 +26,7 @@ const Login = () => {
 
   return (
     <div className="login-container">
+      <BackButton position="top-left" size="medium" />
       <div className="login-content">
         <h1 className="login-title">
           Login

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
-import NavBar from '../navBar'
+import NavBar from '../../navBar'
 import './css/homePage.css'
 import profileImage from './images/profile/my_image.jpg'
 import project1Img from './images/projectimg/project1.png'
@@ -103,7 +103,7 @@ const HomePage = () => {
               </button>
               <button 
                 className="btn-secondary"
-                onClick={() => navigate('/projects')}
+                onClick={() => navigate('/Projects')}
               >
                 View Projects
               </button>

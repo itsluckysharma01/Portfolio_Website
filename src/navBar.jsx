@@ -37,14 +37,18 @@ const NavBar = () => {
             <Link to="/skillhub" className="navbar-link" onClick={closeMenu}>SkillHub</Link>
           </li>
           <li className="navbar-item">
-            <Link to="/techblog" className="navbar-link" onClick={closeMenu}>TechBlog</Link>
+            <Link to="/Certificates" className="navbar-link" onClick={closeMenu}>Certificates</Link>
           </li>
           <li className="navbar-item">
-            <Link to="/contact" className="navbar-link" onClick={closeMenu}>Contact</Link>
+            <Link to="/Projects" className="navbar-link" onClick={closeMenu}>Projects</Link>
           </li>
           <li className="navbar-item">
             <Link to="/about" className="navbar-link" onClick={closeMenu}>About</Link>
           </li>
+          <li className="navbar-item">
+            <Link to="/contact" className="navbar-link" onClick={closeMenu}>Contact</Link>
+          </li>
+          
           <li className="navbar-item">
             <Link to="/login" className="navbar-link" onClick={closeMenu}>Login</Link>
           </li>

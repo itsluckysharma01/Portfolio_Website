@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './css/resumeContact.css';
 import resumePreview from './images/resume/Lucky_Sharma_Resume_Preview.jpg';
+import BackButton from '../../components/BackButton';
 
 
 const ResumeContact = () => {
@@ -159,6 +160,7 @@ const ResumeContact = () => {
 
   return (
     <div className="resume-contact">
+      <BackButton position="top-left" size="medium" />
       {/* Navigation */}
       <nav className="navbar">
         <div className="nav-container">
@@ -176,12 +178,14 @@ const ResumeContact = () => {
             {/* Desktop Navigation */}
             <div className="nav-desktop">
               <div className="nav-links">
-                <a href="/" className="nav-link">Home</a>
+                <a href="/home" className="nav-link">Home</a>
+                <a href="/resume" className="nav-link">Resume</a>
+                <a href="/skillhub" className="nav-link">SkillHub</a>
+                <a href="/Certificates" className="nav-link">Certificates</a>
+                <a href="/Projects" className="nav-link">Projects</a>
                 <a href="/about" className="nav-link">About</a>
-                <a href="/skills" className="nav-link">Skills Lab</a>
-                <a href="/projects" className="nav-link">Projects</a>
-                <a href="/blog" className="nav-link">Blog</a>
-                <a href="/contact" className="nav-link nav-link-active">Contact</a>
+                <a href="/contact" className="nav-link">Contact</a>
+                <a href="/login" className="nav-link nav-link-active">Login</a>
               </div>
             </div>
             
@@ -200,11 +204,13 @@ const ResumeContact = () => {
         <div className={`nav-mobile ${mobileMenuOpen ? 'nav-mobile-open' : ''}`}>
           <div className="nav-mobile-content">
             <a href="/" className="nav-mobile-link">Home</a>
+            <a href="/resume" className="nav-mobile-link">Resume</a>
+            <a href="/skillhub" className="nav-mobile-link">SkillHub</a>
+            <a href="/Certificates" className="nav-mobile-link">Certificates</a>
+            <a href="/Projects" className="nav-mobile-link">Projects</a>
             <a href="/about" className="nav-mobile-link">About</a>
-            <a href="/skills" className="nav-mobile-link">Skills Lab</a>
-            <a href="/projects" className="nav-mobile-link">Projects</a>
-            <a href="/blog" className="nav-mobile-link">Blog</a>
             <a href="/contact" className="nav-mobile-link nav-mobile-link-active">Contact</a>
+            <a href="/login" className="nav-link nav-link-active">Login</a>
           </div>
         </div>
       </nav>
@@ -425,7 +431,7 @@ const ResumeContact = () => {
                 {/* Certification 1 */}
                 <div className="certification-card card">
                   <div className="certification-image-container">
-                    <img src="/images/certificates/01_Oracle_Professional_Data_Science.jpg" alt="Oracle Data Science" className="certification-logo" loading="lazy" />
+                    <img src="/images/Certificates/01_Oracle_Professional_Data_Science.jpg" alt="Oracle Data Science" className="certification-logo" loading="lazy" />
                   </div>
                   <div className="certification-content">
                     <div className="certification-header">
@@ -448,7 +454,7 @@ const ResumeContact = () => {
                 {/* Certification 2 */}
                 <div className="certification-card card">
                   <div className="certification-image-container">
-                    <img src="/images/certificates/02_Oracle_Cloud_Infrastructure.jpg" alt="Oracle Data Science" className="certification-logo" loading="lazy" />
+                    <img src="/images/Certificates/02_Oracle_Cloud_Infrastructure.jpg" alt="Oracle Data Science" className="certification-logo" loading="lazy" />
                   </div>
                   <div className="certification-content">
                     <div className="certification-header">
@@ -471,7 +477,7 @@ const ResumeContact = () => {
                 {/* Certification 3 */}
                 <div className="certification-card card">
                   <div className="certification-image-container">
-                    <img src="/images/certificates/04_NIELIT-Internship_Certificate.jpg" alt="Oracle Data Science" className="certification-logo" loading="lazy" />
+                    <img src="/images/Certificates/04_NIELIT-Internship_Certificate.jpg" alt="Oracle Data Science" className="certification-logo" loading="lazy" />
                   </div>
                   <div className="certification-content">
                     <div className="certification-header">
@@ -494,7 +500,7 @@ const ResumeContact = () => {
                 {/* Certification 4 */}
                 <div className="certification-card card">
                   <div className="certification-image-container">
-                    <img src="/images/certificates/07_Udemy_Python.jpg" alt="Oracle Data Science" className="certification-logo" loading="lazy" />
+                    <img src="/images/Certificates/07_Udemy_Python.jpg" alt="Oracle Data Science" className="certification-logo" loading="lazy" />
                   </div>
                   <div className="certification-content">
                     <div className="certification-header">
@@ -895,7 +901,7 @@ const ResumeContact = () => {
                 <li><a href="/about" className="footer-link">About</a></li>
                 <li><a href="/skills" className="footer-link">Skills</a></li>
                 <li><a href="/projects" className="footer-link">Projects</a></li>
-                <li><a href="/blog" className="footer-link">Blog</a></li>
+                <li><a href="/Certificates" className="footer-link">Certificates</a></li>
               </ul>
             </div>
             
