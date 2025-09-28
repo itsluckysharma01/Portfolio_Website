@@ -14,7 +14,7 @@
 
 ---
 
-### 🌐 **[🔥 LIVE DEMO 🔥](https://itsluckysharma01.github.io/Portfolio_Website/)**
+### 🌐 **[🔥 LIVE DEMO 🔥](https://portfolio-website-pearl-zeta.vercel.app/)**
 
 _Click above to explore my portfolio!_
 
