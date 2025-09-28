@@ -10,62 +10,12 @@ const Projects = () => {
 
   const projectsData = [
     {
-      id: 1,
-      title: 'Potato Leaf Diseases Detection',
-      category: 'ai-ml',
-      type: 'Machine Learning',
-      status: 'Completed',
-      year: '2024',
-      image: require('./images/projectimg/project1.png'),
-      description: 'An AI-powered computer vision system for detecting and classifying potato leaf diseases using deep learning techniques. The system achieves 99.8% accuracy in disease detection and provides real-time analysis for farmers.',
-      longDescription: 'This project addresses a critical agricultural challenge by developing an intelligent system that can identify various potato leaf diseases with high accuracy. The system uses advanced computer vision techniques and deep learning models to analyze leaf images and provide instant disease diagnosis. This helps farmers take timely action to prevent crop loss and improve yield.',
-      technologies: ['Python', 'TensorFlow', 'Keras', 'OpenCV', 'Flask', 'NumPy', 'Pandas'],
-      features: [
-        'Real-time disease detection',
-        '99.8% accuracy rate',
-        'Mobile-friendly interface',
-        'Batch processing capability',
-        'Detailed disease reports',
-        'Integration with farming apps'
-      ],
-      challenges: [
-        'Handling diverse lighting conditions in field images',
-        'Managing large datasets of leaf images',
-        'Optimizing model performance for mobile deployment',
-        'Ensuring accuracy across different disease types'
-      ],
-      solutions: [
-        'Implemented advanced image preprocessing techniques',
-        'Used data augmentation to improve model robustness',
-        'Optimized model architecture for mobile deployment',
-        'Created comprehensive training dataset with expert annotations'
-      ],
-      results: [
-        '99.8% accuracy in disease detection',
-        'Reduced diagnosis time from hours to seconds',
-        'Successfully deployed on Hugging Face Spaces',
-        'Positive feedback from agricultural community'
-      ],
-      liveUrl: 'https://huggingface.co/spaces/itsluckysharma01/Potato_Diseases_Detection_with_Deep_Learning',
-      githubUrl: 'https://github.com/itsluckysharma01/Potato_Leaf_Diseases_Detection_with_Deep-Learning-Tenserflow.git',
-      demoUrl: 'https://huggingface.co/spaces/itsluckysharma01/Potato_Diseases_Detection_with_Deep_Learning',
-      screenshots: [
-        require('./images/projectimg/project1.png')
-      ],
-      metrics: {
-        accuracy: '99.8%',
-        processingTime: '< 2 seconds',
-        modelSize: '15MB',
-        trainingEpochs: '50'
-      }
-    },
-    {
     id: 1,
       title: 'Potato Leaf Diseases Detection',
       category: 'ai-ml',
       type: 'Machine Learning',
       status: 'Completed',
-      year: '2024',
+      year: '2025',
       image: require('./images/projectimg/project1.png'),
       description: 'An AI-powered computer vision system for detecting and classifying potato leaf diseases using deep learning techniques. The system achieves 99.8% accuracy in disease detection and provides real-time analysis for farmers.',
       longDescription: 'This project addresses a critical agricultural challenge by developing an intelligent system that can identify various potato leaf diseases with high accuracy. The system uses advanced computer vision techniques and deep learning models to analyze leaf images and provide instant disease diagnosis. This helps farmers take timely action to prevent crop loss and improve yield.',
@@ -109,7 +59,7 @@ const Projects = () => {
         trainingEpochs: '50'
       }
     },
-
+    
     {
       id: 2,
       title: 'Full-Stack Authentication System',
@@ -149,7 +99,7 @@ const Projects = () => {
         'Zero security vulnerabilities'
       ],
       liveUrl: 'https://sign-up-form-lo8dkmb3l-lucky-sharmas-projects-d189830d.vercel.app/signup',
-      githubUrl: 'https://github.com/itsluckysharma01/full-stack-authentication-system-Signup-login-Form.git',
+      githubUrl: 'https://github.com/itsluckysharma01/House_Price_India-Regression_Model-ML.git',
       demoUrl: 'https://sign-up-form-lo8dkmb3l-lucky-sharmas-projects-d189830d.vercel.app/signup',
       screenshots: [
         require('./images/projectimg/project2.png')
@@ -309,7 +259,55 @@ const Projects = () => {
         contributors: '5+',
         stars: '50+'
       }
+    },
+    {
+      id: 6,
+      title: 'House Price Prediction using Machine Learning',
+      category: 'ai-ml',
+      type: 'Machine Learning',
+      status: 'Completed',
+      year: '2025',
+      image: require('./images/projectimg/project6.png'),
+      description: 'House Price Prediction is a machine learning problem that involves estimating the selling price of a residential property based on various factors (features) using statistical models. It falls under the category of regression analysis because the target variable (price) is a continuous value.',
+      longDescription: "A House Price Prediction system uses machine learning (ML), primarily regression algorithms like Random Forest or XGBoost, to estimate a property's monetary value. The model learns from historical data, analyzing dozens of complex features—such as square footage, location, and local economic indicators—to forecast the final sale price, providing crucial insights for buyers, sellers, and investors.",
+      technologies: ['Python', 'Matplotlib', 'Regression Algorithms', 'Flask', 'NumPy', 'Pandas'],
+      features: [
+        'Continuous Value Prediction',
+        '99.8% accuracy rate',
+        'Mobile-friendly interface',
+        'Performance Evaluation Metrics',
+        'Feature Engineering'
+      ],
+      challenges: [
+        'Data Heterogeneity and Quality',
+        'Feature Engineering Complexity',
+        'Optimizing model performance for mobile deployment',
+        'Market Dynamics and External Factors'
+      ],
+      solutions: [
+        'Automated Data Validation & Imputation',
+        'Standardized Feature Processing Pipelines',
+        'Regularization and Ensemble Techniques',
+        'Integration of Time-Series and Macroeconomic Indicators'
+      ],
+      results: [
+        '99.8% accuracy in disease detection',
+        'Estimated Sale Price',
+        'Successfully deployed',
+        'Feature Importance'
+      ],
+      liveUrl: 'https://house-price-india-regression-model-ml.onrender.com/',
+      githubUrl: 'https://github.com/itsluckysharma01/House_Price_India-Regression_Model-ML..git',
+      demoUrl: 'https://house-price-india-regression-model-ml.onrender.com/',
+      screenshots: [
+        require('./images/projectimg/project6.png')
+      ],
+      metrics: {
+        accuracy: '98%',
+        processingTime: '< 2 seconds'
+      }
     }
+
   ];
 
   const categories = [
