@@ -11,9 +11,9 @@ import Contact from "./pages/components/Contact";
 import Projects from "./pages/components/Projects";
 
 function App() {
-  
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL || "/"}>
+      <NavBar />
       <Routes>
         <Route path="/home" element={<HomePage />} />
         <Route
