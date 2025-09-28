@@ -38,7 +38,7 @@ const About = () => {
           <div className="about-info">
             <h2 className="about-name">Lucky Sharma</h2>
             <p className="about-description">
-              I am a full-stack developer who thrives on creating elegant and intuitive solutions. With over 3 years of experience, I specialize in building end-to-end applications that integrate my strong skills in data science and analysis. I use hands-on projects to apply statistical modeling and machine learning, ensuring every solution is not just well-built but also data-informed.
+              I am a Data Science and Analytics and also full-stack developer who thrives on creating elegant and intuitive solutions. With over 3 years of experience, I specialize in building end-to-end applications that integrate my strong skills in data science and analysis. I use hands-on projects to apply statistical modeling and machine learning, ensuring every solution is not just well-built but also data-informed.
             </p>
             
             <div className="about-tags">

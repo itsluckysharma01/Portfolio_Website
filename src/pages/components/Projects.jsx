@@ -300,10 +300,104 @@ const Projects = () => {
       githubUrl: 'https://github.com/itsluckysharma01/House_Price_India-Regression_Model-ML..git',
       demoUrl: 'https://house-price-india-regression-model-ml.onrender.com/',
       screenshots: [
-        require('./images/projectimg/project6.png')
+        require('./images/projectimg/project7.png')
       ],
       metrics: {
         accuracy: '98%',
+        processingTime: '< 2 seconds'
+      }
+    },
+    {
+      id: 7,
+      title: 'Diabetes Risk Predictor - AI-Powered Health Assessment',
+      category: 'ai-ml',
+      type: 'Machine Learning',
+      status: 'Completed',
+      year: '2025',
+      image: require('./images/projectimg/project8.png'),
+      description: "Diabetes Risk Prediction is a machine learning problem that involves estimating the probability of an individual having or developing diabetes based on various biomedical and lifestyle factors (features) using statistical models. It typically falls under the category of classification analysis because the target variable (risk) is a discrete, categorical value (e.g., 'Positive' or 'Negative').",
+      longDescription: "Developed a machine learning model to predict an individual's risk of developing diabetes based on clinical and lifestyle factors (e.g., glucose, BMI, age). Utilized the Pima Indians Diabetes Dataset and employed algorithms like Logistic Regression and Random Forest; achieved an accuracy of [Insert Specific Accuracy Score, e.g., 85%] after extensive data cleaning, feature scaling, and hyperparameter tuning.",
+      technologies: ['Python', 'Matplotlib', 'Regression Algorithms', 'Flask', 'NumPy', 'Pandas'],
+      features: [
+        'Continuous Diabetes Risk Prediction',
+        '95.72% accuracy rate',
+        'Mobile-friendly interface',
+        'Performance Evaluation Metrics',
+        'Feature Engineering'
+      ],
+      challenges: [
+        'Data Heterogeneity and Quality',
+        'Feature Engineering Complexity',
+        'Optimizing model performance for mobile deployment',
+        'Market Dynamics and External Factors'
+      ],
+      solutions: [
+        'Automated Data Validation & Imputation',
+        'Standardized Feature Processing Pipelines',
+        'Regularization and Ensemble Techniques',
+        'Integration of Time-Series and Macroeconomic Indicators'
+      ],
+      results: [
+        '95.87% accuracy in disease detection',
+        'Diabetes risk prediction',
+        'Successfully deployed',
+        'Feature Importance'
+      ],
+      liveUrl: 'https://predicting-diabetes-with-logistic.onrender.com/',
+      githubUrl: 'https://github.com/itsluckysharma01/Predicting_Diabetes_with_Logistic_Regression-ML.git',
+      demoUrl: 'https://predicting-diabetes-with-logistic.onrender.com/',
+      screenshots: [
+        require('./images/projectimg/project6.png')
+      ],
+      metrics: {
+        accuracy: '96%',
+        processingTime: '< 2 seconds'
+      }
+    },
+    {
+      id: 8,
+      title: 'Loan Approval Prediction using Decision Trees and Random Forests',
+      category: 'ai-ml',
+      type: 'Machine Learning',
+      status: 'Completed',
+      year: '2025',
+      image: require('./images/projectimg/project8.png'),
+      description: "Loan Approval Prediction is a machine learning project that uses Decision Trees and Random Forests to determine the likelihood of a loan applicant being approved. By analyzing financial and personal features (e.g., credit score, income, employment history), the models classify applicants into a discrete 'Approved' or 'Denied' category, thereby automating and improving the risk assessment process.",
+      longDescription: "The Loan Approval Prediction project is a supervised machine learning application designed to automate and enhance the credit risk assessment process for financial institutions. It addresses a classification problem where the primary goal is to predict whether a prospective borrower should be approved or denied for a loan based on their demographic, financial, and credit-related features. The project leverages Decision Trees and Random Forests, which are powerful algorithms known for their interpretability and robustness in handling complex datasets with non-linear relationships and interactions among features.",
+      technologies: ['Python', 'Matplotlib', 'Regression Algorithms', 'Flask', 'NumPy', 'Pandas'],
+      features: [
+        'Continuous Loan Approval Prediction',
+        '99% accuracy rate',
+        'Mobile-friendly interface',
+        'Performance Evaluation Metrics',
+        'Feature Engineering'
+      ],
+      challenges: [
+        'Data Heterogeneity and Quality',
+        'Feature Engineering Complexity',
+        'Optimizing model performance for mobile deployment',
+        'Market Dynamics and External Factors'
+      ],
+      solutions: [
+        'Automated Data Validation & Imputation',
+        'Standardized Feature Processing Pipelines',
+        'Regularization and Ensemble Techniques',
+        'Integration of Time-Series and Macroeconomic Indicators'
+      ],
+      results: [
+        '99% accuracy in loan approval prediction',
+        'AI-Powered Loan Approval Prediction',
+        'Successfully deployed',
+        'Feature Importance'
+      ],
+      liveUrl: 'https://loan-approval-prediction-decision-tree.onrender.com/',
+      githubUrl: 'https://github.com/itsluckysharma01/Loan_Approval_Prediction-Decision_Tree_and_Random_Forest.git',
+      demoUrl: 'https://loan-approval-prediction-decision-tree.onrender.com/',
+      screenshots: [
+        require('./images/projectimg/project8.png')
+      ],
+      metrics: {
+        accuracy: '99%',
         processingTime: '< 2 seconds'
       }
     }
