@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Portfolio_Website/static/css/main.db2cc034.css",
-    "main.js": "/Portfolio_Website/static/js/main.58f9a5be.js",
+    "main.js": "/Portfolio_Website/static/js/main.75d5601e.js",
     "static/media/Lucky_Sharma_Resume_Preview.jpg": "/Portfolio_Website/static/media/Lucky_Sharma_Resume_Preview.32620eced737ec638448.jpg",
     "static/media/project2.png": "/Portfolio_Website/static/media/project2.5ddd7de0c55adabe6328.png",
     "static/media/project8.png": "/Portfolio_Website/static/media/project8.b43148dc6a1543b5253a.png",
@@ -14,10 +14,10 @@
     "static/media/my_image.jpg": "/Portfolio_Website/static/media/my_image.b4d7bbbbd5bfeb80dc55.jpg",
     "index.html": "/Portfolio_Website/index.html",
     "main.db2cc034.css.map": "/Portfolio_Website/static/css/main.db2cc034.css.map",
-    "main.58f9a5be.js.map": "/Portfolio_Website/static/js/main.58f9a5be.js.map"
+    "main.75d5601e.js.map": "/Portfolio_Website/static/js/main.75d5601e.js.map"
   },
   "entrypoints": [
     "static/css/main.db2cc034.css",
-    "static/js/main.58f9a5be.js"
+    "static/js/main.75d5601e.js"
   ]
 }
