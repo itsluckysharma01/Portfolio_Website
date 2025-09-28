@@ -251,7 +251,7 @@ const ResumeContact = () => {
                 <span className="status-text">Available for New Projects</span>
               </div>
               <p className="availability-description">
-                Currently accepting new client projects and collaboration opportunities. Next availability: <span className="highlight">August 2025</span>
+                Currently accepting new client projects and collaboration opportunities. Next availability: <span className="highlight">December 2025</span>
               </p>
               <div className="services-grid">
                 <div className="service-item">
@@ -285,7 +285,7 @@ const ResumeContact = () => {
               {/* Resume Preview Card */}
               <div className="resume-preview-card card">
                 <div className="resume-preview">
-                  <div className="resume-content">
+                  <div className="resume-content" onClick={downloadResume}>
                     <img 
                       src={resumePreview} 
                       alt="Lucky Sharma Resume Preview" 
@@ -364,10 +364,10 @@ const ResumeContact = () => {
                   </div>
                   <div className="timeline-content">
                     <div className="timeline-header">
-                      <h3 className="timeline-title">B.Tech (Bachelor of Technology)</h3>
+                      <h3 className="timeline-title">B.Tech (Bachelor of Technology) - HPTU</h3>
                       <span className="timeline-badge primary">Current</span>
                     </div>
-                    <p className="timeline-company">Govt. College Dharamshala School of Computer Science and Engineering | Kangra-HP | • 2022 - Present</p>
+                    <p className="timeline-company">Govt. College Dharamshala School of Computer Science and Engineering Kangra-HP | • 2022 - Present</p>
                     <p className="timeline-description">Developing and implementing software solutions for academic projects. Collaborating with peers on complex programming assignments and group projects. Applying foundational knowledge of data structures, algorithms, and modern software development practices.</p>
                     <div className="timeline-tags">
                       <span className="tag primary">Computer Science and Engineering</span>
@@ -383,7 +383,7 @@ const ResumeContact = () => {
                     </svg>
                   </div>
                   <div className="timeline-content">
-                    <h3 className="timeline-title">Senior Secondary</h3>
+                    <h3 className="timeline-title">Senior Secondary - HP BOARD</h3>
                     <p className="timeline-company">GSSS Kachhiari | Kangra-HP | • 2019 - 2021</p>
                     <p className="timeline-description">Completed Senior Secondary education with a focus on Physics, Chemistry, and Mathematics (PCM). This provided a strong foundation in core scientific principles and honed analytical and problem-solving skills.</p>
                     <div className="timeline-tags">
@@ -405,7 +405,7 @@ const ResumeContact = () => {
                     </svg>
                   </div>
                   <div className="timeline-content">
-                    <h3 className="timeline-title">Matriculation</h3>
+                    <h3 className="timeline-title">Matriculation - HP BOARD</h3>
                     <p className="timeline-company">Govt. High School Sinyur | Chamba-HP |• March 2019</p>
                     <p className="timeline-description">Attained Secondary School Certificate (SSC), demonstrating a strong foundation in core subjects including Mathematics, Science, and Social Studies. Developed essential skills in problem-solving and critical thinking.</p>
                     <div className="timeline-tags">
@@ -431,7 +431,7 @@ const ResumeContact = () => {
                 {/* Certification 1 */}
                 <div className="certification-card card">
                   <div className="certification-image-container">
-                    <img src="/images/Certificates/01_Oracle_Professional_Data_Science.jpg" alt="Oracle Data Science" className="certification-logo" loading="lazy" />
+                    <img src="/images/Certificates/01_Oracle_Professional_Data_Science.jpg" alt="Oracle Data Science" className="certification-logo" loading="lazy" onClick={() => window.open('/images/Certificates/01_Oracle_Professional_Data_Science.jpg','_blank')} />
                   </div>
                   <div className="certification-content">
                     <div className="certification-header">
@@ -446,22 +446,22 @@ const ResumeContact = () => {
                     <p className="certification-description">Professional level certification demonstrating expertise in data science, machine learning, and analytics using Oracle technologies.</p>
                     <div className="certification-footer">
                       <span className="certification-date">Issued: Sep. 2025</span>
-                      <a href="#" className="certification-verify primary">Verify Certificate</a>
+                      <a className="certification-verify primary">Verify Certificate</a>
                     </div>
                   </div>
                 </div>
                 
                 {/* Certification 2 */}
-                <div className="certification-card card">
+                <div className="certification-card card" >
                   <div className="certification-image-container">
-                    <img src="/images/Certificates/02_Oracle_Cloud_Infrastructure.jpg" alt="Oracle Data Science" className="certification-logo" loading="lazy" />
+                    <img src="/images/Certificates/02_Oracle_Cloud_Infrastructure.jpg" alt="Oracle Data Science" className="certification-logo" loading="lazy" onClick={() => window.open('/images/Certificates/02_Oracle_Cloud_Infrastructure.jpg','_blank')} />
                   </div>
                   <div className="certification-content">
                     <div className="certification-header">
                       <div className="certification-info">
                         <div>
                           <h3 className="certification-title">Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate</h3>
-                          <p className="certification-issuer">Meta (Facebook)</p>
+                          <p className="certification-issuer">Oracle University</p>
                         </div>
                         <span className="certification-badge secondary">Valid</span>
                       </div>
@@ -469,7 +469,7 @@ const ResumeContact = () => {
                     <p className="certification-description">The Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate certification validates your foundational knowledge of AI, Machine Learning, and Generative AI, including Large Language Models (LLMs).</p>
                     <div className="certification-footer">
                       <span className="certification-date">Issued: Sep.-2025</span>
-                      <a href="#" className="certification-verify secondary">Verify Certificate</a>
+                      <a  className="certification-verify secondary">Verify Certificate</a>
                     </div>
                   </div>
                 </div>
@@ -477,7 +477,7 @@ const ResumeContact = () => {
                 {/* Certification 3 */}
                 <div className="certification-card card">
                   <div className="certification-image-container">
-                    <img src="/images/Certificates/04_NIELIT-Internship_Certificate.jpg" alt="Oracle Data Science" className="certification-logo" loading="lazy" />
+                    <img src="/images/Certificates/04_NIELIT-Internship_Certificate.jpg" alt="Oracle Data Science" className="certification-logo" loading="lazy" onClick={() => window.open('/images/Certificates/04_NIELIT-Internship_Certificate.jpg','_blank')} />
                   </div>
                   <div className="certification-content">
                     <div className="certification-header">
@@ -492,7 +492,7 @@ const ResumeContact = () => {
                     <p className="certification-description">Demonstrated expertise in data curation using Python, proficiently employing Pandas and NumPy to clean, transform, and organize large datasets for analysis.</p>
                     <div className="certification-footer">
                       <span className="certification-date">Issued: July 2025</span>
-                      <a href="#" className="certification-verify accent">Verify Certificate</a>
+                      <a className="certification-verify accent">Verify Certificate</a>
                     </div>
                   </div>
                 </div>
@@ -500,7 +500,7 @@ const ResumeContact = () => {
                 {/* Certification 4 */}
                 <div className="certification-card card">
                   <div className="certification-image-container">
-                    <img src="/images/Certificates/07_Udemy_Python.jpg" alt="Oracle Data Science" className="certification-logo" loading="lazy" />
+                    <img src="/images/Certificates/07_Udemy_Python.jpg" alt="Oracle Data Science" className="certification-logo" loading="lazy" onClick={() => window.open('/images/Certificates/07_Udemy_Python.jpg','_blank')} />
                   </div>
                   <div className="certification-content">
                     <div className="certification-header">
@@ -515,7 +515,7 @@ const ResumeContact = () => {
                     <p className="certification-description">Applied theoretical knowledge to build practical, project-based applications, demonstrating the ability to write clean, efficient, and well-documented code to solve real-world problems.</p>
                     <div className="certification-footer">
                       <span className="certification-date">Issued: June 2024</span>
-                      <a href="#" className="certification-verify primary">Verify Certificate</a>
+                      <a className="certification-verify primary">Verify Certificate</a>
                     </div>
                   </div>
                 </div>
@@ -876,12 +876,12 @@ const ResumeContact = () => {
                 Crafting exceptional digital experiences through clean code, thoughtful design, and innovative problem-solving.
               </p>
               <div className="footer-social">
-                <a href="#" className="social-link">
+                <a href="https://github.com/itsluckysharma01" target="_blank" className="social-link">
                   <svg fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                   </svg>
                 </a>
-                <a href="#" className="social-link">
+                <a href="https://www.linkedin.com/in/lucky-sharma918894599977" target="_blank" className="social-link">
                   <svg fill="currentColor" viewBox="0 0 24 24">
                     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                   </svg>

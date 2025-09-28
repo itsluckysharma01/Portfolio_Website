@@ -60,12 +60,63 @@ const Projects = () => {
       }
     },
     {
+    id: 1,
+      title: 'Potato Leaf Diseases Detection',
+      category: 'ai-ml',
+      type: 'Machine Learning',
+      status: 'Completed',
+      year: '2024',
+      image: require('./images/projectimg/project1.png'),
+      description: 'An AI-powered computer vision system for detecting and classifying potato leaf diseases using deep learning techniques. The system achieves 99.8% accuracy in disease detection and provides real-time analysis for farmers.',
+      longDescription: 'This project addresses a critical agricultural challenge by developing an intelligent system that can identify various potato leaf diseases with high accuracy. The system uses advanced computer vision techniques and deep learning models to analyze leaf images and provide instant disease diagnosis. This helps farmers take timely action to prevent crop loss and improve yield.',
+      technologies: ['Python', 'TensorFlow', 'Keras', 'OpenCV', 'Flask', 'NumPy', 'Pandas'],
+      features: [
+        'Real-time disease detection',
+        '99.8% accuracy rate',
+        'Mobile-friendly interface',
+        'Batch processing capability',
+        'Detailed disease reports',
+        'Integration with farming apps'
+      ],
+      challenges: [
+        'Handling diverse lighting conditions in field images',
+        'Managing large datasets of leaf images',
+        'Optimizing model performance for mobile deployment',
+        'Ensuring accuracy across different disease types'
+      ],
+      solutions: [
+        'Implemented advanced image preprocessing techniques',
+        'Used data augmentation to improve model robustness',
+        'Optimized model architecture for mobile deployment',
+        'Created comprehensive training dataset with expert annotations'
+      ],
+      results: [
+        '99.8% accuracy in disease detection',
+        'Reduced diagnosis time from hours to seconds',
+        'Successfully deployed on Hugging Face Spaces',
+        'Positive feedback from agricultural community'
+      ],
+      liveUrl: 'https://huggingface.co/spaces/itsluckysharma01/Potato_Diseases_Detection_with_Deep_Learning',
+      githubUrl: 'https://github.com/itsluckysharma01/Potato_Leaf_Diseases_Detection_with_Deep-Learning-Tenserflow.git',
+      demoUrl: 'https://huggingface.co/spaces/itsluckysharma01/Potato_Diseases_Detection_with_Deep_Learning',
+      screenshots: [
+        require('./images/projectimg/project1.png')
+      ],
+      metrics: {
+        accuracy: '99.8%',
+        processingTime: '< 2 seconds',
+        modelSize: '15MB',
+        trainingEpochs: '50'
+      }
+    },
+
+    {
       id: 2,
       title: 'Full-Stack Authentication System',
       category: 'web-dev',
       type: 'Full-Stack',
       status: 'Completed',
-      year: '2024',
+      year: '2025',
       image: require('./images/projectimg/project2.png'),
       description: 'A complete full-stack authentication system with React frontend and Express backend, featuring secure user registration, login, password reset, and session management.',
       longDescription: 'This comprehensive authentication system provides a secure and scalable solution for user management. Built with modern web technologies, it includes advanced security features like JWT tokens, password hashing, email verification, and role-based access control. The system is designed to handle high traffic and provides a seamless user experience.',
@@ -104,7 +155,7 @@ const Projects = () => {
         require('./images/projectimg/project2.png')
       ],
       metrics: {
-        users: '1000+',
+        users: '100+',
         responseTime: '< 200ms',
         uptime: '99.9%',
         securityScore: 'A+'
@@ -116,7 +167,7 @@ const Projects = () => {
       category: 'web-dev',
       type: 'Frontend',
       status: 'Completed',
-      year: '2023',
+      year: '2024',
       image: require('./images/projectimg/project3.png'),
       description: 'A web-based digital signature application built with HTML, CSS, and JavaScript that allows users to create, customize, and save digital signatures with various tools and options.',
       longDescription: 'Quick Sign is an intuitive digital signature application that provides a comprehensive solution for creating and managing digital signatures. The application features a responsive design, multiple drawing tools, signature customization options, and the ability to save signatures in various formats. It\'s perfect for businesses and individuals who need to create professional digital signatures quickly and easily.',
@@ -202,6 +253,53 @@ const Projects = () => {
       liveUrl: 'https://github.com/itsluckysharma01/Datasets.git',
       githubUrl: 'https://github.com/itsluckysharma01/Datasets.git',
       demoUrl: 'https://github.com/itsluckysharma01/Datasets.git',
+      screenshots: [
+        require('./images/projectimg/project4.png')
+      ],
+      metrics: {
+        users: '100+',
+        loadTime: '< 1 second',
+        compatibility: '95%',
+        userRating: '4.8/5'
+      }
+    },
+    {
+      id: 5,
+      title: 'QR-Code Generator',
+      category: 'web-dev',
+      type: 'Frontend',
+      status: 'Completed',
+      year: '2025',
+      image: require('./images/projectimg/project5.png'),
+      description: 'A QR Code Generator built with HTML, CSS, and JavaScript is a web application that allows users to input data (like a URL, text, or contact information) and instantly generate a scannable Quick Response (QR) code image.',
+      longDescription: 'A QR Code Generator built with HTML, CSS, and JavaScript is a fast, client-side web tool. It uses HTML for the input structure and output display, and CSS for styling the user interface. The core functionality relies on JavaScript, which uses a dedicated library to encode the users data (like a URL or text) into a scannable QR code image displayed instantly on the page.',
+      technologies: ['HTML', 'CSS', 'JavaScript'],
+      features: [
+        'Instant QR code generation',
+        'User-friendly interface',
+        'Customizable QR code design',
+        'Comprehensive documentation',
+        'Easy integration with analysis tools',
+        'Regular updates and maintenance'
+      ],
+      challenges: [
+        'Ensuring reliable image output across browsers',
+        'Handling different data formats',
+        'Providing intuitive customization and download features'
+      ],
+      solutions: [
+        'Implemented automated data validation',
+        'Created a modular input system',
+        'Developed a user-friendly options panel'
+      ],
+      results: [
+        'QR image format like PNG or SVG',
+        'encoded version of the original user input',
+        'Open source and freely available'
+      ],
+      liveUrl: 'https://itsluckysharma01.github.io/QR-Code-Generator/',
+      githubUrl: 'https://github.com/itsluckysharma01/QR-Code-Generator.git',
+      demoUrl: 'https://itsluckysharma01.github.io/QR-Code-Generator/',
       screenshots: [
         require('./images/projectimg/project4.png')
       ],
