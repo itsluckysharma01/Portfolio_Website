@@ -14,7 +14,7 @@
 
 ---
 
-### 🌐 **[🔥 LIVE DEMO 🔥](https://itsluckysharma01.github.io/my_portfolio_website/)**
+### 🌐 **[🔥 LIVE DEMO 🔥](https://itsluckysharma01.github.io/Portfolio_Website/)**
 
 _Click above to explore my portfolio!_
 
@@ -288,9 +288,10 @@ npm start
 
 This portfolio is configured for **GitHub Pages** deployment:
 
-- **Live URL:** https://itsluckysharma01.github.io/my_portfolio_website/
+- **Live URL:** https://itsluckysharma01.github.io/Portfolio_Website/
 - **Auto-deployment:** Run `npm run deploy` to build and deploy automatically
 - **Custom Domain:** Configure in repository settings if needed
+- **Deployment Status:** ✅ Successfully deployed and live!
 
 ## 🎨 **Customization Made Easy**
 
