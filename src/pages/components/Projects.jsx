@@ -251,7 +251,7 @@ const Projects = () => {
       githubUrl: 'https://github.com/itsluckysharma01/QR-Code-Generator.git',
       demoUrl: 'https://itsluckysharma01.github.io/QR-Code-Generator/',
       screenshots: [
-        require('./images/projectimg/project4.png')
+        require('./images/projectimg/project5.png')
       ],
       metrics: {
         datasets: '15+',
@@ -300,7 +300,7 @@ const Projects = () => {
       githubUrl: 'https://github.com/itsluckysharma01/House_Price_India-Regression_Model-ML..git',
       demoUrl: 'https://house-price-india-regression-model-ml.onrender.com/',
       screenshots: [
-        require('./images/projectimg/project7.png')
+        require('./images/projectimg/project6.png')
       ],
       metrics: {
         accuracy: '98%',
@@ -314,7 +314,7 @@ const Projects = () => {
       type: 'Machine Learning',
       status: 'Completed',
       year: '2025',
-      image: require('./images/projectimg/project8.png'),
+      image: require('./images/projectimg/project7.png'),
       description: "Diabetes Risk Prediction is a machine learning problem that involves estimating the probability of an individual having or developing diabetes based on various biomedical and lifestyle factors (features) using statistical models. It typically falls under the category of classification analysis because the target variable (risk) is a discrete, categorical value (e.g., 'Positive' or 'Negative').",
       longDescription: "Developed a machine learning model to predict an individual's risk of developing diabetes based on clinical and lifestyle factors (e.g., glucose, BMI, age). Utilized the Pima Indians Diabetes Dataset and employed algorithms like Logistic Regression and Random Forest; achieved an accuracy of [Insert Specific Accuracy Score, e.g., 85%] after extensive data cleaning, feature scaling, and hyperparameter tuning.",
       technologies: ['Python', 'Matplotlib', 'Regression Algorithms', 'Flask', 'NumPy', 'Pandas'],
@@ -347,7 +347,7 @@ const Projects = () => {
       githubUrl: 'https://github.com/itsluckysharma01/Predicting_Diabetes_with_Logistic_Regression-ML.git',
       demoUrl: 'https://predicting-diabetes-with-logistic.onrender.com/',
       screenshots: [
-        require('./images/projectimg/project6.png')
+        require('./images/projectimg/project7.png')
       ],
       metrics: {
         accuracy: '96%',

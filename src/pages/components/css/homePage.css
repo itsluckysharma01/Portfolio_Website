@@ -1508,3 +1508,139 @@ p {
 .mt-6 {
   margin-top: 1.5rem;
 }
+
+/* Interactive Project Card Styles */
+.interactive-card {
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.interactive-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(0, 212, 255, 0.2);
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+  border-radius: 0.5rem;
+  z-index: 10;
+}
+
+.interactive-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.overlay-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-primary);
+  text-align: center;
+}
+
+.overlay-content svg {
+  color: var(--primary);
+  transition: all 0.2s ease;
+}
+
+.overlay-content span {
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.interactive-card:hover .overlay-content svg {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.6));
+}
+
+/* Enhanced project image container */
+.interactive-card .project-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.interactive-card .project-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(0, 212, 255, 0.1) 0%, 
+    rgba(57, 255, 20, 0.1) 50%, 
+    rgba(255, 107, 53, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.interactive-card:hover .project-image::after {
+  opacity: 1;
+}
+
+/* Project description enhanced interactivity */
+.interactive-card .project-description {
+  transition: color 0.3s ease;
+}
+
+.interactive-card:hover .project-description {
+  color: var(--text-primary);
+}
+
+/* Tech stack enhanced hover effects */
+.interactive-card .tech-tag {
+  transition: all 0.3s ease;
+}
+
+.interactive-card:hover .tech-tag.primary {
+  background: rgba(0, 212, 255, 0.3);
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+}
+
+.interactive-card:hover .tech-tag.secondary {
+  background: rgba(57, 255, 20, 0.3);
+  box-shadow: 0 0 15px rgba(57, 255, 20, 0.4);
+}
+
+.interactive-card:hover .tech-tag.accent {
+  background: rgba(255, 107, 53, 0.3);
+  box-shadow: 0 0 15px rgba(255, 107, 53, 0.4);
+}
+
+/* Prevent action buttons from triggering card navigation */
+.project-actions {
+  position: relative;
+  z-index: 20;
+}
+
+/* Mobile responsiveness for interactive cards */
+@media (max-width: 768px) {
+  .interactive-card:hover {
+    transform: translateY(-4px);
+  }
+  
+  .project-overlay {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.6);
+  }
+  
+  .overlay-content {
+    font-size: 0.75rem;
+  }
+}

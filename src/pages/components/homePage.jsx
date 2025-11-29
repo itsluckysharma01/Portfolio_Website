@@ -263,27 +263,43 @@ const HomePage = () => {
               Featured <span className="gradient-text">Project Showcase</span>
             </h2>
             <p className="section-description">
-              Comprehensive case studies demonstrating problem-solving approach and technical execution
+              Interactive case studies demonstrating problem-solving approach and technical execution. Click on any project to explore more.
             </p>
           </div>
           
           <div className="projects-grid">
 
             {/* Dataset*/}
-            <div className="project-card card">
+            <div 
+              className="project-card card interactive-card" 
+              onClick={() => navigate('/projects')}
+              style={{ cursor: 'pointer' }}
+            >
               <div className="project-image">
                 <img 
                   src={project4Img} 
-                  alt="Form Validation with Full-Stack Authentication" 
+                  alt="Comprehensive Dataset Collection" 
                   loading="lazy"
                   onError={(e) => {
                     e.target.src = 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
                   }}
                 />
+                <div className="project-overlay">
+                  <div className="overlay-content">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                    </svg>
+                    <span>View Details</span>
+                  </div>
+                </div>
               </div>
               <div className="project-content">
                 <h3 className="project-title">Comprehensive Dataset Collection</h3>
-                <p className="project-description">This repository contains a comprehensive collection of 15+ datasets spanning various domains including healthcare, entertainment, transportation, demographics, and more</p>
+                <p className="project-description">
+                  A curated repository of 15+ high-quality datasets spanning healthcare, entertainment, transportation, and demographics. 
+                  Perfect for data science projects, machine learning experiments, and analytical research.
+                </p>
                 
                 <div className="tech-stack">
                   <span className="tech-tag secondary">Dataset</span>
@@ -294,21 +310,21 @@ const HomePage = () => {
                 
                 <div className="project-stats">
                   <div className="stat">
-                    <div className="stat-value secondary">-</div>
-                    <div className="stat-label">Compatible</div>
+                    <div className="stat-value secondary">15+</div>
+                    <div className="stat-label">Datasets</div>
                   </div>
                   <div className="stat">
-                    <div className="stat-value primary">-</div>
-                    <div className="stat-label">Pandas</div>
+                    <div className="stat-value primary">100%</div>
+                    <div className="stat-label">Compatible</div>
                   </div>
                 </div>
                 
-                <div className="project-actions">
+                <div className="project-actions" onClick={(e) => e.stopPropagation()}>
                   <button 
                     className="btn-secondary small"
                     onClick={() => window.open('https://github.com/itsluckysharma01/Datasets.git', '_blank')}
                   >
-                    Dataset
+                    View Repository
                   </button>
                   <button className="btn-icon" onClick={()=> window.open('https://github.com/itsluckysharma01/Datasets.git' , '_blank')}>
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -320,7 +336,11 @@ const HomePage = () => {
             </div>
 
             {/* Project 1: Potato Leaf Diseases Detection */}
-            <div className="project-card card">
+            <div 
+              className="project-card card interactive-card" 
+              onClick={() => navigate('/projects')}
+              style={{ cursor: 'pointer' }}
+            >
               <div className="project-image">
                 <img 
                   src={project1Img}
@@ -328,11 +348,23 @@ const HomePage = () => {
                   loading="lazy"
                   onError={(e) => {  e.target.src = 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
                   }}
-              />
+                />
+                <div className="project-overlay">
+                  <div className="overlay-content">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                    </svg>
+                    <span>Explore AI Model</span>
+                  </div>
+                </div>
               </div>
               <div className="project-content">
-                <h3 className="project-title">Potato Leaf Diseases Detection</h3>
-                <p className="project-description">An AI-powered computer vision system for detecting and classifying potato Leaf diseases using deep learning techniques.</p>
+                <h3 className="project-title">AI-Powered Plant Disease Detection</h3>
+                <p className="project-description">
+                  Revolutionary computer vision system using deep learning to identify potato leaf diseases with 99.8% accuracy. 
+                  Features real-time image processing, disease classification, and treatment recommendations.
+                </p>
                 
                 <div className="tech-stack">
                   <span className="tech-tag primary">Python</span>
@@ -348,16 +380,16 @@ const HomePage = () => {
                   </div>
                   <div className="stat">
                     <div className="stat-value secondary">50</div>
-                    <div className="stat-label">Epoch</div>
+                    <div className="stat-label">Epochs</div>
                   </div>
                 </div>
                 
-                <div className="project-actions">
+                <div className="project-actions" onClick={(e) => e.stopPropagation()}>
                   <button 
                     className="btn-primary small"
                     onClick={() => window.open('https://huggingface.co/spaces/itsluckysharma01/Potato_Diseases_Detection_with_Deep_Learning', '_blank')}
                   >
-                    Deploy Link
+                    Live Demo
                   </button>
                   <button className="btn-icon"   onClick={() => window.open('https://github.com/itsluckysharma01/Potato_Leaf_Diseases_Detection_with_Deep-Learning-Tenserflow.git', '_blank')}
  >
@@ -370,7 +402,11 @@ const HomePage = () => {
             </div>
             
             {/* Project 2: Form Validation with Full-Stack Authentication*/}
-            <div className="project-card card">
+            <div 
+              className="project-card card interactive-card" 
+              onClick={() => navigate('/projects')}
+              style={{ cursor: 'pointer' }}
+            >
               <div className="project-image">
                 <img 
                   src={project2Img} 
@@ -380,35 +416,46 @@ const HomePage = () => {
                     e.target.src = 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
                   }}
                 />
+                <div className="project-overlay">
+                  <div className="overlay-content">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                    </svg>
+                    <span>Secure Authentication</span>
+                  </div>
+                </div>
               </div>
               <div className="project-content">
-                <h3 className="project-title">Form Validation with Full-Stack Authentication</h3>
-                <p className="project-description">A complete full-stack authentication system with React frontend and Express backend</p>
+                <h3 className="project-title">Full-Stack Authentication System</h3>
+                <p className="project-description">
+                  Enterprise-grade authentication system featuring secure user registration, login, password validation, and session management. 
+                  Built with React frontend and Express.js backend with MongoDB integration.
+                </p>
                 
                 <div className="tech-stack">
-                  <span className="tech-tag secondary">React Js</span>
-                  <span className="tech-tag primary">Express Js</span>
-                  <span className="tech-tag accent">Node Js</span>
+                  <span className="tech-tag secondary">React.js</span>
+                  <span className="tech-tag primary">Express.js</span>
+                  <span className="tech-tag accent">Node.js</span>
                   <span className="tech-tag secondary">MongoDB</span>
                 </div>
                 
                 <div className="project-stats">
                   <div className="stat">
-                    <div className="stat-value secondary">-</div>
-                    <div className="stat-label">Validation</div>
+                    <div className="stat-value secondary">JWT</div>
+                    <div className="stat-label">Secure Tokens</div>
                   </div>
                   <div className="stat">
-                    <div className="stat-value primary">-</div>
-                    <div className="stat-label">Authentication</div>
+                    <div className="stat-value primary">BCrypt</div>
+                    <div className="stat-label">Password Hash</div>
                   </div>
                 </div>
                 
-                <div className="project-actions">
+                <div className="project-actions" onClick={(e) => e.stopPropagation()}>
                   <button 
                     className="btn-secondary small"
                     onClick={() => window.open('https://sign-up-form-lo8dkmb3l-lucky-sharmas-projects-d189830d.vercel.app/signup', '_blank')}
                   >
-                    Deploy Link
+                    Live Demo
                   </button>
                   <button className="btn-icon" onClick={()=> window.open('https://github.com/itsluckysharma01/full-stack-authentication-system-Signup-login-Form.git' , '_blank')}>
                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -420,45 +467,60 @@ const HomePage = () => {
             </div>
             
             {/* Project 3: Quick Sign Project */}
-            <div className="project-card card">
+            <div 
+              className="project-card card interactive-card" 
+              onClick={() => navigate('/projects')}
+              style={{ cursor: 'pointer' }}
+            >
               <div className="project-image">
                 <img 
                   src={project3Img}
-                  alt="Quick Sign" 
+                  alt="Quick Sign Digital Signature Tool" 
                   loading="lazy"
                   onError={(e) => {
                     e.target.src = 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
                   }}
                 />
+                <div className="project-overlay">
+                  <div className="overlay-content">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+                    </svg>
+                    <span>Digital Signature</span>
+                  </div>
+                </div>
               </div>
               <div className="project-content">
-                <h3 className="project-title">Quick Sign</h3>
-                <p className="project-description">Quick Sign is a web-based application built using HTML, CSS, and JavaScript</p>
+                <h3 className="project-title">Quick Sign - Digital Signature Tool</h3>
+                <p className="project-description">
+                  Intuitive web-based digital signature application with smooth drawing capabilities, customizable pen styles, 
+                  and instant download functionality. Perfect for document signing and digital artwork creation.
+                </p>
                 
                 <div className="tech-stack">
-                  <span className="tech-tag accent">HTML</span>
-                  <span className="tech-tag primary">CSS</span>
-                  <span className="tech-tag secondary">Java Script</span>
-                  <span className="tech-tag accent">GitHub</span>
+                  <span className="tech-tag accent">HTML5</span>
+                  <span className="tech-tag primary">CSS3</span>
+                  <span className="tech-tag secondary">JavaScript</span>
+                  <span className="tech-tag accent">Canvas API</span>
                 </div>
                 
                 <div className="project-stats">
                   <div className="stat">
-                    <div className="stat-value accent">-</div>
-                    <div className="stat-label">Digital Sign</div>
+                    <div className="stat-value accent">Canvas</div>
+                    <div className="stat-label">Technology</div>
                   </div>
                   <div className="stat">
-                    <div className="stat-value primary">-</div>
-                    <div className="stat-label">Save Sign Picture</div>
+                    <div className="stat-value primary">Instant</div>
+                    <div className="stat-label">Download</div>
                   </div>
                 </div>
                 
-                <div className="project-actions">
+                <div className="project-actions" onClick={(e) => e.stopPropagation()}>
                   <button 
                     className="btn-accent small"
                     onClick={() => window.open('https://itsluckysharma01.github.io/Project-Quick-Signature/', '_blank')}
                   >
-                     Deploy Link
+                     Try it Live
                   </button>
                   <button className="btn-icon" onClick={() => window.open('https://github.com/itsluckysharma01/Project-Quick-Signature.git', '_blank')}>
                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
