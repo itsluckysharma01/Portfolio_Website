@@ -199,6 +199,90 @@ const Certificates = () => {
       skills: ['Trading', 'Investment', 'Market Analysis', 'Financial Strategies'],
       verificationUrl: '#',
       level: 'Intermediate'
+    },
+    {
+      id: 17,
+      title: 'Data Science with Python',
+      issuer: 'SMARTED',
+      date: '2025',
+      category: 'Data Science',
+      image: '/images/Certificates/17_DATA_SCIENCE_WITH_PYTHON-Lucky_Sharm_SMARTED.jpg',
+      description: 'Comprehensive Python-based data science certification covering data analysis, visualization, and machine learning with Python libraries.',
+      skills: ['Data Science', 'Python', 'Data Analysis', 'Machine Learning', 'Pandas', 'NumPy'],
+      verificationUrl: '#',
+      level: 'Intermediate'
+    },
+    {
+      id: 18,
+      title: 'AI ML Engineer',
+      issuer: 'Reliance Skilling Academy',
+      date: '2025',
+      category: 'Training',
+      image: '/images/Certificates/19_AI ML Engineer Reliance Skilling Acadmy.jpg.jpg',
+      description: 'Professional AI and Machine Learning Engineer certification from Reliance Skilling Academy covering advanced ML algorithms and AI systems.',
+      skills: ['AI', 'Machine Learning', 'Deep Learning', 'Neural Networks', 'Engineering'],
+      verificationUrl: '#',
+      level: 'Professional'
+    },
+    {
+      id: 19,
+      title: 'AI ML Engineer',
+      issuer: 'Skill India',
+      date: '2025',
+      category: 'Government',
+      image: '/images/Certificates/20_AI ML Engineer Skillindia.jpg',
+      description: 'Government of India AI & ML Engineer certification under Skill India initiative covering artificial intelligence and machine learning engineering.',
+      skills: ['AI', 'Machine Learning', 'Government Certification', 'ML Engineering', 'AI Systems'],
+      verificationUrl: '#',
+      level: 'Professional'
+    },
+    {
+      id: 20,
+      title: 'Data Science for Everyone',
+      issuer: 'Reliance',
+      date: '2025',
+      category: 'Training',
+      image: '/images/Certificates/21_Data Science for Everyone_Reliance.jpg',
+      description: 'Foundational data science certification from Reliance covering basic data analysis, statistics, and data-driven decision making.',
+      skills: ['Data Science', 'Statistics', 'Data Analysis', 'Decision Making', 'Fundamentals'],
+      verificationUrl: '#',
+      level: 'Intermediate'
+    },
+    {
+      id: 21,
+      title: 'Data Science for Everyone',
+      issuer: 'Skill India',
+      date: '2025',
+      category: 'government',
+      image: '/images/Certificates/22_Data Science for Everyone_Skillindia.jpg',
+      description: 'Government of India data science certification making data science accessible to everyone with foundational concepts.',
+      skills: ['Data Science', 'Basics', 'Government Certification', 'Analytics', 'Statistics'],
+      verificationUrl: '#',
+      level: 'Intermediate'
+    },
+    {
+      id: 22,
+      title: 'Code Clash 2.0',
+      issuer: 'Code Clash',
+      date: '2025',
+      category: 'Hackthon',
+      image: '/images/Certificates/23Code_Clash2.0.jpeg',
+      description: 'Participation certificate from Code Clash 2.0 coding competition showcasing competitive programming and problem-solving skills.',
+      skills: ['Competitive Programming', 'Problem Solving', 'Coding', 'Algorithms', 'Competition'],
+      verificationUrl: '#',
+      level: 'Participation'
+    },
+    {
+      id: 23,
+      title: 'Tata Crucible Quiz',
+      issuer: 'Tata Crucible',
+      date: '2025',
+      category: 'competition',
+      image: '/images/Certificates/24_Tata Crucible Quiz.jpg',
+      description: 'Participation certificate from prestigious Tata Crucible Quiz competition demonstrating knowledge and quick thinking.',
+      skills: ['Quiz', 'General Knowledge', 'Competition', 'Quick Thinking', 'Business Knowledge'],
+      verificationUrl: '#',
+      level: 'Participation'
     }
   ];
 
