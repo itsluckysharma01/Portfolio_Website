@@ -19,3 +19,4 @@ const SocialButton = ({ svgPath, text, link, platformClass }) => {
 export default SocialButton;
 
 
+
