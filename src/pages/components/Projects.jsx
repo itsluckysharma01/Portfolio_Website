@@ -874,7 +874,7 @@ const Projects = () => {
       title: "Skin Diseases Detection Using Deep Learning",
       category: "ai-ml",
       type: "Deep Learning",
-      status: "Completed",
+      status: "Continued",
       year: "2025",
       image: require("./images/projectimg/project15.jpg"),
 
