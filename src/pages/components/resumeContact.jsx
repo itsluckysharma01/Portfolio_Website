@@ -4,7 +4,6 @@ import resumePreview from "./images/resume/Lucky_Sharma_Resume_Preview.jpg";
 import BackButton from "../../components/BackButton";
 
 const ResumeContact = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -19,10 +18,6 @@ const ResumeContact = () => {
     additionalInfo: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
-  };
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -169,110 +164,6 @@ const ResumeContact = () => {
   return (
     <div className="resume-contact">
       <BackButton position="top-left" size="medium" />
-      {/* Navigation */}
-      <nav className="navbar">
-        <div className="nav-container">
-          <div className="nav-content">
-            {/* Logo */}
-            <div className="nav-logo">
-              <a href="/" className="logo-link">
-                <svg
-                  className="logo-icon"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                </svg>
-                <span className="logo-text">Lucky Sharma</span>
-              </a>
-            </div>
-
-            {/* Desktop Navigation */}
-            <div className="nav-desktop">
-              <div className="nav-links">
-                <a href="/home" className="nav-link">
-                  Home
-                </a>
-                <a href="/resume" className="nav-link">
-                  Resume
-                </a>
-                <a href="/skillhub" className="nav-link">
-                  SkillHub
-                </a>
-                <a href="/Certificates" className="nav-link">
-                  Certificates
-                </a>
-                <a href="/Projects" className="nav-link">
-                  Projects
-                </a>
-                <a href="/about" className="nav-link">
-                  About
-                </a>
-                <a href="/contact" className="nav-link">
-                  Contact
-                </a>
-                <a href="/login" className="nav-link nav-link-active">
-                  Login
-                </a>
-              </div>
-            </div>
-
-            {/* Mobile menu button */}
-            <div className="nav-mobile-toggle">
-              <button onClick={toggleMobileMenu} className="mobile-menu-button">
-                <svg
-                  className="mobile-menu-icon"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Mobile Navigation */}
-        <div
-          className={`nav-mobile ${mobileMenuOpen ? "nav-mobile-open" : ""}`}
-        >
-          <div className="nav-mobile-content">
-            <a href="/" className="nav-mobile-link">
-              Home
-            </a>
-            <a href="/resume" className="nav-mobile-link">
-              Resume
-            </a>
-            <a href="/skillhub" className="nav-mobile-link">
-              SkillHub
-            </a>
-            <a href="/Certificates" className="nav-mobile-link">
-              Certificates
-            </a>
-            <a href="/Projects" className="nav-mobile-link">
-              Projects
-            </a>
-            <a href="/about" className="nav-mobile-link">
-              About
-            </a>
-            <a
-              href="/contact"
-              className="nav-mobile-link nav-mobile-link-active"
-            >
-              Contact
-            </a>
-            <a href="/login" className="nav-link nav-link-active">
-              Login
-            </a>
-          </div>
-        </div>
-      </nav>
 
       {/* Hero Section */}
       <section id="hero" className="hero-section">

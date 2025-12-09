@@ -102,7 +102,7 @@
     top: 60px; /* Adjust this value based on your navbar's height */
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 60px);
     flex-direction: column;
     background-color: #222; /* Darker background for mobile menu */
     transform: translateX(-100%);
@@ -111,10 +111,14 @@
     align-items: center;
     gap: 1.5rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    pointer-events: none;
+    z-index: 999;
   }
 
   .navbar-menu.active {
     transform: translateX(0); /* Slide in the menu */
+    pointer-events: auto;
   }
 
   .navbar-item {
