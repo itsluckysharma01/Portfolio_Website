@@ -1,0 +1,43 @@
+/* App-level Mobile Optimizations */
+.App {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Smooth scroll for anchor links */
+.App a[href^="#"] {
+  scroll-behavior: smooth;
+}
+
+/* Mobile-friendly spacing */
+@media (max-width: 768px) {
+  .App {
+    padding-top: 60px; /* Account for fixed navbar */
+  }
+}
+
+/* Prevent layout shift on scroll */
+.App {
+  position: relative;
+  width: 100%;
+}
+
+/* Optimize animations for mobile */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Better touch scrolling */
+.App {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Prevent pull-to-refresh on mobile when scrolling */
+body {
+  overscroll-behavior-y: contain;
+}

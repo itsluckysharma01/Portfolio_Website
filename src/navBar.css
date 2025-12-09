@@ -9,6 +9,10 @@
   width: 100%;
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  /* Mobile optimizations */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .navbar-container {
@@ -26,6 +30,9 @@
   font-weight: bold;
   text-decoration: none;
   transition: color 0.3s ease;
+  /* Improve tap target size for mobile */
+  padding: 0.5rem;
+  margin: -0.5rem;
 }
 
 .navbar-brand a:hover {
@@ -49,7 +56,9 @@
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.2s ease;
+  /* Improve tap target size for mobile */
+  display: inline-block;
 }
 
 .navbar-link:hover {
@@ -64,6 +73,10 @@
   justify-content: space-around;
   width: 30px;
   height: 25px;
+  /* Better tap target for mobile */
+  padding: 10px;
+  margin: -10px;
+  z-index: 1001;
 }
 
 .hamburger span {
@@ -89,6 +102,10 @@
 
 /* --- Media Queries for Mobile Responsiveness --- */
 @media (max-width: 768px) {
+  .navbar {
+    padding: 0.75rem 1rem;
+  }
+
   .navbar-container {
     padding: 0 1rem;
   }
@@ -106,7 +123,7 @@
     flex-direction: column;
     background-color: #222; /* Darker background for mobile menu */
     transform: translateX(-100%);
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     padding: 2rem;
     align-items: center;
     gap: 1.5rem;
@@ -114,6 +131,9 @@
     overflow-y: auto;
     pointer-events: none;
     z-index: 999;
+    /* Smooth scrolling for mobile menu */
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
   }
 
   .navbar-menu.active {
@@ -125,10 +145,42 @@
     margin: 0; /* Remove horizontal margin */
     width: 100%;
     text-align: center;
+    /* Smooth animations */
+    animation: slideInLeft 0.3s ease forwards;
   }
 
   .navbar-link {
     display: block;
+    padding: 1rem 0;
+    font-size: 1.2rem;
+    /* Larger tap targets for mobile */
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Stagger animation for menu items */
+  .navbar-menu.active .navbar-item:nth-child(1) { animation-delay: 0.05s; }
+  .navbar-menu.active .navbar-item:nth-child(2) { animation-delay: 0.1s; }
+  .navbar-menu.active .navbar-item:nth-child(3) { animation-delay: 0.15s; }
+  .navbar-menu.active .navbar-item:nth-child(4) { animation-delay: 0.2s; }
+  .navbar-menu.active .navbar-item:nth-child(5) { animation-delay: 0.25s; }
+  .navbar-menu.active .navbar-item:nth-child(6) { animation-delay: 0.3s; }
+  .navbar-menu.active .navbar-item:nth-child(7) { animation-delay: 0.35s; }
+  .navbar-menu.active .navbar-item:nth-child(8) { animation-delay: 0.4s; }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
     padding: 1rem 0;
     font-size: 1.2rem;
   }
