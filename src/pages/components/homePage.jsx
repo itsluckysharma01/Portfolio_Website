@@ -625,9 +625,7 @@ const HomePage = () => {
               <span className="typewriter-cursor">|</span>
             </div>
             <p className="hero-description" aria-label="About Lucky Sharma">
-              Front-End developer crafting clean, accessible UIs. Comfortable
-              with JavaScript, React, HTML/CSS, Python, and Java. Ethical
-              hacking and deep learning enthusiast.
+              Student Coordinator at Govt. College Dharamshala | Data Analyst & MERN Stack Developer | Skilled in Java, Python ,C++& JavaScript | Ethical Hacking & Deep Learning Enthusiast
             </p>
             <div className="hero-buttons">
               <button
