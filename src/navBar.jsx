@@ -65,7 +65,7 @@ const NavBar = () => {
           </li>
           <li className="navbar-item">
             <Link to="/skillhub" className="navbar-link" onClick={closeMenu}>
-              SkillHub
+              Skills
             </Link>
           </li>
           <li className="navbar-item">
