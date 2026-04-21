@@ -1747,3 +1747,296 @@ p {
     font-size: 0.75rem;
   }
 }
+
+/* Featured Projects Grid - Matches Projects Page Card Style */
+.featured-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .featured-projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .featured-projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .featured-projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Project Card Styling for Featured Projects */
+.featured-projects-grid .project-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.featured-projects-grid .project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--category-color);
+  z-index: 10;
+}
+
+.featured-projects-grid .project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
+
+.featured-projects-grid .project-image-container {
+  position: relative;
+  height: 140px;
+  overflow: hidden;
+}
+
+.featured-projects-grid .project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.featured-projects-grid .project-card:hover .project-image {
+  transform: scale(1.05);
+}
+
+.featured-projects-grid .project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.featured-projects-grid .project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.featured-projects-grid .overlay-content {
+  text-align: center;
+  color: white;
+}
+
+.featured-projects-grid .view-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.featured-projects-grid .view-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.featured-projects-grid .project-status {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: white;
+  z-index: 5;
+}
+
+.featured-projects-grid .project-year {
+  position: absolute;
+  bottom: 80px;
+  left: 10px;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #333;
+  z-index: 5;
+}
+
+.featured-projects-grid .project-info {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 140px);
+}
+
+.featured-projects-grid .project-header {
+  margin-bottom: 0.4rem;
+  flex-shrink: 0;
+}
+
+.featured-projects-grid .project-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 0.35rem 0;
+  line-height: 1.2;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.featured-projects-grid .project-type {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #666;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.featured-projects-grid .type-icon {
+  font-size: 0.9rem;
+}
+
+.featured-projects-grid .type-text {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.featured-projects-grid .project-description {
+  color: #666;
+  font-size: 0.8rem;
+  margin: 0.5rem 0;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+.featured-projects-grid .project-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.5rem 0;
+  flex-shrink: 0;
+}
+
+.featured-projects-grid .tech-tag {
+  background: rgba(102, 126, 234, 0.15);
+  color: #667eea;
+  padding: 0.25rem 0.6rem;
+  border-radius: 10px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.featured-projects-grid .tech-tag.more {
+  background: rgba(118, 75, 162, 0.15);
+  color: #764ba2;
+}
+
+.featured-projects-grid .project-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+  margin: 0.5rem 0;
+  flex-shrink: 0;
+}
+
+.featured-projects-grid .metric {
+  text-align: center;
+  padding: 0.35rem;
+  background: rgba(102, 126, 234, 0.05);
+  border-radius: 6px;
+  border: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.featured-projects-grid .metric-value {
+  display: block;
+  font-weight: 600;
+  color: #667eea;
+  font-size: 0.8rem;
+  margin-bottom: 0.1rem;
+}
+
+.featured-projects-grid .metric-label {
+  display: block;
+  font-size: 0.65rem;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.featured-projects-grid .project-actions {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.6rem;
+  margin-top: auto;
+}
+
+.featured-projects-grid .action-btn {
+  padding: 0.6rem 0.8rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.featured-projects-grid .action-btn.primary {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+}
+
+.featured-projects-grid .action-btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.featured-projects-grid .action-btn.secondary {
+  background: rgba(102, 126, 234, 0.1);
+  color: #667eea;
+  border: 1px solid rgba(102, 126, 234, 0.3);
+}
+
+.featured-projects-grid .action-btn.secondary:hover {
+  background: rgba(102, 126, 234, 0.2);
+  border-color: rgba(102, 126, 234, 0.5);
+  transform: translateY(-2px);
+}
+
+.featured-projects-grid .action-btn svg {
+  width: 1rem;
+  height: 1rem;
+}

@@ -3,10 +3,8 @@ import { useNavigate } from "react-router-dom";
 import NavBar from "../../navBar";
 import "./css/homePage.css";
 import profileImage from "./images/profile/my_image.jpg";
-import project1Img from "./images/projectimg/project1.png";
-import project2Img from "./images/projectimg/project2.png";
-import project3Img from "./images/projectimg/project3.png";
-import project4Img from "./images/projectimg/project4.png";
+
+import projectsWithImages from "../../data/projectsConfig";
 
 const HomePage = () => {
   const [typewriterText, setTypewriterText] = useState("");
@@ -625,7 +623,8 @@ const HomePage = () => {
               <span className="typewriter-cursor">|</span>
             </div>
             <p className="hero-description" aria-label="About Lucky Sharma">
-              Work Based Intern at Centre for Development of Advanced Computing Mohali | GATE 2025 Qualified |GeeksforGeeks Campus Mantri |
+              Work Based Intern at Centre for Development of Advanced Computing
+              Mohali | GATE 2025 Qualified |GeeksforGeeks Campus Mantri |
               Student Coordinator | Google Ambassador | ML Engineer & MERN Stack
               Developer
             </p>
@@ -1183,429 +1182,136 @@ const HomePage = () => {
               Featured <span className="gradient-text">Project Showcase</span>
             </h2>
             <p className="section-description">
-              Interactive case studies demonstrating problem-solving approach
-              and technical execution. Click on any project to explore more.
+              Explore my latest projects showcasing diverse technical expertise
+              and problem-solving capabilities
             </p>
           </div>
 
-          <div className="projects-grid">
-            {/* Dataset*/}
-            <div
-              className="project-card card interactive-card"
-              onClick={() => navigate("/projects")}
-              style={{ cursor: "pointer" }}
-            >
-              <div className="project-image">
-                <img
-                  src={project4Img}
-                  alt="Comprehensive Dataset Collection"
-                  loading="lazy"
-                  onError={(e) => {
-                    e.target.src =
-                      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
-                  }}
-                />
-                <div className="project-overlay">
-                  <div className="overlay-content">
-                    <svg
-                      className="w-6 h-6"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                      />
-                    </svg>
-                    <span>View Details</span>
-                  </div>
-                </div>
-              </div>
-              <div className="project-content">
-                <h3 className="project-title">
-                  Comprehensive Dataset Collection
-                </h3>
-                <p className="project-description">
-                  A curated repository of 15+ high-quality datasets spanning
-                  healthcare, entertainment, transportation, and demographics.
-                  Perfect for data science projects, machine learning
-                  experiments, and analytical research.
-                </p>
-
-                <div className="tech-stack">
-                  <span className="tech-tag secondary">Dataset</span>
-                  <span className="tech-tag primary">Open Source</span>
-                  <span className="tech-tag accent">Python</span>
-                  <span className="tech-tag secondary">Data Science</span>
-                </div>
-
-                <div className="project-stats">
-                  <div className="stat">
-                    <div className="stat-value secondary">15+</div>
-                    <div className="stat-label">Datasets</div>
-                  </div>
-                  <div className="stat">
-                    <div className="stat-value primary">100%</div>
-                    <div className="stat-label">Compatible</div>
-                  </div>
-                </div>
-
+          <div className="projects-grid featured-projects-grid">
+            {projectsWithImages
+              .slice(-5)
+              .reverse()
+              .map((project) => (
                 <div
-                  className="project-actions"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  <button
-                    className="btn-secondary small"
-                    onClick={() =>
-                      window.open(
-                        "https://github.com/itsluckysharma01/Datasets.git",
-                        "_blank",
-                      )
-                    }
-                  >
-                    View Repository
-                  </button>
-                  <button
-                    className="btn-icon"
-                    onClick={() =>
-                      window.open(
-                        "https://github.com/itsluckysharma01/Datasets.git",
-                        "_blank",
-                      )
-                    }
-                  >
-                    <svg
-                      className="w-5 h-5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {/* Project 1: Potato Leaf Diseases Detection */}
-            <div
-              className="project-card card interactive-card"
-              onClick={() => navigate("/projects")}
-              style={{ cursor: "pointer" }}
-            >
-              <div className="project-image">
-                <img
-                  src={project1Img}
-                  alt="Potato Leaf Diseases Detection"
-                  loading="lazy"
-                  onError={(e) => {
-                    e.target.src =
-                      "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
+                  key={project.id}
+                  className="project-card"
+                  onClick={() => navigate("/projects")}
+                  style={{
+                    cursor: "pointer",
+                    "--category-color":
+                      project.category === "ai-ml"
+                        ? "#ff6b6b"
+                        : project.category === "web-dev"
+                          ? "#4ecdc4"
+                          : project.category === "data-science"
+                            ? "#45b7d1"
+                            : project.category === "mobile"
+                              ? "#96ceb4"
+                              : project.category === "desktop"
+                                ? "#feca57"
+                                : "#95a5a6",
                   }}
-                />
-                <div className="project-overlay">
-                  <div className="overlay-content">
-                    <svg
-                      className="w-6 h-6"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                      />
-                    </svg>
-                    <span>Explore AI Model</span>
-                  </div>
-                </div>
-              </div>
-              <div className="project-content">
-                <h3 className="project-title">
-                  AI-Powered Plant Disease Detection
-                </h3>
-                <p className="project-description">
-                  Revolutionary computer vision system using deep learning to
-                  identify potato leaf diseases with 99.8% accuracy. Features
-                  real-time image processing, disease classification, and
-                  treatment recommendations.
-                </p>
-
-                <div className="tech-stack">
-                  <span className="tech-tag primary">Python</span>
-                  <span className="tech-tag secondary">TensorFlow</span>
-                  <span className="tech-tag accent">Keras</span>
-                  <span className="tech-tag primary">Flask</span>
-                </div>
-
-                <div className="project-stats">
-                  <div className="stat">
-                    <div className="stat-value primary">99.8%</div>
-                    <div className="stat-label">Accuracy</div>
-                  </div>
-                  <div className="stat">
-                    <div className="stat-value secondary">50</div>
-                    <div className="stat-label">Epochs</div>
-                  </div>
-                </div>
-
-                <div
-                  className="project-actions"
-                  onClick={(e) => e.stopPropagation()}
                 >
-                  <button
-                    className="btn-primary small"
-                    onClick={() =>
-                      window.open(
-                        "https://huggingface.co/spaces/itsluckysharma01/Potato_Diseases_Detection_with_Deep_Learning",
-                        "_blank",
-                      )
-                    }
-                  >
-                    Live Demo
-                  </button>
-                  <button
-                    className="btn-icon"
-                    onClick={() =>
-                      window.open(
-                        "https://github.com/itsluckysharma01/Potato_Leaf_Diseases_Detection_with_Deep-Learning-Tenserflow.git",
-                        "_blank",
-                      )
-                    }
-                  >
-                    <svg
-                      className="w-5 h-5"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
+                  <div className="project-image-container">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="project-image"
+                      loading="lazy"
+                      onError={(e) => {
+                        e.target.src =
+                          "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+                      }}
+                    />
+                    <div className="project-overlay">
+                      <div className="overlay-content">
+                        <span className="view-icon">👁️</span>
+                        <span className="view-text">View Details</span>
+                      </div>
+                    </div>
+                    <div
+                      className="project-status"
+                      style={{
+                        backgroundColor:
+                          project.status === "Completed"
+                            ? "#10b981"
+                            : project.status === "In Progress"
+                              ? "#f59e0b"
+                              : project.status === "Ongoing"
+                                ? "#3b82f6"
+                                : "#6b7280",
+                      }}
                     >
-                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
+                      {project.status}
+                    </div>
+                    <div className="project-year">{project.year}</div>
+                  </div>
 
-            {/* Project 2: Form Validation with Full-Stack Authentication*/}
-            <div
-              className="project-card card interactive-card"
-              onClick={() => navigate("/projects")}
-              style={{ cursor: "pointer" }}
-            >
-              <div className="project-image">
-                <img
-                  src={project2Img}
-                  alt="Form Validation with Full-Stack Authentication"
-                  loading="lazy"
-                  onError={(e) => {
-                    e.target.src =
-                      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
-                  }}
-                />
-                <div className="project-overlay">
-                  <div className="overlay-content">
-                    <svg
-                      className="w-6 h-6"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                      />
-                    </svg>
-                    <span>Secure Authentication</span>
+                  <div className="project-info">
+                    <div className="project-header">
+                      <h3 className="project-title">{project.title}</h3>
+                      <div className="project-type">
+                        <span className="type-icon">🔧</span>
+                        <span className="type-text">{project.type}</span>
+                      </div>
+                    </div>
+
+                    <p className="project-description">{project.description}</p>
+
+                    <div className="project-technologies">
+                      {project.technologies.slice(0, 4).map((tech, index) => (
+                        <span key={index} className="tech-tag">
+                          {tech}
+                        </span>
+                      ))}
+                      {project.technologies.length > 4 && (
+                        <span className="tech-tag more">
+                          +{project.technologies.length - 4}
+                        </span>
+                      )}
+                    </div>
+
+                    <div className="project-metrics">
+                      {Object.entries(project.metrics)
+                        .slice(0, 2)
+                        .map(([key, value]) => (
+                          <div key={key} className="metric">
+                            <span className="metric-value">{value}</span>
+                            <span className="metric-label">{key}</span>
+                          </div>
+                        ))}
+                    </div>
+
+                    <div className="project-actions">
+                      <button
+                        className="action-btn primary"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          window.open(project.liveUrl, "_blank");
+                        }}
+                      >
+                        Live Demo
+                      </button>
+                      <button
+                        className="action-btn secondary"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          window.open(project.githubUrl, "_blank");
+                        }}
+                      >
+                        <svg
+                          className="w-4 h-4"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                        Code
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="project-content">
-                <h3 className="project-title">
-                  Full-Stack Authentication System
-                </h3>
-                <p className="project-description">
-                  Enterprise-grade authentication system featuring secure user
-                  registration, login, password validation, and session
-                  management. Built with React frontend and Express.js backend
-                  with MongoDB integration.
-                </p>
-
-                <div className="tech-stack">
-                  <span className="tech-tag secondary">React.js</span>
-                  <span className="tech-tag primary">Express.js</span>
-                  <span className="tech-tag accent">Node.js</span>
-                  <span className="tech-tag secondary">MongoDB</span>
-                </div>
-
-                <div className="project-stats">
-                  <div className="stat">
-                    <div className="stat-value secondary">JWT</div>
-                    <div className="stat-label">Secure Tokens</div>
-                  </div>
-                  <div className="stat">
-                    <div className="stat-value primary">BCrypt</div>
-                    <div className="stat-label">Password Hash</div>
-                  </div>
-                </div>
-
-                <div
-                  className="project-actions"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  <button
-                    className="btn-secondary small"
-                    onClick={() =>
-                      window.open(
-                        "https://sign-up-form-lo8dkmb3l-lucky-sharmas-projects-d189830d.vercel.app/signup",
-                        "_blank",
-                      )
-                    }
-                  >
-                    Live Demo
-                  </button>
-                  <button
-                    className="btn-icon"
-                    onClick={() =>
-                      window.open(
-                        "https://github.com/itsluckysharma01/full-stack-authentication-system-Signup-login-Form.git",
-                        "_blank",
-                      )
-                    }
-                  >
-                    <svg
-                      className="w-5 h-5"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {/* Project 3: Quick Sign Project */}
-            <div
-              className="project-card card interactive-card"
-              onClick={() => navigate("/projects")}
-              style={{ cursor: "pointer" }}
-            >
-              <div className="project-image">
-                <img
-                  src={project3Img}
-                  alt="Quick Sign Digital Signature Tool"
-                  loading="lazy"
-                  onError={(e) => {
-                    e.target.src =
-                      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
-                  }}
-                />
-                <div className="project-overlay">
-                  <div className="overlay-content">
-                    <svg
-                      className="w-6 h-6"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
-                      />
-                    </svg>
-                    <span>Digital Signature</span>
-                  </div>
-                </div>
-              </div>
-              <div className="project-content">
-                <h3 className="project-title">
-                  Quick Sign - Digital Signature Tool
-                </h3>
-                <p className="project-description">
-                  Intuitive web-based digital signature application with smooth
-                  drawing capabilities, customizable pen styles, and instant
-                  download functionality. Perfect for document signing and
-                  digital artwork creation.
-                </p>
-
-                <div className="tech-stack">
-                  <span className="tech-tag accent">HTML5</span>
-                  <span className="tech-tag primary">CSS3</span>
-                  <span className="tech-tag secondary">JavaScript</span>
-                  <span className="tech-tag accent">Canvas API</span>
-                </div>
-
-                <div className="project-stats">
-                  <div className="stat">
-                    <div className="stat-value accent">Canvas</div>
-                    <div className="stat-label">Technology</div>
-                  </div>
-                  <div className="stat">
-                    <div className="stat-value primary">Instant</div>
-                    <div className="stat-label">Download</div>
-                  </div>
-                </div>
-
-                <div
-                  className="project-actions"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  <button
-                    className="btn-accent small"
-                    onClick={() =>
-                      window.open(
-                        "https://itsluckysharma01.github.io/Project-Quick-Signature/",
-                        "_blank",
-                      )
-                    }
-                  >
-                    Try it Live
-                  </button>
-                  <button
-                    className="btn-icon"
-                    onClick={() =>
-                      window.open(
-                        "https://github.com/itsluckysharma01/Project-Quick-Signature.git",
-                        "_blank",
-                      )
-                    }
-                  >
-                    <svg
-                      className="w-5 h-5"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
+              ))}
           </div>
 
           <div className="section-footer">
