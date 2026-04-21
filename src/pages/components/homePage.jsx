@@ -20,7 +20,7 @@ const HomePage = () => {
 
   const phrases = useMemo(
     () => ["Code with Purpose", "Build with Precision", "Create with Passion"],
-    []
+    [],
   );
 
   useEffect(() => {
@@ -625,7 +625,9 @@ const HomePage = () => {
               <span className="typewriter-cursor">|</span>
             </div>
             <p className="hero-description" aria-label="About Lucky Sharma">
-              Student Coordinator at Govt. College Dharamshala | Data Analyst & MERN Stack Developer | Skilled in Java, Python ,C++& JavaScript | Ethical Hacking & Deep Learning Enthusiast
+              Work Based Intern at Centre for Development of Advanced Computing Mohali | GATE 2025 Qualified |GeeksforGeeks Campus Mantri |
+              Student Coordinator | Google Ambassador | ML Engineer & MERN Stack
+              Developer
             </p>
             <div className="hero-buttons">
               <button
@@ -936,7 +938,7 @@ const HomePage = () => {
               <div className="stat-number">
                 {
                   certificatesData.filter(
-                    (cert) => cert.level === "Professional"
+                    (cert) => cert.level === "Professional",
                   ).length
                 }
               </div>
@@ -1015,7 +1017,7 @@ const HomePage = () => {
                         className="category-badge"
                         style={{
                           backgroundColor: getCategoryColor(
-                            certificate.category
+                            certificate.category,
                           ),
                         }}
                       >
@@ -1108,7 +1110,7 @@ const HomePage = () => {
                       className="detail-value level-badge"
                       style={{
                         backgroundColor: getLevelColor(
-                          selectedCertificate.level
+                          selectedCertificate.level,
                         ),
                       }}
                     >
@@ -1121,7 +1123,7 @@ const HomePage = () => {
                       className="detail-value category-badge"
                       style={{
                         backgroundColor: getCategoryColor(
-                          selectedCertificate.category
+                          selectedCertificate.category,
                         ),
                       }}
                     >
@@ -1151,7 +1153,7 @@ const HomePage = () => {
                       onClick={() =>
                         window.open(
                           selectedCertificate.verificationUrl,
-                          "_blank"
+                          "_blank",
                         )
                       }
                     >
@@ -1266,7 +1268,7 @@ const HomePage = () => {
                     onClick={() =>
                       window.open(
                         "https://github.com/itsluckysharma01/Datasets.git",
-                        "_blank"
+                        "_blank",
                       )
                     }
                   >
@@ -1277,7 +1279,7 @@ const HomePage = () => {
                     onClick={() =>
                       window.open(
                         "https://github.com/itsluckysharma01/Datasets.git",
-                        "_blank"
+                        "_blank",
                       )
                     }
                   >
@@ -1378,7 +1380,7 @@ const HomePage = () => {
                     onClick={() =>
                       window.open(
                         "https://huggingface.co/spaces/itsluckysharma01/Potato_Diseases_Detection_with_Deep_Learning",
-                        "_blank"
+                        "_blank",
                       )
                     }
                   >
@@ -1389,7 +1391,7 @@ const HomePage = () => {
                     onClick={() =>
                       window.open(
                         "https://github.com/itsluckysharma01/Potato_Leaf_Diseases_Detection_with_Deep-Learning-Tenserflow.git",
-                        "_blank"
+                        "_blank",
                       )
                     }
                   >
@@ -1478,7 +1480,7 @@ const HomePage = () => {
                     onClick={() =>
                       window.open(
                         "https://sign-up-form-lo8dkmb3l-lucky-sharmas-projects-d189830d.vercel.app/signup",
-                        "_blank"
+                        "_blank",
                       )
                     }
                   >
@@ -1489,7 +1491,7 @@ const HomePage = () => {
                     onClick={() =>
                       window.open(
                         "https://github.com/itsluckysharma01/full-stack-authentication-system-Signup-login-Form.git",
-                        "_blank"
+                        "_blank",
                       )
                     }
                   >
@@ -1578,7 +1580,7 @@ const HomePage = () => {
                     onClick={() =>
                       window.open(
                         "https://itsluckysharma01.github.io/Project-Quick-Signature/",
-                        "_blank"
+                        "_blank",
                       )
                     }
                   >
@@ -1589,7 +1591,7 @@ const HomePage = () => {
                     onClick={() =>
                       window.open(
                         "https://github.com/itsluckysharma01/Project-Quick-Signature.git",
-                        "_blank"
+                        "_blank",
                       )
                     }
                   >
