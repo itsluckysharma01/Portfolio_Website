@@ -901,6 +901,190 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/* Career Timeline Section */}
+      <section id="career-timeline" className="career-timeline-section">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title">
+              My <span className="gradient-text">Career Journey</span>
+            </h2>
+            <p className="section-description">
+              A comprehensive timeline of my professional experience, education,
+              and milestones
+            </p>
+          </div>
+
+          <div className="timeline-wrapper">
+            <div className="timeline">
+              {/* CDAC Internship - Latest */}
+              <div className="timeline-item timeline-item-active">
+                <div className="timeline-marker">
+                  <div className="marker-icon primary">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M13 10V3L4 14h7v7l9-11h-7z"
+                      />
+                    </svg>
+                  </div>
+                  <div className="marker-label">Jan 2026</div>
+                </div>
+                <div className="timeline-content card">
+                  <div className="content-header">
+                    <h3 className="timeline-title">
+                      Machine Learning Engineer Intern
+                    </h3>
+                    <span className="badge badge-current">Current</span>
+                  </div>
+                  <p className="timeline-company">
+                    Centre for Development of Advanced Computing (CDAC), Mohali
+                  </p>
+                  <p className="timeline-description">
+                    Working as a Machine Learning Engineer on cutting-edge AI
+                    projects. Developing and deploying ML models, analyzing
+                    complex datasets, and implementing AI solutions.
+                  </p>
+                  <div className="timeline-tags">
+                    <span className="tag tag-primary">Machine Learning</span>
+                    <span className="tag tag-primary">AI</span>
+                    <span className="tag tag-primary">Data Science</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* B.Tech */}
+              <div className="timeline-item">
+                <div className="timeline-marker">
+                  <div className="marker-icon primary">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                      />
+                    </svg>
+                  </div>
+                  <div className="marker-label">2022 - Present</div>
+                </div>
+                <div className="timeline-content card">
+                  <div className="content-header">
+                    <h3 className="timeline-title">
+                      B.Tech (Computer Science & Engineering)
+                    </h3>
+                    <span className="badge badge-ongoing">Ongoing</span>
+                  </div>
+                  <p className="timeline-company">
+                    Govt. College Dharamshala, Kangra-HP
+                  </p>
+                  <p className="timeline-description">
+                    Developing software solutions for academic projects.
+                    Collaborating on complex programming assignments while
+                    applying knowledge of data structures and modern development
+                    practices.
+                  </p>
+                  <div className="timeline-tags">
+                    <span className="tag tag-primary">Computer Science</span>
+                    <span className="tag tag-primary">Engineering</span>
+                    <span className="tag tag-primary">Technology</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Senior Secondary */}
+              <div className="timeline-item">
+                <div className="timeline-marker">
+                  <div className="marker-icon secondary">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+                      />
+                    </svg>
+                  </div>
+                  <div className="marker-label">2019 - 2021</div>
+                </div>
+                <div className="timeline-content card">
+                  <div className="content-header">
+                    <h3 className="timeline-title">Senior Secondary (PCM)</h3>
+                    <span className="badge badge-completed">Completed</span>
+                  </div>
+                  <p className="timeline-company">GSSS Kachhiari, Kangra-HP</p>
+                  <p className="timeline-description">
+                    Completed senior secondary education with focus on Physics,
+                    Chemistry, and Mathematics. Developed strong analytical and
+                    problem-solving skills.
+                  </p>
+                  <div className="timeline-tags">
+                    <span className="tag tag-secondary">Physics</span>
+                    <span className="tag tag-secondary">Chemistry</span>
+                    <span className="tag tag-secondary">Mathematics</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Matriculation */}
+              <div className="timeline-item">
+                <div className="timeline-marker">
+                  <div className="marker-icon accent">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                      />
+                    </svg>
+                  </div>
+                  <div className="marker-label">March 2019</div>
+                </div>
+                <div className="timeline-content card">
+                  <div className="content-header">
+                    <h3 className="timeline-title">Matriculation (SSC)</h3>
+                    <span className="badge badge-completed">Completed</span>
+                  </div>
+                  <p className="timeline-company">
+                    Govt. High School Sinyur, Chamba-HP
+                  </p>
+                  <p className="timeline-description">
+                    Attained Secondary School Certificate demonstrating strong
+                    foundation in core subjects including Mathematics, Science,
+                    and Social Studies.
+                  </p>
+                  <div className="timeline-tags">
+                    <span className="tag tag-accent">Sports</span>
+                    <span className="tag tag-accent">General Education</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="timeline-footer">
+            <button className="btn-primary" onClick={() => navigate("/resume")}>
+              <span>View Full Resume & Timeline</span>
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
       {/* Certificates Section */}
       <section id="certificates" className="certificates-section">
         <div className="container">
