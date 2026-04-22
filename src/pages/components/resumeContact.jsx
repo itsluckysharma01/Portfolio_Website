@@ -104,7 +104,7 @@ const ResumeContact = () => {
       });
       showNotification(
         "Thank you! Your project inquiry has been sent. I'll respond within 24 hours.",
-        "success"
+        "success",
       );
     }, 2000);
   };
@@ -279,7 +279,7 @@ const ResumeContact = () => {
                 <div className="resume-header">
                   <h3 className="resume-name">Lucky Sharma</h3>
                   <p className="resume-role">
-                    Full-Stack Developer And Data Analytics
+                    Machine Learning Engineer And Data Analytics
                   </p>
                 </div>
 
@@ -354,7 +354,7 @@ const ResumeContact = () => {
                   <div className="stat-label">Years Experience</div>
                 </div>
                 <div className="stat-item">
-                  <div className="stat-number secondary">10+</div>
+                  <div className="stat-number secondary">30+</div>
                   <div className="stat-label">Projects Completed</div>
                 </div>
               </div>
@@ -367,6 +367,47 @@ const ResumeContact = () => {
               </h2>
 
               <div className="timeline">
+                {/* CDAC Internship */}
+                <div className="timeline-item">
+                  <div className="timeline-icon primary">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M13 10V3L4 14h7v7l9-11h-7z"
+                      />
+                    </svg>
+                  </div>
+                  <div className="timeline-content">
+                    <div className="timeline-header">
+                      <h3 className="timeline-title">
+                        Machine Learning Engineer - Work-Based Internship
+                      </h3>
+                      <span className="timeline-badge primary">Current</span>
+                    </div>
+                    <p className="timeline-company">
+                      Centre for Development of Advanced Computing (CDAC),
+                      Mohali | • Jan 2026 - Present
+                    </p>
+                    <p className="timeline-description">
+                      Working as a Machine Learning Engineer on cutting-edge AI
+                      projects. Developing and deploying machine learning
+                      models, analyzing complex datasets, and implementing AI
+                      solutions. Collaborating with experienced professionals to
+                      deliver high-impact projects in artificial intelligence
+                      and data science.
+                    </p>
+                    <div className="timeline-tags">
+                      <span className="tag primary">Machine Learning</span>
+                      <span className="tag primary">
+                        Artificial Intelligence
+                      </span>
+                      <span className="tag primary">Data Science</span>
+                    </div>
+                  </div>
+                </div>
+
                 {/* Timeline Item 1 */}
                 <div className="timeline-item">
                   <div className="timeline-icon primary">
@@ -493,7 +534,7 @@ const ResumeContact = () => {
                   onClick={() =>
                     window.open(
                       "/images/Certificates/01_Oracle_Professional_Data_Science.jpg",
-                      "_blank"
+                      "_blank",
                     )
                   }
                 />
@@ -536,7 +577,7 @@ const ResumeContact = () => {
                   onClick={() =>
                     window.open(
                       "/images/Certificates/02_Oracle_Cloud_Infrastructure.jpg",
-                      "_blank"
+                      "_blank",
                     )
                   }
                 />
@@ -580,7 +621,7 @@ const ResumeContact = () => {
                   onClick={() =>
                     window.open(
                       "/images/Certificates/04_NIELIT-Internship_Certificate.jpg",
-                      "_blank"
+                      "_blank",
                     )
                   }
                 />
@@ -624,7 +665,7 @@ const ResumeContact = () => {
                   onClick={() =>
                     window.open(
                       "/images/Certificates/07_Udemy_Python.jpg",
-                      "_blank"
+                      "_blank",
                     )
                   }
                 />
