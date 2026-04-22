@@ -673,7 +673,7 @@ If you find this project helpful or interesting, please consider giving it a sta
 
 ---
 
-**Made with ❤️ and lots of ☕ by [Lucky Sharma](https://github.com/itsluckysharma01)**
+**जय श्री राम 🚩 by [Lucky Sharma](https://github.com/itsluckysharma01)**
 
 _© 2025 Lucky Sharma. All rights reserved._
 
