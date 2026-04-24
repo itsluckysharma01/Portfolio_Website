@@ -5,6 +5,7 @@ import {
   Route,
   useLocation,
 } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import NavBar from "./navBar";
 import HomePage from "./pages/components/homePage";
 import About from "./pages/components/About";
@@ -63,77 +64,79 @@ function App() {
   }, []);
 
   return (
-    <Router basename={process.env.PUBLIC_URL || "/"}>
-      <ScrollToTop />
-      <NavBar />
-      <Routes>
-        <Route path="/home" element={<HomePage />} />
-        <Route
-          path="/contact"
-          element={
-            <>
-              <NavBar />
-              <Contact />
-            </>
-          }
-        />
-        <Route
-          path="/about"
-          element={
-            <>
-              <NavBar />
-              <About />
-            </>
-          }
-        />
-        <Route
-          path="/skillhub"
-          element={
-            <>
-              <NavBar />
-              <SkillHub />
-            </>
-          }
-        />
-        <Route
-          path="/Certificates"
-          element={
-            <>
-              <NavBar />
-              <Certificates />
-            </>
-          }
-        />
-        <Route
-          path="/resume"
-          element={
-            <>
-              <NavBar />
-              <ResumeContact />
-            </>
-          }
-        />
-        <Route
-          path="/Projects"
-          element={
-            <>
-              <NavBar />
-              <Projects />
-            </>
-          }
-        />
-        <Route
-          path="/login"
-          element={
-            <>
-              <NavBar />
-              <Login />
-            </>
-          }
-        />
-        <Route path="/" element={<HomePage />} />
-      </Routes>
-    </Router>
+    <HelmetProvider>
+      <Router basename={process.env.PUBLIC_URL || "/"}>
+        <ScrollToTop />
+        <NavBar />
+        <Routes>
+          <Route path="/home" element={<HomePage />} />
+          <Route
+            path="/contact"
+            element={
+              <>
+                <NavBar />
+                <Contact />
+              </>
+            }
+          />
+          <Route
+            path="/about"
+            element={
+              <>
+                <NavBar />
+                <About />
+              </>
+            }
+          />
+          <Route
+            path="/skillhub"
+            element={
+              <>
+                <NavBar />
+                <SkillHub />
+              </>
+            }
+          />
+          <Route
+            path="/Certificates"
+            element={
+              <>
+                <NavBar />
+                <Certificates />
+              </>
+            }
+          />
+          <Route
+            path="/resume"
+            element={
+              <>
+                <NavBar />
+                <ResumeContact />
+              </>
+            }
+          />
+          <Route
+            path="/Projects"
+            element={
+              <>
+                <NavBar />
+                <Projects />
+              </>
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <>
+                <NavBar />
+                <Login />
+              </>
+            }
+          />
+          <Route path="/" element={<HomePage />} />
+        </Routes>
+      </Router>
+    </HelmetProvider>
   );
 }
 

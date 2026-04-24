@@ -1,6 +1,12 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import NavBar from "../../navBar";
+import {
+  SEOHelmet,
+  PersonSchema,
+  WebSiteSchema,
+  BreadcrumbSchema,
+} from "../../utils/SEOHelmet";
 import "./css/homePage.css";
 import profileImage from "./images/profile/my_image.jpg";
 
@@ -609,6 +615,14 @@ const HomePage = () => {
 
   return (
     <>
+      <SEOHelmet
+        title="Lucky Sharma - Full Stack Developer & AI/ML Engineer"
+        description="Lucky Sharma - Professional Full Stack Developer & AI/ML Engineer from India. View my portfolio featuring projects, certifications, and expertise in React, Python, Machine Learning, and Data Science."
+        keywords="Lucky Sharma, Lucky Sharma developer, Lucky Sharma portfolio, full stack developer, AI engineer, ML engineer, machine learning, data science, React, Python, MERN stack"
+        url="https://itsluckysharma01.in/"
+        type="website"
+        jsonLd={PersonSchema}
+      />
       <NavBar />
 
       {/* Hero Section */}

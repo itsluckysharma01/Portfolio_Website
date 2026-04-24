@@ -1,3 +1,10 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /login
+
+# Sitemap
+Sitemap: https://itsluckysharma01.in/sitemap.xml
+
+# Cache settings
+Cache-control: public

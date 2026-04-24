@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { SEOHelmet } from "../../utils/SEOHelmet";
 import "./css/Certificates.css";
 import BackButton from "../../components/BackButton";
 import certificatesData from "../../data/certificatesConfig";
@@ -211,249 +212,266 @@ const Certificates = () => {
   }, [isModalOpen]);
 
   return (
-    <div className="certificates-container">
-      <BackButton position="top-left" size="medium" />
-      <div className="certificates-content">
-        {/* Header Section */}
-        <div className="certificates-header">
-          <h1 className="certificates-title">
-            My <span className="gradient-text">Achievements</span> &
-            Certifications
-          </h1>
-          <p className="certificates-subtitle">
-            A comprehensive collection of professional certifications, training
-            programs, and achievements that demonstrate my commitment to
-            continuous learning and professional development.
-          </p>
-        </div>
+    <>
+      <SEOHelmet
+        title="Certifications by Lucky Sharma - Oracle, Cisco, Data Science & More"
+        description="View Lucky Sharma's 20+ professional certifications including Oracle Cloud, Cisco Cybersecurity, Data Science, AI/ML Engineer, and government certifications from NIELIT and Skill India."
+        keywords="Lucky Sharma certifications, Lucky Sharma credentials, Oracle certification, Cisco certification, Data Science certification, AI ML certification, Lucky Sharma achievements"
+        url="https://itsluckysharma01.in/certificates"
+        type="article"
+      />
+      <div className="certificates-container">
+        <BackButton position="top-left" size="medium" />
+        <div className="certificates-content">
+          {/* Header Section */}
+          <div className="certificates-header">
+            <h1 className="certificates-title">
+              My <span className="gradient-text">Achievements</span> &
+              Certifications
+            </h1>
+            <p className="certificates-subtitle">
+              A comprehensive collection of professional certifications,
+              training programs, and achievements that demonstrate my commitment
+              to continuous learning and professional development.
+            </p>
+          </div>
 
-        {/* Statistics Section */}
-        <div className="certificates-stats">
-          <div className="stat-card">
-            <div className="stat-number">{certificatesData.length}</div>
-            <div className="stat-label">Total Certificates</div>
-          </div>
-          <div className="stat-card">
-            <div className="stat-number">{categories.length - 1}</div>
-            <div className="stat-label">Categories</div>
-          </div>
-          <div className="stat-card">
-            <div className="stat-number">
-              {new Set(certificatesData.map((cert) => cert.issuer)).size}
+          {/* Statistics Section */}
+          <div className="certificates-stats">
+            <div className="stat-card">
+              <div className="stat-number">{certificatesData.length}</div>
+              <div className="stat-label">Total Certificates</div>
             </div>
-            <div className="stat-label">Issuing Organizations</div>
-          </div>
-          <div className="stat-card">
-            <div className="stat-number">
-              {
-                certificatesData.filter((cert) => cert.level === "Professional")
-                  .length
-              }
+            <div className="stat-card">
+              <div className="stat-number">{categories.length - 1}</div>
+              <div className="stat-label">Categories</div>
             </div>
-            <div className="stat-label">Professional Level</div>
-          </div>
-        </div>
-
-        {/* Filter Section */}
-        <div className="certificates-filters">
-          {categories.map((category) => (
-            <button
-              key={category.id}
-              className={`filter-button ${activeFilter === category.id ? "active" : ""}`}
-              onClick={() => setActiveFilter(category.id)}
-              style={{ "--category-color": getCategoryColor(category.id) }}
-            >
-              <span className="filter-icon">{category.icon}</span>
-              <span className="filter-text">{category.name}</span>
-              <span className="filter-count">{category.count}</span>
-            </button>
-          ))}
-        </div>
-
-        {/* Certificates Grid */}
-        <div className="certificates-grid">
-          {filteredCertificates.map((certificate) => (
-            <div
-              key={certificate.id}
-              className="certificate-card"
-              onClick={() => openModal(certificate)}
-              style={{
-                "--category-color": getCategoryColor(certificate.category),
-              }}
-            >
-              <div className="certificate-image-container">
-                <img
-                  src={certificate.image}
-                  alt={certificate.title}
-                  className="certificate-image"
-                  loading="lazy"
-                />
-                <div className="certificate-overlay">
-                  <div className="overlay-content">
-                    <span className="view-icon">👁️</span>
-                    <span className="view-text">View Details</span>
-                  </div>
-                </div>
-                <div
-                  className="certificate-level"
-                  style={{ backgroundColor: getLevelColor(certificate.level) }}
-                >
-                  {certificate.level}
-                </div>
+            <div className="stat-card">
+              <div className="stat-number">
+                {new Set(certificatesData.map((cert) => cert.issuer)).size}
               </div>
-
-              <div className="certificate-info">
-                <div className="certificate-header">
-                  <h3 className="certificate-title">{certificate.title}</h3>
-                  <div className="certificate-issuer">
-                    <span className="issuer-icon">🏢</span>
-                    <span className="issuer-name">{certificate.issuer}</span>
-                  </div>
-                </div>
-
-                <div className="certificate-meta">
-                  <div className="certificate-date">
-                    <span className="date-icon">📅</span>
-                    <span className="date-text">{certificate.date}</span>
-                  </div>
-                  <div className="certificate-category">
-                    <span
-                      className="category-badge"
-                      style={{
-                        backgroundColor: getCategoryColor(certificate.category),
-                      }}
-                    >
-                      {certificate.category.toUpperCase()}
-                    </span>
-                  </div>
-                </div>
-
-                <p className="certificate-description">
-                  {certificate.description}
-                </p>
-
-                <div className="certificate-skills">
-                  {certificate.skills.slice(0, 3).map((skill, index) => (
-                    <span key={index} className="skill-tag">
-                      {skill}
-                    </span>
-                  ))}
-                  {certificate.skills.length > 3 && (
-                    <span className="skill-tag more">
-                      +{certificate.skills.length - 3}
-                    </span>
-                  )}
-                </div>
-              </div>
+              <div className="stat-label">Issuing Organizations</div>
             </div>
-          ))}
-        </div>
+            <div className="stat-card">
+              <div className="stat-number">
+                {
+                  certificatesData.filter(
+                    (cert) => cert.level === "Professional",
+                  ).length
+                }
+              </div>
+              <div className="stat-label">Professional Level</div>
+            </div>
+          </div>
 
-        {/* Modal */}
-        {isModalOpen && selectedCertificate && (
-          <div className="certificate-modal" onClick={closeModal}>
-            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-              <button className="modal-close" onClick={closeModal}>
-                <span>✕</span>
+          {/* Filter Section */}
+          <div className="certificates-filters">
+            {categories.map((category) => (
+              <button
+                key={category.id}
+                className={`filter-button ${activeFilter === category.id ? "active" : ""}`}
+                onClick={() => setActiveFilter(category.id)}
+                style={{ "--category-color": getCategoryColor(category.id) }}
+              >
+                <span className="filter-icon">{category.icon}</span>
+                <span className="filter-text">{category.name}</span>
+                <span className="filter-count">{category.count}</span>
               </button>
+            ))}
+          </div>
 
-              <div className="modal-header">
-                <h2 className="modal-title">{selectedCertificate.title}</h2>
-                <div className="modal-issuer">
-                  <span className="issuer-icon">🏢</span>
-                  <span className="issuer-name">
-                    {selectedCertificate.issuer}
-                  </span>
-                </div>
-              </div>
-
-              <div className="modal-body">
-                <div className="modal-image-container">
+          {/* Certificates Grid */}
+          <div className="certificates-grid">
+            {filteredCertificates.map((certificate) => (
+              <div
+                key={certificate.id}
+                className="certificate-card"
+                onClick={() => openModal(certificate)}
+                style={{
+                  "--category-color": getCategoryColor(certificate.category),
+                }}
+              >
+                <div className="certificate-image-container">
                   <img
-                    src={selectedCertificate.image}
-                    alt={selectedCertificate.title}
-                    className="modal-image"
+                    src={certificate.image}
+                    alt={certificate.title}
+                    className="certificate-image"
+                    loading="lazy"
                   />
+                  <div className="certificate-overlay">
+                    <div className="overlay-content">
+                      <span className="view-icon">👁️</span>
+                      <span className="view-text">View Details</span>
+                    </div>
+                  </div>
+                  <div
+                    className="certificate-level"
+                    style={{
+                      backgroundColor: getLevelColor(certificate.level),
+                    }}
+                  >
+                    {certificate.level}
+                  </div>
                 </div>
 
-                <div className="modal-details">
-                  <div className="detail-row">
-                    <span className="detail-label">Date:</span>
-                    <span className="detail-value">
-                      {selectedCertificate.date}
-                    </span>
-                  </div>
-                  <div className="detail-row">
-                    <span className="detail-label">Level:</span>
-                    <span
-                      className="detail-value level-badge"
-                      style={{
-                        backgroundColor: getLevelColor(
-                          selectedCertificate.level,
-                        ),
-                      }}
-                    >
-                      {selectedCertificate.level}
-                    </span>
-                  </div>
-                  <div className="detail-row">
-                    <span className="detail-label">Category:</span>
-                    <span
-                      className="detail-value category-badge"
-                      style={{
-                        backgroundColor: getCategoryColor(
-                          selectedCertificate.category,
-                        ),
-                      }}
-                    >
-                      {selectedCertificate.category.toUpperCase()}
-                    </span>
-                  </div>
-
-                  <div className="modal-description">
-                    <h4>Description</h4>
-                    <p>{selectedCertificate.description}</p>
-                  </div>
-
-                  <div className="modal-skills">
-                    <h4>Skills Covered</h4>
-                    <div className="skills-list">
-                      {selectedCertificate.skills.map((skill, index) => (
-                        <span key={index} className="skill-tag">
-                          {skill}
-                        </span>
-                      ))}
+                <div className="certificate-info">
+                  <div className="certificate-header">
+                    <h3 className="certificate-title">{certificate.title}</h3>
+                    <div className="certificate-issuer">
+                      <span className="issuer-icon">🏢</span>
+                      <span className="issuer-name">{certificate.issuer}</span>
                     </div>
                   </div>
 
-                  <div className="modal-actions">
-                    <button
-                      className="btn-primary"
-                      onClick={() =>
-                        window.open(
-                          selectedCertificate.verificationUrl,
-                          "_blank",
-                        )
-                      }
-                    >
-                      Verify Certificate
-                    </button>
-                    <button
-                      className="btn-secondary"
-                      onClick={() =>
-                        window.open(selectedCertificate.image, "_blank")
-                      }
-                    >
-                      Download Image
-                    </button>
+                  <div className="certificate-meta">
+                    <div className="certificate-date">
+                      <span className="date-icon">📅</span>
+                      <span className="date-text">{certificate.date}</span>
+                    </div>
+                    <div className="certificate-category">
+                      <span
+                        className="category-badge"
+                        style={{
+                          backgroundColor: getCategoryColor(
+                            certificate.category,
+                          ),
+                        }}
+                      >
+                        {certificate.category.toUpperCase()}
+                      </span>
+                    </div>
+                  </div>
+
+                  <p className="certificate-description">
+                    {certificate.description}
+                  </p>
+
+                  <div className="certificate-skills">
+                    {certificate.skills.slice(0, 3).map((skill, index) => (
+                      <span key={index} className="skill-tag">
+                        {skill}
+                      </span>
+                    ))}
+                    {certificate.skills.length > 3 && (
+                      <span className="skill-tag more">
+                        +{certificate.skills.length - 3}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Modal */}
+          {isModalOpen && selectedCertificate && (
+            <div className="certificate-modal" onClick={closeModal}>
+              <div
+                className="modal-content"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button className="modal-close" onClick={closeModal}>
+                  <span>✕</span>
+                </button>
+
+                <div className="modal-header">
+                  <h2 className="modal-title">{selectedCertificate.title}</h2>
+                  <div className="modal-issuer">
+                    <span className="issuer-icon">🏢</span>
+                    <span className="issuer-name">
+                      {selectedCertificate.issuer}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="modal-body">
+                  <div className="modal-image-container">
+                    <img
+                      src={selectedCertificate.image}
+                      alt={selectedCertificate.title}
+                      className="modal-image"
+                    />
+                  </div>
+
+                  <div className="modal-details">
+                    <div className="detail-row">
+                      <span className="detail-label">Date:</span>
+                      <span className="detail-value">
+                        {selectedCertificate.date}
+                      </span>
+                    </div>
+                    <div className="detail-row">
+                      <span className="detail-label">Level:</span>
+                      <span
+                        className="detail-value level-badge"
+                        style={{
+                          backgroundColor: getLevelColor(
+                            selectedCertificate.level,
+                          ),
+                        }}
+                      >
+                        {selectedCertificate.level}
+                      </span>
+                    </div>
+                    <div className="detail-row">
+                      <span className="detail-label">Category:</span>
+                      <span
+                        className="detail-value category-badge"
+                        style={{
+                          backgroundColor: getCategoryColor(
+                            selectedCertificate.category,
+                          ),
+                        }}
+                      >
+                        {selectedCertificate.category.toUpperCase()}
+                      </span>
+                    </div>
+
+                    <div className="modal-description">
+                      <h4>Description</h4>
+                      <p>{selectedCertificate.description}</p>
+                    </div>
+
+                    <div className="modal-skills">
+                      <h4>Skills Covered</h4>
+                      <div className="skills-list">
+                        {selectedCertificate.skills.map((skill, index) => (
+                          <span key={index} className="skill-tag">
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="modal-actions">
+                      <button
+                        className="btn-primary"
+                        onClick={() =>
+                          window.open(
+                            selectedCertificate.verificationUrl,
+                            "_blank",
+                          )
+                        }
+                      >
+                        Verify Certificate
+                      </button>
+                      <button
+                        className="btn-secondary"
+                        onClick={() =>
+                          window.open(selectedCertificate.image, "_blank")
+                        }
+                      >
+                        Download Image
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

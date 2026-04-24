@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { SEOHelmet } from "../../utils/SEOHelmet";
 import "./css/skillHub.css";
 import BackButton from "../../components/BackButton";
 
@@ -6,7 +7,7 @@ const SkillHub = () => {
   const [activeCategory, setActiveCategory] = useState("all");
   const [searchTerm, setSearchTerm] = useState("");
   const [hoveredSkill, setHoveredSkill] = useState(null);
-  const [skillLevels, setSkillLevels] = useState({});
+  // const [skillLevels, setSkillLevels] = useState({});
   const [isAnimating, setIsAnimating] = useState(false);
 
   const skillsData = {
@@ -174,190 +175,199 @@ const SkillHub = () => {
   };
 
   return (
-    <div className="skillhub-container">
-      <BackButton position="top-left" size="medium" />
-      <div className="skillhub-content">
-        {/* Header Section */}
-        <div className="skillhub-header">
-          <h1 className="skillhub-title">
-            My <span className="gradient-text">Technical Skills</span>
-          </h1>
-          <p className="skillhub-subtitle">
-            Showcasing my expertise in Web Development, Data Science, and
-            Developer Tools
-          </p>
-        </div>
+    <>
+      <SEOHelmet
+        title="Skills & Technical Expertise of Lucky Sharma - Web Development, AI/ML, Data Science"
+        description="View Lucky Sharma's comprehensive technical skills in React, Python, JavaScript, Machine Learning, Data Science, Cloud Technologies with proficiency levels and years of experience."
+        keywords="Lucky Sharma skills, Lucky Sharma technical expertise, React skills, Python skills, AI skills, machine learning, data science, web development skills, cloud technologies"
+        url="https://itsluckysharma01.in/skillhub"
+        type="article"
+      />
+      <div className="skillhub-container">
+        <BackButton position="top-left" size="medium" />
+        <div className="skillhub-content">
+          {/* Header Section */}
+          <div className="skillhub-header">
+            <h1 className="skillhub-title">
+              My <span className="gradient-text">Technical Skills</span>
+            </h1>
+            <p className="skillhub-subtitle">
+              Showcasing my expertise in Web Development, Data Science, and
+              Developer Tools
+            </p>
+          </div>
 
-        {/* Search and Filter Section */}
-        <div className="skillhub-controls">
-          <div className="search-container">
-            <input
-              type="text"
-              placeholder="Search skills..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="skill-search-input"
-            />
-            <svg
-              className="search-icon"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+          {/* Search and Filter Section */}
+          <div className="skillhub-controls">
+            <div className="search-container">
+              <input
+                type="text"
+                placeholder="Search skills..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="skill-search-input"
               />
-            </svg>
-          </div>
-
-          <div className="category-filters">
-            {categories.map((category) => (
-              <button
-                key={category.id}
-                className={`category-filter ${activeCategory === category.id ? "active" : ""}`}
-                onClick={() => setActiveCategory(category.id)}
+              <svg
+                className="search-icon"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
               >
-                <span className="filter-icon">{category.icon}</span>
-                <span className="filter-text">{category.name}</span>
-              </button>
-            ))}
-          </div>
-        </div>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+            </div>
 
-        {/* Skills Grid */}
-        <div className="skills-grid">
-          {searchFilteredSkills.map((skill, index) => (
-            <div
-              key={`${skill.name}-${index}`}
-              className="skill-card"
-              style={{ "--skill-color": skill.color }}
-              onMouseEnter={() => setHoveredSkill(skill.name)}
-              onMouseLeave={() => setHoveredSkill(null)}
-            >
-              <div className="skill-header">
-                <div className="skill-icon">
-                  <div
-                    className="skill-icon-bg"
-                    style={{ backgroundColor: skill.color }}
-                  >
-                    {skill.name.charAt(0)}
-                  </div>
-                </div>
-                <div className="skill-info">
-                  <h3 className="skill-name">{skill.name}</h3>
-                  <span className="skill-category">{skill.category}</span>
-                </div>
-                <div
-                  className="skill-level-badge"
-                  style={{ backgroundColor: getSkillLevelColor(skill.level) }}
+            <div className="category-filters">
+              {categories.map((category) => (
+                <button
+                  key={category.id}
+                  className={`category-filter ${activeCategory === category.id ? "active" : ""}`}
+                  onClick={() => setActiveCategory(category.id)}
                 >
-                  {getSkillLevelText(skill.level)}
-                </div>
-              </div>
+                  <span className="filter-icon">{category.icon}</span>
+                  <span className="filter-text">{category.name}</span>
+                </button>
+              ))}
+            </div>
+          </div>
 
-              <div className="skill-details">
-                <div className="skill-stats">
-                  <div className="stat">
-                    <span className="stat-value">{skill.level}%</span>
-                    <span className="stat-label">Proficiency</span>
-                  </div>
-                  <div className="stat">
-                    <span className="stat-value">{skill.experience}</span>
-                    <span className="stat-label">Experience</span>
-                  </div>
-                  <div className="stat">
-                    <span className="stat-value">{skill.projects}</span>
-                    <span className="stat-label">Projects</span>
-                  </div>
-                </div>
-
-                <div className="skill-progress">
-                  <div className="progress-bar">
+          {/* Skills Grid */}
+          <div className="skills-grid">
+            {searchFilteredSkills.map((skill, index) => (
+              <div
+                key={`${skill.name}-${index}`}
+                className="skill-card"
+                style={{ "--skill-color": skill.color }}
+                onMouseEnter={() => setHoveredSkill(skill.name)}
+                onMouseLeave={() => setHoveredSkill(null)}
+              >
+                <div className="skill-header">
+                  <div className="skill-icon">
                     <div
-                      className="progress-fill"
-                      style={{
-                        width: isAnimating ? `${skill.level}%` : "0%",
-                        backgroundColor: getSkillLevelColor(skill.level),
-                      }}
-                    />
-                  </div>
-                  <span className="progress-text">{skill.level}%</span>
-                </div>
-              </div>
-
-              {hoveredSkill === skill.name && (
-                <div className="skill-hover-info">
-                  <div className="hover-content">
-                    <h4>Recent Projects</h4>
-                    <p>
-                      Successfully completed {skill.projects} projects using{" "}
-                      {skill.name}
-                    </p>
-                    <div className="hover-stats">
-                      <span>Experience: {skill.experience}</span>
-                      <span>Level: {getSkillLevelText(skill.level)}</span>
+                      className="skill-icon-bg"
+                      style={{ backgroundColor: skill.color }}
+                    >
+                      {skill.name.charAt(0)}
                     </div>
                   </div>
+                  <div className="skill-info">
+                    <h3 className="skill-name">{skill.name}</h3>
+                    <span className="skill-category">{skill.category}</span>
+                  </div>
+                  <div
+                    className="skill-level-badge"
+                    style={{ backgroundColor: getSkillLevelColor(skill.level) }}
+                  >
+                    {getSkillLevelText(skill.level)}
+                  </div>
                 </div>
-              )}
-            </div>
-          ))}
-        </div>
 
-        {/* Skills Summary */}
-        <div className="skills-summary">
-          <div className="summary-card">
-            <h3>Total Skills</h3>
-            <div className="summary-number">
-              {Object.values(skillsData).reduce(
-                (total, category) => total + category.skills.length,
-                0,
-              )}
-            </div>
-          </div>
-          <div className="summary-card">
-            <h3>Categories</h3>
-            <div className="summary-number">
-              {Object.keys(skillsData).length}
-            </div>
-          </div>
-          <div className="summary-card">
-            <h3>Total Projects</h3>
-            <div className="summary-number">
-              {Object.values(skillsData).reduce(
-                (total, category) =>
-                  total +
-                  category.skills.reduce(
-                    (sum, skill) => sum + skill.projects,
-                    0,
-                  ),
-                0,
-              )}
-            </div>
-          </div>
-          <div className="summary-card">
-            <h3>Years Experience</h3>
-            <div className="summary-number">4+</div>
-          </div>
-        </div>
+                <div className="skill-details">
+                  <div className="skill-stats">
+                    <div className="stat">
+                      <span className="stat-value">{skill.level}%</span>
+                      <span className="stat-label">Proficiency</span>
+                    </div>
+                    <div className="stat">
+                      <span className="stat-value">{skill.experience}</span>
+                      <span className="stat-label">Experience</span>
+                    </div>
+                    <div className="stat">
+                      <span className="stat-value">{skill.projects}</span>
+                      <span className="stat-label">Projects</span>
+                    </div>
+                  </div>
 
-        {/* Call to Action */}
-        <div className="skillhub-cta">
-          <h2>Interested in My Work?</h2>
-          <p>
-            Check out my projects and get in touch with me to discuss
-            opportunities
-          </p>
-          <div className="cta-buttons">
-            <button className="btn-primary">View My Projects</button>
-            <button className="btn-secondary">Contact Me</button>
+                  <div className="skill-progress">
+                    <div className="progress-bar">
+                      <div
+                        className="progress-fill"
+                        style={{
+                          width: isAnimating ? `${skill.level}%` : "0%",
+                          backgroundColor: getSkillLevelColor(skill.level),
+                        }}
+                      />
+                    </div>
+                    <span className="progress-text">{skill.level}%</span>
+                  </div>
+                </div>
+
+                {hoveredSkill === skill.name && (
+                  <div className="skill-hover-info">
+                    <div className="hover-content">
+                      <h4>Recent Projects</h4>
+                      <p>
+                        Successfully completed {skill.projects} projects using{" "}
+                        {skill.name}
+                      </p>
+                      <div className="hover-stats">
+                        <span>Experience: {skill.experience}</span>
+                        <span>Level: {getSkillLevelText(skill.level)}</span>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Skills Summary */}
+          <div className="skills-summary">
+            <div className="summary-card">
+              <h3>Total Skills</h3>
+              <div className="summary-number">
+                {Object.values(skillsData).reduce(
+                  (total, category) => total + category.skills.length,
+                  0,
+                )}
+              </div>
+            </div>
+            <div className="summary-card">
+              <h3>Categories</h3>
+              <div className="summary-number">
+                {Object.keys(skillsData).length}
+              </div>
+            </div>
+            <div className="summary-card">
+              <h3>Total Projects</h3>
+              <div className="summary-number">
+                {Object.values(skillsData).reduce(
+                  (total, category) =>
+                    total +
+                    category.skills.reduce(
+                      (sum, skill) => sum + skill.projects,
+                      0,
+                    ),
+                  0,
+                )}
+              </div>
+            </div>
+            <div className="summary-card">
+              <h3>Years Experience</h3>
+              <div className="summary-number">4+</div>
+            </div>
+          </div>
+
+          {/* Call to Action */}
+          <div className="skillhub-cta">
+            <h2>Interested in My Work?</h2>
+            <p>
+              Check out my projects and get in touch with me to discuss
+              opportunities
+            </p>
+            <div className="cta-buttons">
+              <button className="btn-primary">View My Projects</button>
+              <button className="btn-secondary">Contact Me</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
