@@ -1,0 +1,63 @@
+{
+  "name": "Lucky Sharma - Full Stack Developer & AI/ML Engineer Portfolio",
+  "short_name": "Lucky Sharma Portfolio",
+  "description": "Professional portfolio of Lucky Sharma - Full Stack Developer & AI/ML Engineer. Explore projects, certifications, skills, and expertise in React, Python, Machine Learning, and Web Development.",
+  "scope": "https://itsluckysharma01.in/",
+  "start_url": "https://itsluckysharma01.in/",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "keywords": [
+    "Lucky Sharma",
+    "luckysharma",
+    "itsluckysharma01",
+    "Portfolio",
+    "Full Stack Developer",
+    "AI/ML Engineer",
+    "React Developer",
+    "Python Developer",
+    "Data Scientist",
+    "Web Developer"
+  ],
+  "author": {
+    "name": "Lucky Sharma",
+    "email": "itsluckysharma001@gmail.com",
+    "url": "https://itsluckysharma01.in"
+  },
+  "version": "2.0.0",
+  "homepage": "https://itsluckysharma01.in",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/itsluckysharma01/Portfolio_Website"
+  },
+  "social": {
+    "twitter": "@itsluckysharma01",
+    "linkedin": "https://linkedin.com/in/lucky-sharma918894599977",
+    "github": "https://github.com/itsluckysharma01",
+    "instagram": "https://instagram.com/its_pandit_lucky01"
+  },
+  "categories": ["portfolio", "developer", "technology"],
+  "screenshots": [
+    {
+      "src": "https://itsluckysharma01.in/images/profile/lucky-sharma-profile.jpg",
+      "sizes": "500x500",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ],
+  "prefer_related_applications": false,
+  "color_scheme": "dark",
+  "icons": [
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    }
+  ]
+}

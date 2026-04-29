@@ -7,9 +7,9 @@ const Contact = () => {
   return (
     <>
       <SEOHelmet
-        title="Contact Lucky Sharma - Hire Full Stack Developer & AI Engineer"
-        description="Get in touch with Lucky Sharma for freelance projects, collaboration, or job opportunities. Contact me through email, LinkedIn, or the contact form for professional inquiries."
-        keywords="Contact Lucky Sharma, hire Lucky Sharma, lucky sharma contact, freelance developer, project inquiries, professional contact, hire full stack developer"
+        title="Contact Lucky Sharma (itsluckysharma01) - Hire Full Stack Developer & AI Engineer"
+        description="Contact Lucky Sharma (luckysharma, itsluckysharma01) for freelance projects, job opportunities, or collaborations. Hire a professional Full Stack Developer & AI/ML Engineer for React, Python, and Machine Learning projects."
+        keywords="Contact Lucky Sharma, hire Lucky Sharma, luckysharma contact, itsluckysharma01 contact, lucky sharma contact, LuckySharma, LUCKYSHARMA, freelance developer, hire full stack developer, hire AI engineer, project inquiries, professional contact, available for work"
         url="https://itsluckysharma01.in/contact"
         type="article"
       />

@@ -1,57 +1,152 @@
 /* Contact Component Styles */
 
 .contact-container {
-  padding: 2rem;
+  padding: 1rem;
   margin-top: 80px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  position: relative;
+}
+
+@media (min-width: 640px) {
+  .contact-container {
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .contact-container {
+    padding: 2rem;
+  }
 }
 
 .contact-content {
   max-width: 600px;
   margin: 0 auto;
+  padding: 0 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .contact-content {
+    padding: 0;
+  }
 }
 
 .contact-title {
-  font-size: 2.5rem;
-  color: #2c3e50;
-  margin-bottom: 2rem;
+  font-size: 1.75rem;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
   text-align: center;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+@media (min-width: 640px) {
+  .contact-title {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .contact-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
 }
 
 .contact-card {
-  background-color: #f8f9fa;
-  padding: 2rem;
+  background-color: rgba(102, 126, 234, 0.1);
+  padding: 1.5rem;
   border-radius: 10px;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(102, 126, 234, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+@media (min-width: 640px) {
+  .contact-card {
+    padding: 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .contact-card {
+    margin-bottom: 2rem;
+  }
 }
 
 .contact-intro {
   text-align: center;
-  font-size: 1.1rem;
-  color: #6c757d;
-  margin-bottom: 2rem;
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+@media (min-width: 640px) {
+  .contact-intro {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .contact-intro {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
 }
 
 .contact-methods {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .contact-methods {
+    gap: 1.25rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .contact-methods {
+    gap: 1.5rem;
+  }
 }
 
 .contact-method {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 640px) {
+  .contact-method {
+    padding: 1.25rem;
+  }
+}
+
+.contact-method:hover {
+  background: rgba(102, 126, 234, 0.15);
+  transform: translateX(4px);
 }
 
 .contact-icon {
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   font-size: 1.2rem;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
 }
 
 .contact-icon.email {
@@ -68,30 +163,78 @@
 
 .contact-method h3 {
   margin: 0;
-  color: #2c3e50;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+@media (min-width: 640px) {
+  .contact-method h3 {
+    font-size: 1.1rem;
+  }
 }
 
 .contact-method p {
-  margin: 0;
-  color: #6c757d;
+  margin: 0.25rem 0 0 0;
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  word-break: break-word;
+}
+
+@media (min-width: 640px) {
+  .contact-method p {
+    font-size: 0.95rem;
+  }
 }
 
 .contact-button-container {
   text-align: center;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .contact-button-container {
+    margin-top: 2rem;
+  }
 }
 
 .contact-button {
   background-color: #667eea;
   color: white;
   border: none;
-  padding: 1rem 2rem;
+  padding: 0.75rem 1.5rem;
   border-radius: 25px;
-  font-size: 1.1rem;
+  font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  min-height: 48px;
+  min-width: 120px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+@media (min-width: 640px) {
+  .contact-button {
+    padding: 0.875rem 2rem;
+    font-size: 1.05rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .contact-button {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+  }
 }
 
 .contact-button:hover {
   background-color: #5a6fd8;
   transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
+}
+
+.contact-button:active {
+  transform: translateY(0);
 }

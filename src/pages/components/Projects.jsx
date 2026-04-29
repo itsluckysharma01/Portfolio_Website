@@ -121,9 +121,9 @@ const Projects = () => {
   return (
     <>
       <SEOHelmet
-        title="Projects by Lucky Sharma - Full Stack & AI/ML Portfolio"
-        description="Explore Lucky Sharma's portfolio projects featuring full stack development, AI/ML applications, data science solutions, and React-based projects with detailed case studies and source code."
-        keywords="Lucky Sharma projects, Lucky Sharma portfolio, AI projects, ML projects, full stack projects, web development projects, React projects, data science projects, Lucky Sharma github"
+        title="Projects - Lucky Sharma (itsluckysharma01) | Full Stack, AI/ML, Data Science Portfolio"
+        description="Explore Lucky Sharma's (itsluckysharma01, luckysharma) portfolio projects including full stack web applications, AI/ML solutions, data science projects, and React-based systems. View source code on GitHub."
+        keywords="Lucky Sharma projects, luckysharma projects, itsluckysharma01 portfolio, itsluckysharma01 github, LuckySharma projects, LUCKYSHARMA portfolio, lucky sharma portfolio, full stack projects, AI projects, ML projects, web development projects, React projects, data science projects, open source, GitHub projects"
         url="https://itsluckysharma01.in/projects"
         type="article"
       />

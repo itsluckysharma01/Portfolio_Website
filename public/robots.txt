@@ -1,9 +1,32 @@
 # https://www.robotstxt.org/robotstxt.html
+# Robots.txt for Lucky Sharma Portfolio Website
+# Version 1.0 - Last Updated: April 29, 2026
+
+# Allow all crawlers to index the site
 User-agent: *
 Allow: /
+
+# Disallow login page from indexing
 Disallow: /login
 
-# Sitemap
+# Disallow admin and private sections (if any)
+Disallow: /admin/
+Disallow: /private/
+
+# Crawl delay to prevent server overload (optional)
+Crawl-delay: 1
+
+# User-agent specific rules for Googlebot
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0.5
+
+# User-agent specific rules for Bingbot
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Sitemap reference for search engines
 Sitemap: https://itsluckysharma01.in/sitemap.xml
 
 # Cache settings

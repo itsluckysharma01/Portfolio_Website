@@ -51,9 +51,9 @@ const About = () => {
   return (
     <>
       <SEOHelmet
-        title="About Lucky Sharma - Full Stack Developer & AI/ML Engineer"
-        description="About Lucky Sharma - Learn about my professional journey as a Full Stack Developer and AI/ML Engineer. Discover my expertise, skills, and professional accomplishments in web development and machine learning."
-        keywords="About Lucky Sharma, Lucky Sharma biography, Lucky Sharma developer, professional experience, full stack development, machine learning engineer"
+        title="About Lucky Sharma (luckysharma, itsluckysharma01) - Full Stack Developer & AI Engineer"
+        description="Discover Lucky Sharma's (itsluckysharma01, luckysharma) professional journey. Full Stack Developer & AI/ML Engineer passionate about React, Python, Machine Learning, and innovative web solutions. Based in India."
+        keywords="About Lucky Sharma, luckysharma, LuckySharma, LUCKYSHARMA, itsluckysharma01, Lucky Sharma biography, Lucky Sharma developer, professional experience, full stack development, machine learning engineer, AI engineer, career highlights, technical expertise"
         url="https://itsluckysharma01.in/about"
         type="article"
         jsonLd={PersonSchema}

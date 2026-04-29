@@ -165,9 +165,9 @@ const ResumeContact = () => {
   return (
     <>
       <SEOHelmet
-        title="Resume & Hire Lucky Sharma - Full Stack Developer & AI Engineer Available for Work"
-        description="Download Lucky Sharma's professional resume and hire him for your projects. View full experience, expertise in web development and AI/ML, and send project inquiries directly through the contact form."
-        keywords="Lucky Sharma resume, hire Lucky Sharma, Lucky Sharma available, freelance developer, project opportunities, Lucky Sharma CV, professional experience, availability"
+        title="Resume & Hire - Lucky Sharma (itsluckysharma01, luckysharma) | Full Stack Developer"
+        description="Download Lucky Sharma's (itsluckysharma01, luckysharma) resume and hire him for full stack development, AI/ML, and data science projects. Available for freelance, contract, and full-time opportunities in React, Python, and Web Development."
+        keywords="Lucky Sharma resume, luckysharma resume, itsluckysharma01 resume, hire Lucky Sharma, LuckySharma CV, LUCKYSHARMA available, hire full stack developer, hire AI engineer, hire ML engineer, freelance developer available, project opportunities, contact for hire, professional experience, work availability, employment"
         url="https://itsluckysharma01.in/resume"
         type="article"
       />

@@ -177,9 +177,9 @@ const SkillHub = () => {
   return (
     <>
       <SEOHelmet
-        title="Skills & Technical Expertise of Lucky Sharma - Web Development, AI/ML, Data Science"
-        description="View Lucky Sharma's comprehensive technical skills in React, Python, JavaScript, Machine Learning, Data Science, Cloud Technologies with proficiency levels and years of experience."
-        keywords="Lucky Sharma skills, Lucky Sharma technical expertise, React skills, Python skills, AI skills, machine learning, data science, web development skills, cloud technologies"
+        title="Skills & Expertise - Lucky Sharma (itsluckysharma01, luckysharma) | Full Stack, AI/ML"
+        description="View Lucky Sharma's (itsluckysharma01, luckysharma) complete technical skills including React, Python, Machine Learning, Data Science, Full Stack Development, Cloud Technologies, and more."
+        keywords="Lucky Sharma skills, luckysharma skills, itsluckysharma01 skills, LuckySharma technical expertise, LUCKYSHARMA abilities, lucky sharma expertise, React skills, Python skills, AI skills, ML skills, machine learning expert, data science skills, web development skills, cloud technologies, AWS, Node.js, MongoDB, PostgreSQL"
         url="https://itsluckysharma01.in/skillhub"
         type="article"
       />

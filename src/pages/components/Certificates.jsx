@@ -214,9 +214,9 @@ const Certificates = () => {
   return (
     <>
       <SEOHelmet
-        title="Certifications by Lucky Sharma - Oracle, Cisco, Data Science & More"
-        description="View Lucky Sharma's 20+ professional certifications including Oracle Cloud, Cisco Cybersecurity, Data Science, AI/ML Engineer, and government certifications from NIELIT and Skill India."
-        keywords="Lucky Sharma certifications, Lucky Sharma credentials, Oracle certification, Cisco certification, Data Science certification, AI ML certification, Lucky Sharma achievements"
+        title="Certifications - Lucky Sharma (itsluckysharma01) | Oracle, Cisco, AI/ML, Data Science"
+        description="View Lucky Sharma's (itsluckysharma01, luckysharma) professional certifications and credentials in Oracle, Cisco, Data Science, AI/ML, and more. Verified achievements recognizing technical expertise."
+        keywords="Lucky Sharma certifications, luckysharma certifications, itsluckysharma01 certifications, LuckySharma credentials, LUCKYSHARMA achievements, Oracle certification, Cisco certification, Data Science certification, AI certification, ML certification, professional credentials, verified achievements, technical expertise"
         url="https://itsluckysharma01.in/certificates"
         type="article"
       />
